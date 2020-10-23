@@ -1,11 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Caspart package design ontwerp verpakkingen POS illustratie product design illustratie`,
+    description: `Bent u op zoek naar een ontwerp voor verpakkingen, POS, product design of een illustratie? Onze jarenlange ervaring zal u zeker van pas komen!`,
+    author: `@Caspart`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -15,6 +14,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
