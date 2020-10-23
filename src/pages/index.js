@@ -69,7 +69,7 @@ function IndexPage (props) {
           :
             <div>
               <h3>CASPART IS...</h3>
-              <h1><span className={noTextFade}>A FULL-SERVICE BR</span>AN<span className={noTextFade}>D</span> EXPIERENCE</h1><h1 className={css(indexStyles.single_D)}>D</h1>
+              <h1><span className={noTextFade}>A FULL-SERVICE BR</span>AN<span className={noTextFade}>D</span> EXPIERENCE</h1><h1 className={css(indexStyles.no_single_D)}>D</h1>
               <h1><span className={noTextFade}>& PACKAGING</span> DESIGN AGENCY</h1>
             </div>
           }
@@ -116,9 +116,18 @@ const indexStyles = StyleSheet.create({
   },
 
   single_D: {
+    transition: 'opacity 1.8s ease',
     position: 'absolute',
     marginLeft: '655px',
     marginTop: '-44px'
+  },
+
+  no_single_D: {
+    transition: 'opacity 1s ease',
+    position: 'absolute',
+    marginLeft: '655px',
+    marginTop: '-44px',
+    opacity: '0'
   },
 
   engel: {
