@@ -67,6 +67,9 @@ textarea {
   font-size: 2vh;
   padding: 1vw;
 }
+.hoverArea:hover > .textFade {
+    opacity: 0.15;
+}
 .slider-control-centerleft, .slider-control-centerright {
   display: none;
 }

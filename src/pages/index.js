@@ -48,6 +48,7 @@ function IndexPage (props) {
 
   const [hoverRef, isHovered] = useHover()
   const textFade = css(indexStyles.engel_fading_tekst)
+  const noTextFade = css(indexStyles.engel_non_fading_tekst)
 
   return(
     <Layout>
@@ -68,8 +69,8 @@ function IndexPage (props) {
           :
             <div>
               <h3>CASPART IS...</h3>
-              <h1>A FULL-SERVICE BRAND EXPIERENCE</h1>
-              <h1>& PACKAGING DESIGN AGENCY</h1>
+              <h1><span className={noTextFade}>A FULL-SERVICE BR</span>AN<span className={noTextFade}>D</span> EXPIERENCE</h1><h1 className={css(indexStyles.single_D)}>D</h1>
+              <h1><span className={noTextFade}>& PACKAGING</span> DESIGN AGENCY</h1>
             </div>
           }
         </div>
@@ -105,8 +106,13 @@ const indexStyles = StyleSheet.create({
     gridRowEnd: '4'
   },
 
+  engel_non_fading_tekst: {
+    transition: 'opacity 1.8s ease'
+  },
+
   engel_fading_tekst: {
-    opacity: '0.15'
+    transition: 'opacity 0.5s ease',
+    opacity: 0.15
   },
 
   single_D: {
@@ -144,8 +150,8 @@ const indexStyles = StyleSheet.create({
 
   hover_area: {
     ':hover': {
-      'div': {
-        opacity: '0.15'
+      '.span': {
+        opacity: '0.15',
       }
     }
   }
