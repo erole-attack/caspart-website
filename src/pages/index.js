@@ -74,8 +74,8 @@ function IndexPage (props) {
             </div>
           }
         </div>
-        <div className={css(indexStyles.engel)}>
-          <Img fluid={props.data.engel.childImageSharp.fluid}/>
+        <div className={css(indexStyles.engel_container)}>
+          <Img className={css(indexStyles.engel)} fluid={props.data.engel.childImageSharp.fluid}/>
         </div>
         <svg className={css(indexStyles.arrow_down)} width="47" height="12" viewBox="0 0 47 12" fill="none" xmlns="http://www.w3.org/2000/svg">
           <Link to="/concept">
@@ -137,12 +137,15 @@ const indexStyles = StyleSheet.create({
     opacity: '0'
   },
 
-  engel: {
+  engel_container: {
     placeSelf: 'center',
     gridColumnStart: '1',
     gridColumnEnd: '4',
     gridRowStart: '1',
-    gridRowEnd: '4',
+    gridRowEnd: '4'
+  },
+
+  engel: {
     width: '65vw',
     margin: 'auto',
     display: 'block'
