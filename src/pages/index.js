@@ -126,14 +126,14 @@ const indexStyles = StyleSheet.create({
     transition: 'opacity 1.8s ease',
     position: 'absolute',
     marginLeft: '653px',
-    marginTop: '-45px'
+    marginTop: '-44px'
   },
 
   no_single_D: {
     transition: 'opacity 1s ease',
     position: 'absolute',
     marginLeft: '653px',
-    marginTop: '-45px',
+    marginTop: '-44px',
     opacity: '0'
   },
 
