@@ -1,6 +1,6 @@
 import React from 'react'
 import { useRef, useState, useEffect } from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { StyleSheet, css } from 'aphrodite'
 import Layout from '../components/layout'
 import Img from 'gatsby-image'
@@ -77,6 +77,11 @@ function IndexPage (props) {
         <div className={css(indexStyles.engel)}>
           <Img fluid={props.data.engel.childImageSharp.fluid}/>
         </div>
+        <svg className={css(indexStyles.arrow_down)} width="47" height="12" viewBox="0 0 47 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <Link to="/concept">
+            <path d="M46 1.5L23.5 10L1 1.5" stroke="black" stroke-width="2"/>
+          </Link>
+        </svg>
       </div>
     </Layout>
   )
@@ -91,9 +96,9 @@ const indexStyles = StyleSheet.create({
     display: 'grid',
     width: '100vw',
     height: '100vh',
-    gridTemplateColumns: '1fr 10fr 1fr',
-    gridTemplateRows: '1fr 6fr 1fr',
-    overflow: 'hidden',
+    gridTemplateColumns: '1fr 8fr 1fr',
+    gridTemplateRows: '1fr 8fr 1fr',
+    overflow: 'hidden'
   },
 
   engel_tekst: {
@@ -107,26 +112,28 @@ const indexStyles = StyleSheet.create({
   },
 
   engel_non_fading_tekst: {
+    fontWeight: '300',
     transition: 'opacity 1.8s ease'
   },
 
   engel_fading_tekst: {
+    fontWeight: '300',
     transition: 'opacity 0.5s ease',
-    opacity: 0.15
+    opacity: '0.15'
   },
 
   single_D: {
     transition: 'opacity 1.8s ease',
     position: 'absolute',
-    marginLeft: '655px',
-    marginTop: '-44px'
+    marginLeft: '653px',
+    marginTop: '-45px'
   },
 
   no_single_D: {
     transition: 'opacity 1s ease',
     position: 'absolute',
-    marginLeft: '655px',
-    marginTop: '-44px',
+    marginLeft: '653px',
+    marginTop: '-45px',
     opacity: '0'
   },
 
@@ -147,7 +154,7 @@ const indexStyles = StyleSheet.create({
     gridColumnStart: '1',
     gridColumnEnd: '4',
     gridRowStart: '1',
-    gridRowEnd: '4',
+    gridRowEnd: '4'
   },
 
   hover_area_container: {
@@ -157,12 +164,13 @@ const indexStyles = StyleSheet.create({
     width: '65vw',
   },
 
-  hover_area: {
-    ':hover': {
-      '.span': {
-        opacity: '0.15',
-      }
-    }
+  arrow_down: {
+    zIndex: '300',
+    placeSelf: 'center',
+    gridColumnStart: '2',
+    gridColumnEnd: '3',
+    gridRowStart: '3',
+    gridRowEnd: '4'
   }
 
 })
