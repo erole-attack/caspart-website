@@ -1,48 +1,22 @@
 import React from 'react'
-import { useRef, useState, useEffect } from 'react'
 import { graphql, Link } from 'gatsby'
 import { StyleSheet, css } from 'aphrodite'
+import useHover from '../components/hooks'
 import Layout from '../components/layout'
 import Img from 'gatsby-image'
 import SEO from '../components/seo'
 
-export const pageQuery = graphql`
+export const indexImageQuery = graphql`
   query {
     engel: file(relativePath: { eq: "grote-engel.png" }) {
       childImageSharp {
         fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
   }
 `
-
-// Hook
-function useHover() {
-  const [value, setValue] = useState(false);
-  const ref = useRef(null);
-  const handleMouseOver = () => setValue(true);
-  const handleMouseOut = () => setValue(false);
-
-  useEffect(
-    () => {
-      const node = ref.current;
-      if (node) {
-        node.addEventListener('mouseover', handleMouseOver);
-        node.addEventListener('mouseout', handleMouseOut);
-
-        return () => {
-          node.removeEventListener('mouseover', handleMouseOver);
-          node.removeEventListener('mouseout', handleMouseOut);
-        };
-      }
-    },
-    [ref.current] // Recall only if ref changes
-  );
-
-  return [ref, value];
-}
 
 function IndexPage (props) {
 
