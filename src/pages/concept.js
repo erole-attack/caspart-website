@@ -8,7 +8,7 @@ import SEO from '../components/seo'
 
 export const conceptImageQuery = graphql`
   query {
-    pistache: file(relativePath: { eq: "Pistachenootjes.png" }) {
+    pistache: file(relativePath: { eq: "pistachenootjes.png" }) {
       childImageSharp {
         fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid_withWebp
@@ -214,7 +214,7 @@ function ConceptPage (props) {
           <p>- klein of groot - met evenveel passie uit te werken. Geen uitdaging is ons te groot!</p>
         </div>
         <svg className={css(conceptStyles.arrow_down)} width="47" height="12" viewBox="0 0 47 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <Link to="/concept">
+          <Link to="/work">
             <path d="M46 1.5L23.5 10L1 1.5" stroke="black" stroke-width="2"/>
           </Link>
         </svg>
