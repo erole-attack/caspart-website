@@ -1,5 +1,6 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import { StyleSheet, css } from 'aphrodite'
 import useHover from '../components/hooks'
 import Layout from '../components/layout'
@@ -35,27 +36,27 @@ function IndexPage (props) {
         </div>
         <div className={css(indexStyles.engel_tekst)}>
           {isHovered ?
-            <div>
-              <h3>CASPART IS...</h3>
-              <h1><span className={textFade}>A FULL-SERVICE BR</span>AN<span className={textFade}>D</span> EXPIERENCE</h1><h1 className={css(indexStyles.single_D)}>D</h1>
-              <h1><span className={textFade}>& PACKAGING</span> DESIGN AGENCY</h1>
+            <div className={css(indexStyles.text_container)}>
+              <h3 className={css(indexStyles.text_part1, indexStyles.titles)}>CASPART IS...</h3>
+              <div className={css(indexStyles.text_part2)}><h1 className={css(indexStyles.titles)}><span className={textFade}>A FULL-SERVICE BR</span>AN<span className={textFade}>D</span> EXPIERENCE<span className={css(indexStyles.single_D)}>D</span></h1></div>
+              <div className={css(indexStyles.text_part3)}><h1 className={css(indexStyles.titles)}><span className={textFade}>& PACKAGING</span> DESIGN AGENCY</h1></div>
             </div>
           :
-            <div>
-              <h3>CASPART IS...</h3>
-              <h1><span className={noTextFade}>A FULL-SERVICE BR</span>AN<span className={noTextFade}>D</span> EXPIERENCE</h1><h1 className={css(indexStyles.no_single_D)}>D</h1>
-              <h1><span className={noTextFade}>& PACKAGING</span> DESIGN AGENCY</h1>
+            <div className={css(indexStyles.text_container)}>
+              <h3 className={css(indexStyles.text_part1, indexStyles.titles)}>CASPART IS...</h3>
+              <div className={css(indexStyles.text_part2)}><h1 className={css(indexStyles.titles)}><span className={noTextFade}>A FULL-SERVICE BR</span>AN<span className={noTextFade}>D</span> EXPIERENCE<span className={css(indexStyles.no_single_D)}>D</span></h1></div>
+              <div className={css(indexStyles.text_part3)}><h1 className={css(indexStyles.titles)}><span className={noTextFade}>& PACKAGING</span> DESIGN AGENCY</h1></div>
             </div>
           }
         </div>
         <div className={css(indexStyles.engel_container)}>
           <Img className={css(indexStyles.engel)} fluid={props.data.engel.childImageSharp.fluid}/>
         </div>
-        <svg className={css(indexStyles.arrow_down)} width="47" height="12" viewBox="0 0 47 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <Link to="/concept">
+        <AniLink className={css(indexStyles.arrow_down)} cover to="/concept" bg="#ff0a5a" direction="up">
+          <svg  width="47" height="12" viewBox="0 0 47 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M46 1.5L23.5 10L1 1.5" stroke="black" stroke-width="2"/>
-          </Link>
-        </svg>
+          </svg>
+        </AniLink>
       </div>
     </Layout>
   )
@@ -85,6 +86,29 @@ const indexStyles = StyleSheet.create({
     gridRowEnd: '4'
   },
 
+  text_container: {
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+    display: 'flex',
+    flexWrap: 'wrap'
+  },
+
+  text_part1: {
+    marginRight: '2vw',
+    flexGrow: '1'
+  },
+  text_part2: {
+    flexGrow: '1'
+  },
+  text_part3: {
+    marginRight: '2vw',
+    flexGrow: '1',
+  },
+
+  titles: {
+    lineHeight: '0'
+  },
+
   engel_non_fading_tekst: {
     fontWeight: '300',
     transition: 'opacity 1.8s ease'
@@ -97,17 +121,13 @@ const indexStyles = StyleSheet.create({
   },
 
   single_D: {
+    fontWeight: '300',
     transition: 'opacity 1.8s ease',
-    position: 'absolute',
-    marginLeft: '654px',
-    marginTop: '-44px'
   },
 
   no_single_D: {
+    fontWeight: '300',
     transition: 'opacity 1s ease',
-    position: 'absolute',
-    marginLeft: '654px',
-    marginTop: '-44px',
     opacity: '0'
   },
 

@@ -17,6 +17,12 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     {
+          resolve: "gatsby-plugin-transition-link",
+          options: {
+              layout: require.resolve(`./src/components/Layout.js`)
+          }
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,

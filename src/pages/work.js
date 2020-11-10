@@ -1,5 +1,6 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import Layout from '../components/layout'
 import { StyleSheet, css } from 'aphrodite'
 import SEO from '../components/seo'
@@ -241,11 +242,11 @@ function WorkPage (props) {
     <Layout>
       <SEO title="Work"/>
       <div className={css(workStyles.page_container)}>
-        <svg className={css(workStyles.arrow_up)} width="47" height="12" viewBox="0 0 47 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <Link to="/concept">
+      <AniLink className={css(workStyles.arrow_up)} cover to="/concept" bg="#ff0a5a" direction="down">
+        <svg width="47" height="12" viewBox="0 0 47 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M46 10.5L23.5 2L1 10.5" stroke="#790722" stroke-width="2"/>
-          </Link>
         </svg>
+      </AniLink>
         <div className={css(workStyles.image_grid)}>
           <Img className={css(workStyles.large_image)} fluid={props.data.olijfolie.childImageSharp.fluid}/>
           <Img className={css(workStyles.large_image)} fluid={props.data.manna.childImageSharp.fluid}/>

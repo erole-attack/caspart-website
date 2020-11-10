@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import { StyleSheet, css } from 'aphrodite'
 import useHover from '../components/hooks'
 import Layout from '../components/layout'
@@ -79,11 +80,11 @@ function ConceptPage (props) {
     <Layout>
       <SEO title="Concept"/>
       <div className={css(conceptStyles.page_container)}>
-        <svg className={css(conceptStyles.arrow_up)} width="47" height="12" viewBox="0 0 47 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <Link to="/">
-            <path d="M46 10.5L23.5 2L1 10.5" stroke="#790722" stroke-width="2"/>
-          </Link>
-        </svg>
+        <AniLink className={css(conceptStyles.arrow_up)} cover to="/" bg="#ff0a5a" direction="down">
+          <svg width="47" height="12" viewBox="0 0 47 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M46 10.5L23.5 2L1 10.5" stroke="#790722" stroke-width="2"/>
+          </svg>
+        </AniLink>
         <div className={css(conceptStyles.content_container)}>
           <h1>WHAT WE DO</h1>
           <p>Casp’art is een inspirerend Antwerps ontwerpbureau boordevol frisse ideeën met de drive deze doelgericht</p>
@@ -213,11 +214,11 @@ function ConceptPage (props) {
           <p>Als enthousiaste creatievelingen met de nodige skills, zijn we flexibel en gedreven om elke opdracht</p>
           <p>- klein of groot - met evenveel passie uit te werken. Geen uitdaging is ons te groot!</p>
         </div>
-        <svg className={css(conceptStyles.arrow_down)} width="47" height="12" viewBox="0 0 47 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <Link to="/work">
+        <AniLink className={css(conceptStyles.arrow_down)} cover to="/work" bg="#ff0a5a" direction="up">
+          <svg  width="47" height="12" viewBox="0 0 47 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M46 1.5L23.5 10L1 1.5" stroke="black" stroke-width="2"/>
-          </Link>
-        </svg>
+          </svg>
+        </AniLink>
       </div>
     </Layout>
   )
