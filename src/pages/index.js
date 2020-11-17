@@ -37,13 +37,13 @@ function IndexPage (props) {
         <div className={css(indexStyles.engel_tekst)}>
           {isHovered ?
             <div className={css(indexStyles.text_container)}>
-              <h3 className={css(indexStyles.text_part1, indexStyles.titles)}>CASPART IS...</h3>
+              <h3 className={css(indexStyles.text_part1, indexStyles.titles)}>CASP'ART IS</h3>
               <div className={css(indexStyles.text_part2)}><h1 className={css(indexStyles.titles)}><span className={textFade}>A FULL-SERVICE BR</span>AN<span className={textFade}>D</span> EXPIERENCE<span className={css(indexStyles.single_D)}>D</span></h1></div>
               <div className={css(indexStyles.text_part3)}><h1 className={css(indexStyles.titles)}><span className={textFade}>& PACKAGING</span> DESIGN AGENCY</h1></div>
             </div>
           :
             <div className={css(indexStyles.text_container)}>
-              <h3 className={css(indexStyles.text_part1, indexStyles.titles)}>CASPART IS...</h3>
+              <h3 className={css(indexStyles.text_part1, indexStyles.titles)}>CASP'ART IS</h3>
               <div className={css(indexStyles.text_part2)}><h1 className={css(indexStyles.titles)}><span className={noTextFade}>A FULL-SERVICE BR</span>AN<span className={noTextFade}>D</span> EXPIERENCE<span className={css(indexStyles.no_single_D)}>D</span></h1></div>
               <div className={css(indexStyles.text_part3)}><h1 className={css(indexStyles.titles)}><span className={noTextFade}>& PACKAGING</span> DESIGN AGENCY</h1></div>
             </div>
@@ -52,7 +52,7 @@ function IndexPage (props) {
         <div className={css(indexStyles.engel_container)}>
           <Img className={css(indexStyles.engel)} fluid={props.data.engel.childImageSharp.fluid}/>
         </div>
-        <AniLink className={css(indexStyles.arrow_down)} cover to="/concept" bg="#ff0a5a" direction="up">
+        <AniLink className={css(indexStyles.arrow_down)} cover to="/concept" bg="#0070BA" direction="up">
           <svg  width="47" height="12" viewBox="0 0 47 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M46 1.5L23.5 10L1 1.5" stroke="black" stroke-width="2"/>
           </svg>
@@ -142,7 +142,8 @@ const indexStyles = StyleSheet.create({
   engel: {
     width: '65vw',
     margin: 'auto',
-    display: 'block'
+    display: 'block',
+    filter: 'grayscale(100%)'
   },
 
   svg_container: {

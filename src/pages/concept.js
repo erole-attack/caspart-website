@@ -80,18 +80,19 @@ function ConceptPage (props) {
     <Layout>
       <SEO title="Concept"/>
       <div className={css(conceptStyles.page_container)}>
-        <AniLink className={css(conceptStyles.arrow_up)} cover to="/" bg="#ff0a5a" direction="down">
+        <AniLink className={css(conceptStyles.arrow_up)} cover to="/" bg="#0070BA" direction="down">
           <svg width="47" height="12" viewBox="0 0 47 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M46 10.5L23.5 2L1 10.5" stroke="#790722" stroke-width="2"/>
           </svg>
         </AniLink>
         <div className={css(conceptStyles.content_container)}>
-          <h1>WHAT WE DO</h1>
+          <h1 className={css(conceptStyles.titles)}>WHAT WE DO</h1>
           <p>Casp’art is een inspirerend Antwerps ontwerpbureau boordevol frisse ideeën met de drive deze doelgericht</p>
           <p>te vertalen naar de wensen van uw product.</p>
           <p>Of het nu gaat om uw <b>brand identity</b>, <b>packaging design</b>, <b>style guides</b> of <b>food styling</b>,</p>
           <p>wir shaffen das!</p>
-          <p>In een markt met steeds wisselende trends, verstaan wij de kunst</p>
+          <p>In een markt met steeds wisselende trends, verstaan wij de kunst om creativiteit te vertalen</p>
+          <p>naar de noden van uw product.</p>
           <div className={css(conceptStyles.images_container)}>
             <div className={css(conceptStyles.category_selector)}>
             {deliconoIsHovered ?
@@ -110,7 +111,7 @@ function ConceptPage (props) {
                     <Img className={css(conceptStyles.button, conceptStyles.desaturated)} fluid={props.data.joes.childImageSharp.fluid}/>
                   </div>
                 </div>
-                <Img className={css(conceptStyles.pistache_image, conceptStyles.desaturated)} fluid={props.data.pistache.childImageSharp.fluid}/>
+                <Img className={css(conceptStyles.pistache_image)} fluid={props.data.pistache.childImageSharp.fluid}/>
               </div>
             :
               (moonyIsHovered ?
@@ -129,7 +130,7 @@ function ConceptPage (props) {
                       <Img className={css(conceptStyles.button, conceptStyles.desaturated)} fluid={props.data.joes.childImageSharp.fluid}/>
                     </div>
                   </div>
-                  <Img className={css(conceptStyles.pistache_image, conceptStyles.desaturated)} fluid={props.data.pistache.childImageSharp.fluid}/>
+                  <Img className={css(conceptStyles.pistache_image)} fluid={props.data.pistache.childImageSharp.fluid}/>
                 </div>
               :
                 (joesIsHovered ?
@@ -148,7 +149,7 @@ function ConceptPage (props) {
                         <Img className={css(conceptStyles.button)} fluid={props.data.joes.childImageSharp.fluid}/>
                       </div>
                     </div>
-                    <Img className={css(conceptStyles.pistache_image, conceptStyles.desaturated)} fluid={props.data.pistache.childImageSharp.fluid}/>
+                    <Img className={css(conceptStyles.pistache_image)} fluid={props.data.pistache.childImageSharp.fluid}/>
                   </div>
                 :
                 <div className={css(conceptStyles.pistache_container)}>
@@ -181,7 +182,7 @@ function ConceptPage (props) {
                       <Img className={css(conceptStyles.button, conceptStyles.desaturated)} fluid={props.data.pasen.childImageSharp.fluid}/>
                     </div>
                   </div>
-                  <Img className={css(conceptStyles.image, conceptStyles.desaturated)} fluid={props.data.nougat.childImageSharp.fluid}/>
+                  <Img className={css(conceptStyles.image)} fluid={props.data.nougat.childImageSharp.fluid}/>
                 </div>
               :
                 (pasenIsHovered ?
@@ -196,7 +197,7 @@ function ConceptPage (props) {
                         <Img className={css(conceptStyles.button)} fluid={props.data.pasen.childImageSharp.fluid}/>
                       </div>
                     </div>
-                    <Img className={css(conceptStyles.image, conceptStyles.desaturated)} fluid={props.data.nougat.childImageSharp.fluid}/>
+                    <Img className={css(conceptStyles.image)} fluid={props.data.nougat.childImageSharp.fluid}/>
                   </div>
                 :
                   <div className={css(conceptStyles.category_container)}>
@@ -210,11 +211,11 @@ function ConceptPage (props) {
             <p>Style Guides</p>
           </div>
         </div>
-          <h1>OUR TEAM</h1>
+          <h1 className={css(conceptStyles.titles)}>OUR TEAM</h1>
           <p>Als enthousiaste creatievelingen met de nodige skills, zijn we flexibel en gedreven om elke opdracht</p>
           <p>- klein of groot - met evenveel passie uit te werken. Geen uitdaging is ons te groot!</p>
         </div>
-        <AniLink className={css(conceptStyles.arrow_down)} cover to="/work" bg="#ff0a5a" direction="up">
+        <AniLink className={css(conceptStyles.arrow_down)} cover to="/work" bg="#0070BA" direction="up">
           <svg  width="47" height="12" viewBox="0 0 47 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M46 1.5L23.5 10L1 1.5" stroke="black" stroke-width="2"/>
           </svg>
@@ -265,14 +266,20 @@ const conceptStyles = StyleSheet.create({
     gridRowEnd: '4'
   },
 
+  titles: {
+    fontWeight: '700',
+    color: '#A6A7AA',
+    letterSpacing: '0.5vw'
+  },
+
   images_container: {
+    marginTop: '3vw',
     width: '50vw',
-    margin: 'auto',
     display: 'flex'
   },
 
   category_selector: {
-    width: '15vw',
+    width: '14.9vw',
     flexGrow: '1',
     margin: '10px'
   },
@@ -302,9 +309,6 @@ const conceptStyles = StyleSheet.create({
     gridColumnEnd: '2',
     gridRowStart: '1',
     gridRowEnd: '2',
-    ':hover': {
-      cursor: 'pointer'
-    }
   },
 
   image_lower_hover: {
@@ -377,7 +381,7 @@ const conceptStyles = StyleSheet.create({
 
   desaturated: {
     transition: 'filter 1s ease',
-    filter: 'saturate(5%) contrast(1.5) brightness(85%) blur(1px)'
+    filter: 'saturate(5%) contrast(0.75) brightness(130%)'
   },
 
   button_container: {
@@ -405,19 +409,13 @@ const conceptStyles = StyleSheet.create({
   },
 
   button_wrapper: {
-    height: '6vw',
-    marginTop: '0.5vw',
-    marginBottom: '0.5vw',
-    width: '15vw',
-    clipPath: 'inset(0vw 1vw 0vw 1vw)'
+    height: '7.5vw',
+    width: '15vw'
   },
 
   pistache_wrapper: {
-    height: '4vw',
-    marginTop: '0.25vw',
-    marginBottom: '0.25vw',
-    width: '15vw',
-    clipPath: 'inset(0vw 1vw 0vw 1vw)'
+    height: '5vw',
+    width: '15vw'
   },
 
   invisible: {

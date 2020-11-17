@@ -242,7 +242,7 @@ function WorkPage (props) {
     <Layout>
       <SEO title="Work"/>
       <div className={css(workStyles.page_container)}>
-      <AniLink className={css(workStyles.arrow_up)} cover to="/concept" bg="#ff0a5a" direction="down">
+      <AniLink className={css(workStyles.arrow_up)} cover to="/concept" bg="#0070BA" direction="down">
         <svg width="47" height="12" viewBox="0 0 47 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M46 10.5L23.5 2L1 10.5" stroke="#790722" stroke-width="2"/>
         </svg>

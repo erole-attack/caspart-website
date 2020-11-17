@@ -75,7 +75,7 @@ function PasenPage (props) {
           <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen1.childImageSharp.fluid}/>
           <p className={css(pasenStyles.large_image)}><b>Pasen voor Aldi</b> - gamma paasfiguren</p>
           <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen2.childImageSharp.fluid}/>
-          <p className={css(pasenStyles.large_image)}>Ontwikkeling van een tijdloos paasgamma voor Aldi. Gedurfd afwijken van het klassieke geel / groen en opteren voor een eigentijdse look. Eenvoudig te vertalen naar de verschillende producten en verpakkingen.</p>
+          <p className={css(pasenStyles.large_image, pasenStyles.text)}>Ontwikkeling van een tijdloos paasgamma voor Aldi. Gedurfd afwijken van het klassieke geel / groen en opteren voor een eigentijdse look. Eenvoudig te vertalen naar de verschillende producten en verpakkingen.</p>
           <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen3.childImageSharp.fluid}/>
           <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen4.childImageSharp.fluid}/>
           <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen5.childImageSharp.fluid}/>
@@ -122,7 +122,6 @@ const pasenStyles = StyleSheet.create({
     flexGrow: '3',
     flexBasis: 'calc(100% - 1.5em)',
     margin: '0.75em',
-    lineHeight: '1.6vw',
     fontSize: '1.2vw',
   },
 
@@ -137,5 +136,10 @@ const pasenStyles = StyleSheet.create({
     flexBasis: 'calc(30% - 1.5em)',
     margin: '0.75em'
   },
+
+  text: {
+    lineHeight: '1.6vw',
+    fontSize: '1.2vw',
+  }
 
 })

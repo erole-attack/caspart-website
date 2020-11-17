@@ -59,13 +59,16 @@ function JoesPage (props) {
       <div className={css(joesStyles.page_container)}>
         <div className={css(joesStyles.image_grid)}>
           <Img className={css(joesStyles.large_image)} fluid={props.data.pistache1.childImageSharp.fluid}/>
+          <p className={css(joesStyles.large_image)}><b>Trader Joe’s voor Aldi</b> - gamma noten & gedroogde vruchten</p>
           <div className={css(joesStyles.large_image)}>
-            <p><b>Trader Joe’s voor Aldi</b> - gamma noten & gedroogde vruchten</p>
             <Img fluid={props.data.joes.childImageSharp.fluid}/>
-            <p className={css(joesStyles.text)}>Logo ‘American Style’, passend bij de merknaam en het product; de stijl werd verder doorgevoerd op de verpakkingen.</p>
+            <div className={css(joesStyles.textframe)}>
+              <p className={css(joesStyles.text)}>Logo ‘American Style’, passend bij de merknaam en het product;</p>
+              <p className={css(joesStyles.text)}>de stijl werd verder doorgevoerd op de verpakkingen.</p>
+            </div>
           </div>
           <Img className={css(joesStyles.large_image)} fluid={props.data.fruit1.childImageSharp.fluid}/>
-          <Img className={css(joesStyles.large_image)} fluid={props.data.fruit2.childImageSharp.fluid}/>
+          <Img className={css(joesStyles.large_image, joesStyles.out_of_bounds)} fluid={props.data.fruit2.childImageSharp.fluid}/>
           <Img className={css(joesStyles.small_image)} fluid={props.data.pistache2.childImageSharp.fluid}/>
           <Img className={css(joesStyles.medium_image)} fluid={props.data.pistache3.childImageSharp.fluid}/>
         </div>
@@ -90,8 +93,8 @@ const joesStyles = StyleSheet.create({
   },
 
   image_grid: {
-    gridColumnStart: '2',
-    gridColumnEnd: '3',
+    gridColumnStart: '1',
+    gridColumnEnd: '4',
     gridRowStart: '2',
     gridRowEnd: '3',
     display: 'flex',
@@ -107,7 +110,8 @@ const joesStyles = StyleSheet.create({
   large_image: {
     flexGrow: '3',
     flexBasis: 'calc(100% - 1.5em)',
-    margin: '0.75em'
+    margin: '0.75em',
+    fontSize: '1.2vw',
   },
 
   medium_image: {
@@ -122,9 +126,24 @@ const joesStyles = StyleSheet.create({
     margin: '0.75em'
   },
 
+  textframe: {
+    marginTop: '-3vw'
+  },
+
   text: {
-    lineHeight: '1.6vw',
+    textAlign: 'center',
+    lineHeight: '0.4vw',
     fontSize: '1.2vw',
+  },
+
+  out_of_bounds: {
+    width: '100vw',
+    position: 'relative',
+    left: 'calc(-50vw + 50%)',
+    ':nth-child(1n) > picture > img': {
+        zIndex: '9999',
+        width: '100vw',
+    }
   }
 
 })
