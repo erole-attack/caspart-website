@@ -1,10 +1,10 @@
 import React from 'react'
-import { graphql } from 'gatsby'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
 import { StyleSheet, css } from 'aphrodite'
 import SEO from '../components/seo'
 import Img from 'gatsby-image'
+import ReactScrollWheelHandler from 'react-scroll-wheel-handler'
 
 export const workImageQuery = graphql`
   query {
@@ -239,56 +239,67 @@ export const workImageQuery = graphql`
 function WorkPage (props) {
 
   return(
-    <Layout>
-      <SEO title="Work"/>
-      <div className={css(workStyles.page_container)}>
-      <AniLink className={css(workStyles.arrow_up)} cover to="/concept" bg="#0070BA" direction="down">
-        <svg width="47" height="12" viewBox="0 0 47 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M46 10.5L23.5 2L1 10.5" stroke="#790722" stroke-width="2"/>
-        </svg>
-      </AniLink>
-        <div className={css(workStyles.image_grid)}>
-          <Img className={css(workStyles.large_image)} fluid={props.data.olijfolie.childImageSharp.fluid}/>
-          <Img className={css(workStyles.large_image)} fluid={props.data.manna.childImageSharp.fluid}/>
-          <Img className={css(workStyles.small_image)} fluid={props.data.prima.childImageSharp.fluid}/>
-          <Img className={css(workStyles.medium_image)} fluid={props.data.groentesap.childImageSharp.fluid}/>
-          <Img className={css(workStyles.small_image)} fluid={props.data.nuts.childImageSharp.fluid}/>
-          <Img className={css(workStyles.small_image)} fluid={props.data.bcolijfolie.childImageSharp.fluid}/>
-          <Img className={css(workStyles.small_image)} fluid={props.data.cavalier.childImageSharp.fluid}/>
-          <Img className={css(workStyles.medium_image)} fluid={props.data.saucee.childImageSharp.fluid}/>
-          <div className={css(workStyles.small_image)}>
-            <Img className={css(workStyles.pile_image)} fluid={props.data.kruidenboter.childImageSharp.fluid}/>
-            <Img fluid={props.data.leberg.childImageSharp.fluid}/>
+    <div className={css(workStyles.mask)}>
+      <ReactScrollWheelHandler wheelConfig={[7000, 1000, 5]} className={css(workStyles.scroll_area)} upHandler={(e) => document.getElementById("upToConcept").click()}/>
+      <Layout>
+        <SEO title="Work"/>
+        <div className={css(workStyles.page_container)}>
+          <Link id="upToConcept" className={css(workStyles.arrow_up)} cover to="/concept" bg="#0070BA" direction="down">
+            <svg width="47" height="12" viewBox="0 0 47 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M46 10.5L23.5 2L1 10.5" stroke="black" stroke-width="2"/>
+            </svg>
+          </Link>
+          <div className={css(workStyles.image_grid_container)}>
+            <div className={css(workStyles.image_grid)}>
+              <Img className={css(workStyles.large_image)} fluid={props.data.olijfolie.childImageSharp.fluid}/>
+              <Img className={css(workStyles.large_image)} fluid={props.data.manna.childImageSharp.fluid}/>
+              <Img className={css(workStyles.small_image)} fluid={props.data.prima.childImageSharp.fluid}/>
+              <Img className={css(workStyles.medium_image)} fluid={props.data.groentesap.childImageSharp.fluid}/>
+              <Img className={css(workStyles.small_image)} fluid={props.data.nuts.childImageSharp.fluid}/>
+              <Img className={css(workStyles.small_image)} fluid={props.data.bcolijfolie.childImageSharp.fluid}/>
+              <Img className={css(workStyles.small_image)} fluid={props.data.cavalier.childImageSharp.fluid}/>
+              <Img className={css(workStyles.medium_image)} fluid={props.data.saucee.childImageSharp.fluid}/>
+              <div className={css(workStyles.small_image)}>
+                <div className={css(workStyles.pile_image_container)}>
+                  <Img className={css(workStyles.pile_image)} fluid={props.data.kruidenboter.childImageSharp.fluid}/>
+                  <Img className={css(workStyles.pile_image)} fluid={props.data.leberg.childImageSharp.fluid}/>
+                </div>
+              </div>
+              <Img className={css(workStyles.small_image)} fluid={props.data.cupcake.childImageSharp.fluid}/>
+              <Img className={css(workStyles.medium_image)} fluid={props.data.superfood.childImageSharp.fluid}/>
+              <div className={css(workStyles.small_image)}>
+                <div className={css(workStyles.pile_image_container)}>
+                  <Img className={css(workStyles.pile_image)} fluid={props.data.pistache.childImageSharp.fluid}/>
+                  <Img className={css(workStyles.pile_image)} fluid={props.data.blondeel.childImageSharp.fluid}/>
+                </div>
+              </div>
+              <Img className={css(workStyles.medium_image)} fluid={props.data.olieen.childImageSharp.fluid}/>
+              <Img className={css(workStyles.medium_image)} fluid={props.data.paaseitjes.childImageSharp.fluid}/>
+              <div className={css(workStyles.small_image)}>
+                <div className={css(workStyles.pile_image_container)}>
+                  <Img className={css(workStyles.pile_image)} fluid={props.data.cornflakes.childImageSharp.fluid}/>
+                  <Img className={css(workStyles.pile_image)} fluid={props.data.truffles.childImageSharp.fluid}/>
+                </div>
+              </div>
+              <Img className={css(workStyles.small_image)} fluid={props.data.brokkensaus.childImageSharp.fluid}/>
+              <Img className={css(workStyles.small_image)} fluid={props.data.monte.childImageSharp.fluid}/>
+              <Img className={css(workStyles.small_image)} fluid={props.data.chocomelk.childImageSharp.fluid}/>
+              <Img className={css(workStyles.large_image)} fluid={props.data.yoghurt.childImageSharp.fluid}/>
+              <Img className={css(workStyles.small_image)} fluid={props.data.azijn.childImageSharp.fluid}/>
+              <Img className={css(workStyles.small_image)} fluid={props.data.madeleines.childImageSharp.fluid}/>
+              <Img className={css(workStyles.small_image)} fluid={props.data.vleesbrood.childImageSharp.fluid}/>
+              <Img className={css(workStyles.small_image)} fluid={props.data.soup.childImageSharp.fluid}/>
+              <Img className={css(workStyles.small_image)} fluid={props.data.delinut.childImageSharp.fluid}/>
+              <Img className={css(workStyles.small_image)} fluid={props.data.yoplait.childImageSharp.fluid}/>
+              <Img className={css(workStyles.large_image)} fluid={props.data.mahall.childImageSharp.fluid}/>
+              <Img className={css(workStyles.small_image)} fluid={props.data.vermeiren.childImageSharp.fluid}/>
+              <Img className={css(workStyles.small_image)} fluid={props.data.shortbread.childImageSharp.fluid}/>
+              <Img className={css(workStyles.small_image)} fluid={props.data.melro.childImageSharp.fluid}/>
+            </div>
           </div>
-          <Img className={css(workStyles.small_image)} fluid={props.data.cupcake.childImageSharp.fluid}/>
-          <Img className={css(workStyles.medium_image)} fluid={props.data.superfood.childImageSharp.fluid}/>
-          <div className={css(workStyles.small_image)}>
-            <Img className={css(workStyles.pile_image)} fluid={props.data.pistache.childImageSharp.fluid}/>
-            <Img fluid={props.data.blondeel.childImageSharp.fluid}/>
-          </div>
-          <Img className={css(workStyles.medium_image)} fluid={props.data.olieen.childImageSharp.fluid}/>
-          <Img className={css(workStyles.medium_image)} fluid={props.data.paaseitjes.childImageSharp.fluid}/>
-          <div className={css(workStyles.small_image)}>
-            <Img className={css(workStyles.pile_image)} fluid={props.data.cornflakes.childImageSharp.fluid}/>
-            <Img fluid={props.data.truffles.childImageSharp.fluid}/>
-          </div>
-          <Img className={css(workStyles.small_image)} fluid={props.data.brokkensaus.childImageSharp.fluid}/>
-          <Img className={css(workStyles.small_image)} fluid={props.data.monte.childImageSharp.fluid}/>
-          <Img className={css(workStyles.small_image)} fluid={props.data.chocomelk.childImageSharp.fluid}/>
-          <Img className={css(workStyles.large_image)} fluid={props.data.yoghurt.childImageSharp.fluid}/>
-          <Img className={css(workStyles.small_image)} fluid={props.data.azijn.childImageSharp.fluid}/>
-          <Img className={css(workStyles.small_image)} fluid={props.data.madeleines.childImageSharp.fluid}/>
-          <Img className={css(workStyles.small_image)} fluid={props.data.vleesbrood.childImageSharp.fluid}/>
-          <Img className={css(workStyles.small_image)} fluid={props.data.soup.childImageSharp.fluid}/>
-          <Img className={css(workStyles.small_image)} fluid={props.data.delinut.childImageSharp.fluid}/>
-          <Img className={css(workStyles.small_image)} fluid={props.data.yoplait.childImageSharp.fluid}/>
-          <Img className={css(workStyles.large_image)} fluid={props.data.mahall.childImageSharp.fluid}/>
-          <Img className={css(workStyles.small_image)} fluid={props.data.vermeiren.childImageSharp.fluid}/>
-          <Img className={css(workStyles.small_image)} fluid={props.data.shortbread.childImageSharp.fluid}/>
-          <Img className={css(workStyles.small_image)} fluid={props.data.melro.childImageSharp.fluid}/>
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </div>
   )
 }
 
@@ -307,41 +318,47 @@ const workStyles = StyleSheet.create({
     overflow: 'hidden'
   },
 
-  image_grid: {
+  image_grid_container: {
     gridColumnStart: '2',
     gridColumnEnd: '3',
     gridRowStart: '2',
     gridRowEnd: '3',
-    display: 'flex',
-    flexWrap: 'wrap',
-    margin: '0 auto',
-    width: '38vw',
     overflow: 'auto',
     '::-webkit-scrollbar': {
       display: 'none'
     }
   },
 
+  image_grid: {
+    backgroundColor: 'white',
+    display: 'flex',
+    flexWrap: 'wrap',
+    margin: '0 auto',
+    width: '38vw',
+  },
+
   large_image: {
     flexGrow: '3',
     flexBasis: 'calc(100% - 1em)',
-    margin: '0.5em'
+    border: '0.5em white solid'
   },
 
   medium_image: {
     flexGrow: '2',
     flexBasis: 'calc(66% - 1em)',
-    margin: '0.5em'
+    border: '0.5em white solid'
   },
 
   small_image: {
     flexGrow: '1',
     flexBasis: 'calc(33% - 1em)',
-    margin: '0.5em'
+    border: '0.5em white solid',
+    backgroundColor: 'white'
   },
 
   pile_image: {
-    marginBottom: '1em'
+    border: '0.5em white solid',
+    backgroundColor: 'white'
   },
 
   arrow_up: {
@@ -351,6 +368,17 @@ const workStyles = StyleSheet.create({
     gridColumnEnd: '3',
     gridRowStart: '1',
     gridRowEnd: '2'
+  },
+
+  scroll_area: {
+    position: 'absolute',
+    width: '100vw',
+    height: '100vh'
+  },
+
+  pile_image_container: {
+    margin: '-0.5em',
+    backgroundColor: 'white'
   }
 
 })

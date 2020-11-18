@@ -1,11 +1,11 @@
 import React from 'react'
-import { graphql } from 'gatsby'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import { graphql, Link } from 'gatsby'
 import { StyleSheet, css } from 'aphrodite'
 import useHover from '../components/hooks'
 import Layout from '../components/layout'
 import Img from 'gatsby-image'
 import SEO from '../components/seo'
+import ReactScrollWheelHandler from 'react-scroll-wheel-handler'
 
 export const indexImageQuery = graphql`
   query {
@@ -26,6 +26,7 @@ function IndexPage (props) {
   const noTextFade = css(indexStyles.engel_non_fading_tekst)
 
   return(
+    <ReactScrollWheelHandler downHandler={(e) => document.getElementById("downToConcept").click()}>
     <Layout>
       <SEO title="Home"/>
       <div className={css(indexStyles.page_container)}>
@@ -52,13 +53,14 @@ function IndexPage (props) {
         <div className={css(indexStyles.engel_container)}>
           <Img className={css(indexStyles.engel)} fluid={props.data.engel.childImageSharp.fluid}/>
         </div>
-        <AniLink className={css(indexStyles.arrow_down)} cover to="/concept" bg="#0070BA" direction="up">
+        <Link id="downToConcept" className={css(indexStyles.arrow_down)} to="/concept">
           <svg  width="47" height="12" viewBox="0 0 47 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M46 1.5L23.5 10L1 1.5" stroke="black" stroke-width="2"/>
           </svg>
-        </AniLink>
+        </Link>
       </div>
     </Layout>
+    </ReactScrollWheelHandler>
   )
 }
 
