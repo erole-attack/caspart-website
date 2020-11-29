@@ -1,8 +1,9 @@
-import React from 'react'
-import Layout from '../components/layout'
 import { StyleSheet, css } from 'aphrodite'
-import SEO from '../components/seo'
+
 import Img from 'gatsby-image'
+import Layout from '../components/layout'
+import React from 'react'
+import SEO from '../components/seo'
 
 export const joesImageQuery = graphql`
   query {
@@ -29,7 +30,7 @@ export const joesImageQuery = graphql`
     }
     fruit2: file(relativePath: { eq: "soft-fruit2.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1200) {
+        fluid(maxWidth: 1800) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
@@ -60,7 +61,7 @@ function JoesPage (props) {
         <div className={css(joesStyles.grid_container)}>
           <div className={css(joesStyles.image_grid)}>
             <Img className={css(joesStyles.large_image)} fluid={props.data.pistache1.childImageSharp.fluid}/>
-            <p className={css(joesStyles.large_image)}><b>Trader Joe’s voor Aldi</b> - gamma noten & gedroogde vruchten</p>
+            <p className={css(joesStyles.large_image, joesStyles.caption)}><b>Trader Joe’s voor Aldi</b> - gamma noten & gedroogde vruchten</p>
             <div className={css(joesStyles.large_image)}>
               <Img fluid={props.data.joes.childImageSharp.fluid}/>
               <div className={css(joesStyles.textframe)}>
@@ -143,9 +144,14 @@ const joesStyles = StyleSheet.create({
   },
 
   out_of_bounds: {
-    marginLeft: '-8vw',
-    marginRight: '-8vw',
+    marginLeft: '-8.8vw',
+    marginRight: '-8.4vw',
     zIndex: '700'
+  },
+
+  caption: {
+    marginTop: '0.25em',
+    marginBottom: '1.5em'
   }
 
 })

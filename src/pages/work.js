@@ -1,10 +1,9 @@
-import React from 'react'
-import { graphql, Link } from 'gatsby'
-import Layout from '../components/layout'
 import { StyleSheet, css } from 'aphrodite'
-import SEO from '../components/seo'
+
 import Img from 'gatsby-image'
-import ReactScrollWheelHandler from 'react-scroll-wheel-handler'
+import React from 'react'
+import Structure from '../components/structure'
+import { graphql } from 'gatsby'
 
 export const workImageQuery = graphql`
   query {
@@ -235,99 +234,67 @@ export const workImageQuery = graphql`
   }
 `
 
+function Work (props) {
 
-function WorkPage (props) {
+  const imageGrid =
+    <div className={css(workStyles.image_grid)}>
+      <Img className={css(workStyles.large_image)} fluid={props.data.olijfolie.childImageSharp.fluid}/>
+      <Img className={css(workStyles.large_image)} fluid={props.data.manna.childImageSharp.fluid}/>
+      <Img className={css(workStyles.small_image)} fluid={props.data.prima.childImageSharp.fluid}/>
+      <Img className={css(workStyles.medium_image)} fluid={props.data.groentesap.childImageSharp.fluid}/>
+      <Img className={css(workStyles.small_image)} fluid={props.data.nuts.childImageSharp.fluid}/>
+      <Img className={css(workStyles.small_image)} fluid={props.data.bcolijfolie.childImageSharp.fluid}/>
+      <Img className={css(workStyles.small_image)} fluid={props.data.cavalier.childImageSharp.fluid}/>
+      <Img className={css(workStyles.medium_image)} fluid={props.data.saucee.childImageSharp.fluid}/>
+      <div className={css(workStyles.small_image)}>
+        <div className={css(workStyles.pile_image_container)}>
+          <Img className={css(workStyles.pile_image)} fluid={props.data.kruidenboter.childImageSharp.fluid}/>
+          <Img className={css(workStyles.pile_image)} fluid={props.data.leberg.childImageSharp.fluid}/>
+        </div>
+      </div>
+      <Img className={css(workStyles.small_image)} fluid={props.data.cupcake.childImageSharp.fluid}/>
+      <Img className={css(workStyles.medium_image)} fluid={props.data.superfood.childImageSharp.fluid}/>
+      <div className={css(workStyles.small_image)}>
+        <div className={css(workStyles.pile_image_container)}>
+          <Img className={css(workStyles.pile_image)} fluid={props.data.pistache.childImageSharp.fluid}/>
+          <Img className={css(workStyles.pile_image)} fluid={props.data.blondeel.childImageSharp.fluid}/>
+        </div>
+      </div>
+      <Img className={css(workStyles.medium_image)} fluid={props.data.olieen.childImageSharp.fluid}/>
+      <Img className={css(workStyles.medium_image)} fluid={props.data.paaseitjes.childImageSharp.fluid}/>
+      <div className={css(workStyles.small_image)}>
+        <div className={css(workStyles.pile_image_container)}>
+          <Img className={css(workStyles.pile_image)} fluid={props.data.cornflakes.childImageSharp.fluid}/>
+          <Img className={css(workStyles.pile_image)} fluid={props.data.truffles.childImageSharp.fluid}/>
+        </div>
+      </div>
+      <Img className={css(workStyles.small_image)} fluid={props.data.brokkensaus.childImageSharp.fluid}/>
+      <Img className={css(workStyles.small_image)} fluid={props.data.monte.childImageSharp.fluid}/>
+      <Img className={css(workStyles.small_image)} fluid={props.data.chocomelk.childImageSharp.fluid}/>
+      <Img className={css(workStyles.large_image)} fluid={props.data.yoghurt.childImageSharp.fluid}/>
+      <Img className={css(workStyles.small_image)} fluid={props.data.azijn.childImageSharp.fluid}/>
+      <Img className={css(workStyles.small_image)} fluid={props.data.madeleines.childImageSharp.fluid}/>
+      <Img className={css(workStyles.small_image)} fluid={props.data.vleesbrood.childImageSharp.fluid}/>
+      <Img className={css(workStyles.small_image)} fluid={props.data.soup.childImageSharp.fluid}/>
+      <Img className={css(workStyles.small_image)} fluid={props.data.delinut.childImageSharp.fluid}/>
+      <Img className={css(workStyles.small_image)} fluid={props.data.yoplait.childImageSharp.fluid}/>
+      <Img className={css(workStyles.large_image)} fluid={props.data.mahall.childImageSharp.fluid}/>
+      <Img className={css(workStyles.small_image)} fluid={props.data.vermeiren.childImageSharp.fluid}/>
+      <Img className={css(workStyles.small_image)} fluid={props.data.shortbread.childImageSharp.fluid}/>
+      <Img className={css(workStyles.small_image)} fluid={props.data.melro.childImageSharp.fluid}/>
+    </div>
 
   return(
-    <div className={css(workStyles.mask)}>
-      <ReactScrollWheelHandler wheelConfig={[7000, 1000, 5]} className={css(workStyles.scroll_area)} upHandler={(e) => document.getElementById("upToConcept").click()}/>
-      <Layout>
-        <SEO title="Work"/>
-        <div className={css(workStyles.page_container)}>
-          <Link id="upToConcept" className={css(workStyles.arrow_up)} cover to="/concept" bg="#0070BA" direction="down">
-            <svg width="47" height="12" viewBox="0 0 47 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M46 10.5L23.5 2L1 10.5" stroke="black" stroke-width="2"/>
-            </svg>
-          </Link>
-          <div className={css(workStyles.image_grid_container)}>
-            <div className={css(workStyles.image_grid)}>
-              <Img className={css(workStyles.large_image)} fluid={props.data.olijfolie.childImageSharp.fluid}/>
-              <Img className={css(workStyles.large_image)} fluid={props.data.manna.childImageSharp.fluid}/>
-              <Img className={css(workStyles.small_image)} fluid={props.data.prima.childImageSharp.fluid}/>
-              <Img className={css(workStyles.medium_image)} fluid={props.data.groentesap.childImageSharp.fluid}/>
-              <Img className={css(workStyles.small_image)} fluid={props.data.nuts.childImageSharp.fluid}/>
-              <Img className={css(workStyles.small_image)} fluid={props.data.bcolijfolie.childImageSharp.fluid}/>
-              <Img className={css(workStyles.small_image)} fluid={props.data.cavalier.childImageSharp.fluid}/>
-              <Img className={css(workStyles.medium_image)} fluid={props.data.saucee.childImageSharp.fluid}/>
-              <div className={css(workStyles.small_image)}>
-                <div className={css(workStyles.pile_image_container)}>
-                  <Img className={css(workStyles.pile_image)} fluid={props.data.kruidenboter.childImageSharp.fluid}/>
-                  <Img className={css(workStyles.pile_image)} fluid={props.data.leberg.childImageSharp.fluid}/>
-                </div>
-              </div>
-              <Img className={css(workStyles.small_image)} fluid={props.data.cupcake.childImageSharp.fluid}/>
-              <Img className={css(workStyles.medium_image)} fluid={props.data.superfood.childImageSharp.fluid}/>
-              <div className={css(workStyles.small_image)}>
-                <div className={css(workStyles.pile_image_container)}>
-                  <Img className={css(workStyles.pile_image)} fluid={props.data.pistache.childImageSharp.fluid}/>
-                  <Img className={css(workStyles.pile_image)} fluid={props.data.blondeel.childImageSharp.fluid}/>
-                </div>
-              </div>
-              <Img className={css(workStyles.medium_image)} fluid={props.data.olieen.childImageSharp.fluid}/>
-              <Img className={css(workStyles.medium_image)} fluid={props.data.paaseitjes.childImageSharp.fluid}/>
-              <div className={css(workStyles.small_image)}>
-                <div className={css(workStyles.pile_image_container)}>
-                  <Img className={css(workStyles.pile_image)} fluid={props.data.cornflakes.childImageSharp.fluid}/>
-                  <Img className={css(workStyles.pile_image)} fluid={props.data.truffles.childImageSharp.fluid}/>
-                </div>
-              </div>
-              <Img className={css(workStyles.small_image)} fluid={props.data.brokkensaus.childImageSharp.fluid}/>
-              <Img className={css(workStyles.small_image)} fluid={props.data.monte.childImageSharp.fluid}/>
-              <Img className={css(workStyles.small_image)} fluid={props.data.chocomelk.childImageSharp.fluid}/>
-              <Img className={css(workStyles.large_image)} fluid={props.data.yoghurt.childImageSharp.fluid}/>
-              <Img className={css(workStyles.small_image)} fluid={props.data.azijn.childImageSharp.fluid}/>
-              <Img className={css(workStyles.small_image)} fluid={props.data.madeleines.childImageSharp.fluid}/>
-              <Img className={css(workStyles.small_image)} fluid={props.data.vleesbrood.childImageSharp.fluid}/>
-              <Img className={css(workStyles.small_image)} fluid={props.data.soup.childImageSharp.fluid}/>
-              <Img className={css(workStyles.small_image)} fluid={props.data.delinut.childImageSharp.fluid}/>
-              <Img className={css(workStyles.small_image)} fluid={props.data.yoplait.childImageSharp.fluid}/>
-              <Img className={css(workStyles.large_image)} fluid={props.data.mahall.childImageSharp.fluid}/>
-              <Img className={css(workStyles.small_image)} fluid={props.data.vermeiren.childImageSharp.fluid}/>
-              <Img className={css(workStyles.small_image)} fluid={props.data.shortbread.childImageSharp.fluid}/>
-              <Img className={css(workStyles.small_image)} fluid={props.data.melro.childImageSharp.fluid}/>
-            </div>
-          </div>
-        </div>
-      </Layout>
-    </div>
+    <Structure title="Work" up="/concept" down="/clients">
+      {imageGrid} 
+    </Structure>
   )
 }
 
-export default WorkPage
+export default Work
 
 const workStyles = StyleSheet.create({
 
-  page_container: {
-    zIndex: '3000',
-    margin: '0 auto',
-    display: 'grid',
-    width: '100vw',
-    height: '100vh',
-    gridTemplateColumns: '1fr 8fr 1fr',
-    gridTemplateRows: '1fr 8fr 1fr',
-    overflow: 'hidden'
-  },
-
-  image_grid_container: {
-    gridColumnStart: '2',
-    gridColumnEnd: '3',
-    gridRowStart: '2',
-    gridRowEnd: '3',
-    overflow: 'auto',
-    '::-webkit-scrollbar': {
-      display: 'none'
-    }
-  },
 
   image_grid: {
     backgroundColor: 'white',
@@ -359,21 +326,6 @@ const workStyles = StyleSheet.create({
   pile_image: {
     border: '0.5em white solid',
     backgroundColor: 'white'
-  },
-
-  arrow_up: {
-    zIndex: '300',
-    placeSelf: 'center',
-    gridColumnStart: '2',
-    gridColumnEnd: '3',
-    gridRowStart: '1',
-    gridRowEnd: '2'
-  },
-
-  scroll_area: {
-    position: 'absolute',
-    width: '100vw',
-    height: '100vh'
   },
 
   pile_image_container: {

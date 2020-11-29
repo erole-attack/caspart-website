@@ -1,8 +1,9 @@
-import React from 'react'
-import Layout from '../components/layout'
 import { StyleSheet, css } from 'aphrodite'
-import SEO from '../components/seo'
+
 import Img from 'gatsby-image'
+import Layout from '../components/layout'
+import React from 'react'
+import SEO from '../components/seo'
 
 export const moonyImageQuery = graphql`
   query {
@@ -53,7 +54,7 @@ function MoonyPage (props) {
         <div className={css(moonyStyles.grid_container)}>
           <div className={css(moonyStyles.image_grid)}>
             <Img className={css(moonyStyles.large_image)} fluid={props.data.moony1.childImageSharp.fluid}/>
-            <p className={css(moonyStyles.large_image)}><b>Logo Moony voor Chatar</b> - gamma cakes</p>
+            <p className={css(moonyStyles.large_image, moonyStyles.caption)}><b>Logo Moony voor Chatar</b> - gamma cakes</p>
             <p className={css(moonyStyles.small_image)}>Een sterk en herkenbaar logo voor producten met een jong en eigentijds imago, doch met een betrouwbare authenticiteit. Een duurzaam ontwerp behoudt zijn waarde en zorgt voor een grote naambekendheid.</p>
             <Img className={css(moonyStyles.medium_image)} fluid={props.data.moony2.childImageSharp.fluid}/>
             <Img className={css(moonyStyles.large_image, moonyStyles.out_of_bounds)} fluid={props.data.moony3.childImageSharp.fluid}/>
@@ -124,6 +125,11 @@ const moonyStyles = StyleSheet.create({
     marginLeft: '-11.5vw',
     marginRight: '-11.5vw',
     zIndex: '700'
+  },
+
+  caption: {
+    marginTop: '0.25em',
+    marginBottom: '1.5em'
   }
 
 })

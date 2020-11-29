@@ -1,8 +1,9 @@
-import React from 'react'
-import Layout from '../components/layout'
 import { StyleSheet, css } from 'aphrodite'
-import SEO from '../components/seo'
+
 import Img from 'gatsby-image'
+import Layout from '../components/layout'
+import React from 'react'
+import SEO from '../components/seo'
 
 export const bioImageQuery = graphql`
   query {
@@ -66,9 +67,9 @@ function BioPage (props) {
       <div className={css(bioStyles.page_container)}>
         <div className={css(bioStyles.image_grid)}>
           <Img className={css(bioStyles.large_image)} fluid={props.data.bio1.childImageSharp.fluid}/>
-          <p className={css(bioStyles.large_image)}><b>Bio voor Aldi</b> - gamma diverse producten</p>
+          <p className={css(bioStyles.large_image, bioStyles.caption)}><b>Bio voor Aldi</b> - gamma diverse producten</p>
           <Img className={css(bioStyles.large_image)} fluid={props.data.bio2.childImageSharp.fluid}/>
-          <p className={css(bioStyles.medium_image)}>Ontwikkelen van jonge en frisse basisstijl voor de BIO-range van Aldi. Elk product behoudt zijn eigen merknaam onder de noemer BIO. Door de ontwikkeling van een basiscompositie met een herkenbare band bovenaan in combinatie met de BIO-stempel, ontstaat er een uniformiteit ongeacht het soort product.</p>
+          <p className={css(bioStyles.medium_image, bioStyles.text)}>Ontwikkelen van jonge en frisse basisstijl voor de BIO-range van Aldi. Elk product behoudt zijn eigen merknaam onder de noemer BIO. Door de ontwikkeling van een basiscompositie met een herkenbare band bovenaan in combinatie met de BIO-stempel, ontstaat er een uniformiteit ongeacht het soort product.</p>
           <Img className={css(bioStyles.small_image)} fluid={props.data.bio3.childImageSharp.fluid}/>
           <Img className={css(bioStyles.large_image)} fluid={props.data.bio4.childImageSharp.fluid}/>
           <Img className={css(bioStyles.large_image)} fluid={props.data.bio5.childImageSharp.fluid}/>
@@ -129,5 +130,14 @@ const bioStyles = StyleSheet.create({
     flexBasis: 'calc(35% - 1.5em)',
     margin: '0.75em'
   },
+
+  text: {
+    marginTop: '1.25em',
+  },
+
+  caption: {
+    marginTop: '0.25em',
+    marginBottom: '1.5em'
+  }
 
 })

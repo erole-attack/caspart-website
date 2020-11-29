@@ -1,8 +1,9 @@
-import React from 'react'
-import Layout from '../components/layout'
 import { StyleSheet, css } from 'aphrodite'
-import SEO from '../components/seo'
+
 import Img from 'gatsby-image'
+import Layout from '../components/layout'
+import React from 'react'
+import SEO from '../components/seo'
 
 export const deliconoImageQuery = graphql`
   query {
@@ -46,8 +47,8 @@ function DeliconoPage (props) {
       <div className={css(deliconoStyles.page_container)}>
         <div className={css(deliconoStyles.image_grid)}>
           <Img className={css(deliconoStyles.large_image)} fluid={props.data.delicono1.childImageSharp.fluid}/>
-          <p className={css(deliconoStyles.large_image)}><b>Delicono voor Jacques Ice</b> - gamma luxe chocoladehoorntjes</p>
-          <p className={css(deliconoStyles.small_image)}>De ontwikkeling van een verfijnd logo voor een luxe product, welke de kwaliteit van het product benadrukt en een afspiegeling is van de rijke chocolade-leefwereld</p>
+          <p className={css(deliconoStyles.large_image, deliconoStyles.caption)}><b>Delicono voor Jacques Ice</b> - gamma luxe chocoladehoorntjes</p>
+          <p className={css(deliconoStyles.small_image)}>De ontwikkeling van een verfijnd logo voor een luxe product, welke de kwaliteit van het product benadrukt en een afspiegeling is van de rijke chocolade-leefwereld.</p>
           <Img className={css(deliconoStyles.medium_image)} fluid={props.data.delicono2.childImageSharp.fluid}/>
           <Img className={css(deliconoStyles.large_image)} fluid={props.data.delicono3.childImageSharp.fluid}/>
           <Img className={css(deliconoStyles.large_image)} fluid={props.data.delicono4.childImageSharp.fluid}/>
@@ -105,6 +106,12 @@ const deliconoStyles = StyleSheet.create({
     margin: '0.75em',
     lineHeight: '1.6vw',
     fontSize: '1.2vw',
+    
   },
+
+  caption: {
+    marginTop: '0.25em',
+    marginBottom: '1.5em'
+  }
 
 })

@@ -1,0 +1,292 @@
+{
+  "title": "List of casp'art's clients",
+  "content": [
+        {
+            "client": "Aldi",
+            "brands": "Délifin, Marc Guiselin, Melro, Arioso, Valerie, Casa Morando, Ambiente, Bio, Pasen, Joy Nuts, Milville, Trader Joe’s, Mountain, Palazzo, Golden Bridge, Delinut, Kids, ..."},
+        {
+            "client": "Anco",
+            "brands": "Anco Bloem - Gamma, Kwatta Choco, Kwatta Hagelslag"
+        },
+        {
+            "client": "Albert Premier",
+            "brands": "Coins, Seasonals, Tubes, Mini Chocolates, Catalogus, Pos-materiaal, ..."
+        },
+        {
+            "client": "Bee&cee",  
+            "brands": "Bee’s, Soup!, Sau’cee, Herman Den Blijker, B&c, Pure Raw Food!, Dip’cee, Agave, ...  "
+        },
+        {
+            "client": "Bonduelle",
+            "brands": "Mais"
+        },
+        {
+            "client": "Callebaut",
+            "brands": "Bio, Bloc Dessert, Origines Chocolate, Cream Tablets, Chocolate Sprinkles, ..."
+        },
+        {
+            "client": "Cavalier",
+            "brands": "Cavalier No Sugar Chocolates, Stevia Chocolates - Gamma"
+        },
+        {
+            "client": "Chais Du Nord",
+            "brands": "Wijn - Gamma"
+        },
+        {
+            "client": "Chatar",
+            "brands": "Moony Melen, Moony Cakes, Raibi, Raibi Ice, Al’ Oud, Bladi, Chatar, Catalogus "
+        },
+        {
+            "client": "Chimay",
+            "brands": "Le Chevalier Kaas"
+        },
+        {
+            "client": "Confiture L'ardennaise",
+            "brands": "Confituur - Gamma"
+        },
+        {
+            "client": "Corneel Geerts",
+            "brands": "Restyling Logo & Lay-out Vrachtwagenpark"
+        },
+        {
+            "client": "Cote D'or",
+            "brands": "Seasonals, Bouchées, Mignonettes, Chocotoff, Nougatti, Tin Boxes, Catalogi, ..."
+        },
+        {
+            "client": "Curbi Cubes",
+            "brands": "Caribbean Cubes Sugar Voor Albert Heijn"
+        },
+        {
+            "client": "Danone ",
+            "brands": "Danio, Yoghurt, Activia, Cottage Cheese, Vitalinea, Dan’up, ..."
+        },
+        {
+            "client": "De Banketgroep",
+            "brands": "Wafels"
+        },
+        {
+            "client": "Demon",
+            "brands": "Computeraccessoires, Verpakkingen En Winkeldisplay"
+        },
+        {
+            "client": "Ecover",
+            "brands": "Ecover Shampoo’s & Zepen"
+        },
+        {
+            "client": "Frederic Blondeel",
+            "brands": "Frederic Blondeel Chocolatier"
+        },
+        {
+            "client": "Freshmeals",
+            "brands": "Vamos, Bereide Maaltijden"
+        },
+        {
+            "client": "Frieslandcampina",
+            "brands": "Nutroma"
+        },
+        {
+            "client": "Gervais",
+            "brands": "Gerlati, Petit Suisse, N°1, Melk - Gamma, Petit Gervais, Karnemelken, ..."
+        },
+        {
+            "client": "Greenyard Prepared",
+            "brands": "Soep - Gamma"
+        },
+        {
+            "client": "Group Of Butchers",
+            "brands": "Bio Ham"
+        },
+        {
+            "client": "Haacht",
+            "brands": "Bierkalender"
+        },
+        {
+            "client": "Hamlet",
+            "brands": "Fun, Cupido, Hamlet, Freshlife, Seasonals, Trocadéro"
+        },
+        {
+            "client": "Hellema",
+            "brands": "Funny Faces, Choco Fourré"
+        },
+        {
+            "client": "Hügli",
+            "brands": "Menuto Soepen & Sauzen Voor Aldi"
+        },
+        {
+            "client": "Ijsboerke",
+            "brands": "Kerststronk"
+        },
+        {
+            "client": "Inbev",
+            "brands": "Wijngamma"
+        },
+        {
+            "client": "Inex",
+            "brands": "Melk - Gamma, Chocomelk, Bio Chocomelk"
+        },
+        {
+            "client": "Inza",
+            "brands": "Bettine, Inza Melken, Milsa Voor Aldi"
+        },
+        {
+            "client": "Iscal Sugar",
+            "brands": "Compagnie Sucrière, Mi Perla, Sucandise, Bon & Bio"},
+        {
+            "client": "Jacques-ice",
+            "brands": "Aloha, Delhaize Rendierijsjes, Smølferne Smurfenijs (Denemarken), Delicono Voor Aldi, Dinosaur Snurretop (Denemarken)"
+        },
+        {
+            "client": "jules Destrooper",
+            "brands": "P&p Export Koekjes - Gamma"
+        },
+        {
+            "client": "Kim's Chocolate",
+            "brands": "Cachet Pralines-  & Chocolade - Gamma, Pos-materiaal, Beursstand"
+        },
+        {
+            "client": "La Concorde",
+            "brands": "Room, Catalogus"
+        },
+        {
+            "client": "Lactalys Nestle",
+            "brands": "Fruitkaasjes"
+        },
+        {
+            "client": "La Lorraine",
+            "brands": "Broodzakken"
+        },
+        {
+            "client": "Leberg",
+            "brands": "Leberg Bronwater"
+        },
+        {
+            "client": "Leonidas",
+            "brands": "Leonidas Duty Free (Airport)"
+        },
+        {
+            "client": "Libeert",
+            "brands": "Italo-suisse Paas- & Sinterklaasgamma, Malvorm Sint- & Paasfiguren"
+        },
+        {
+            "client": "Liebig",
+            "brands": "Liebig Bouillon - Gamma Voor Horeca"
+        },
+        {
+            "client": "Lilly's Cakes",
+            "brands": "Cakes"
+        },
+        {
+            "client": "Lotus",
+            "brands": "Mixcakes"
+        },
+        {
+            "client": "Lu",
+            "brands": "Pim’s, Petit Beurre"
+        },
+        {
+            "client": "Maîtres Laitiers Du Cotentin",
+            "brands": "Milsani Fruitkaasjes & Kaasmousse"
+        },
+        {
+            "client": "Manna",
+            "brands": "Manna Sauzen, Myoni, Banners, Baanafiches, Frietkot"
+        },
+        {
+            "client": "Materne",
+            "brands": "Confituur - Gamma"
+        },
+        {
+            "client": "Meli",
+            "brands": "Honing, Vitalis"
+        },
+        {
+            "client": "Menken",
+            "brands": "Nootjes"
+        },
+        {
+            "client": "Meroso",
+            "brands": "Lemaitre, Meroso, Lesire, Mercator’s Truffels"
+        },
+        {
+            "client": "Miko",
+            "brands": "Miko Koffie"
+        },
+        {
+            "client": "Natra - All Crump",
+            "brands": "Diverse Private Labels, Pralinutta, All Crump Chocopasta"
+        },
+        {
+            "client": "Natra Jacali",
+            "brands": "Belgid’or, Natra, Diverse Private Labels (Spanje, Uk, America, Rusland, Frankrijk)"
+        },
+        {
+            "client": "Neuhaus",
+            "brands": "Neuhaus Pasen - Gamma"
+        },
+        {
+            "client": "Nutricia",
+            "brands": "Fristi, Cécémel, Extran, Bambix, Olvarit, Nutrilon"
+        },
+        {
+            "client": "Omega Pharma",
+            "brands": "Biover"
+        },
+        {
+            "client": "Palm",
+            "brands": "Palm, Palm Royale, Bock"
+        },
+        {
+            "client": "Parker", 
+            "brands": "Pos-materiaal Etalage & Verpakking Valentijn "
+        },
+        {
+            "client": "Pur Natur",
+            "brands": "Yoghurt & Boter"
+        },
+        {
+            "client": "Ruff",
+            "brands": "Menuto Snacksoepen"
+        },
+        {
+            "client": "Straal Bronnen",
+            "brands": "Straal Bronwater - Gamma, Catalogus"
+        },
+        {
+            "client": "Struik",
+            "brands": "Selecta Roomsoepen"
+        },
+        {
+            "client": "Taura",
+            "brands": "Del Monte Fruitsnoepjes"
+        },
+        {
+            "client": "Terbeke - Pluma",
+            "brands": "Pluma Charcuterie - Gamma"
+        },
+        {
+            "client": "Vaco",
+            "brands": "Animatiefiguren Voor Babytextiel"
+        },
+        {
+            "client": "Vermeiren Speculoos   ",
+            "brands": "Vermeiren, Biterite"
+        },
+
+        {
+            "client": "Vital",
+            "brands": "Nougat"
+        },
+        {
+            "client": "Volystar",
+            "brands": "Tupelo Farm Bereide Maaltijden"
+        },
+        {
+            "client": "Yakult",
+            "brands": "Yakult Advertising"
+        },
+        {
+            "client": "Yoplait",
+            "brands": "Yoplait Fruityoghurts"
+        }
+    ]
+}

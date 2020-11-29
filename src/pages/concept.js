@@ -1,11 +1,10 @@
-import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
+import React, { useEffect, useState } from 'react'
 import { StyleSheet, css } from 'aphrodite'
-import useHover from '../components/hooks'
-import Layout from '../components/layout'
+
 import Img from 'gatsby-image'
-import SEO from '../components/seo'
-import ReactScrollWheelHandler from 'react-scroll-wheel-handler'
+import Structure from '../components/structure'
+import useHover from '../components/hooks'
 
 export const conceptImageQuery = graphql`
   query {
@@ -67,8 +66,102 @@ export const conceptImageQuery = graphql`
     }
   }
 `
+function BrandIdentityHover (props) {
 
-function ConceptPage (props) {
+  const [target, setTarget] = useState()
+
+  useEffect(() => {
+    setTarget(props.target)
+  }, [props.target])
+
+  const deliconoStyle = () => {
+    if (target === "delicono") {
+      return conceptStyles.button
+    } else {
+      return conceptStyles.desaturated
+    }
+  }
+
+  const moonyStyle = () => {
+    if (target === "moony") {
+      return conceptStyles.button
+    } else {
+      return conceptStyles.desaturated
+    }
+  }
+
+  const joesStyle = () => {
+    if (target === "joes") {
+      return conceptStyles.button
+    } else {
+      return conceptStyles.desaturated
+    }
+  }
+
+  return(
+    <div className={css(conceptStyles.pistache_container)}>
+      <Link className={css(conceptStyles.pistache_upper_hover)} ref={props.deliconoref} to='/brand-identity-delicono'/>
+      <Link className={css(conceptStyles.pistache_middle_hover)} ref={props.moonyref} to='/brand-identity-moony'/>
+      <Link className={css(conceptStyles.pistache_lower_hover)} ref={props.joesref} to='/brand-identity-trader-joes'/>
+      <div className={css(conceptStyles.pistache_button_container)}>
+        <div className={css(conceptStyles.pistache_wrapper)}>
+          <Img className={css(deliconoStyle())} fluid={props.deliconoimg}/>
+        </div>
+        <div className={css(conceptStyles.pistache_wrapper)}>
+          <Img className={css(moonyStyle())} fluid={props.moonyimg}/>
+        </div>
+        <div className={css(conceptStyles.pistache_wrapper)}>
+          <Img className={css(joesStyle())} fluid={props.joesimg}/>
+        </div>
+      </div>
+      <Img className={css(conceptStyles.pistache_image)} fluid={props.pistacheimg}/>
+    </div>
+  )
+}
+
+function StyleGuidesHover (props) {
+
+  const [target, setTarget] = useState()
+
+  useEffect(() => {
+    setTarget(props.target)
+  }, [props.target])
+
+
+  const bioStyle = () => {
+    if (target === "bio") {
+      return conceptStyles.button
+    } else {
+      return conceptStyles.desaturated
+    }
+  }
+
+  const pasenStyle = () => {
+    if (target === "pasen") {
+      return conceptStyles.button
+    } else {
+      return conceptStyles.desaturated
+    }
+  }
+
+  return(
+    <div className={css(conceptStyles.category_container)}>
+      <Link className={css(conceptStyles.image_upper_hover)} ref={props.bioref} to='/style-guides-bio'/>
+      <Link className={css(conceptStyles.image_lower_hover)} ref={props.pasenref} to='/style-guides-pasen'/>
+      <div className={css(conceptStyles.button_container)}>
+        <div className={css(conceptStyles.button_wrapper)}>
+          <Img className={css(bioStyle())} fluid={props.bioimg}/>
+        </div>
+        <div className={css(conceptStyles.button_wrapper)}>
+          <Img className={css(pasenStyle())} fluid={props.pasenimg}/>
+        </div>
+      </div>
+      <Img className={css(conceptStyles.image)} fluid={props.nougatimg}/>
+    </div>
+  )
+}
+
+function Concept (props) {
 
   const [bioRef, bioIsHovered] = useHover()
   const [pasenRef, pasenIsHovered] = useHover()
@@ -76,199 +169,117 @@ function ConceptPage (props) {
   const [moonyRef, moonyIsHovered] = useHover()
   const [joesRef, joesIsHovered] = useHover()
 
-  return(
-    <ReactScrollWheelHandler wheelConfig={[7000, 1000, 5]} upHandler={(e) => document.getElementById("upToIndex").click()} downHandler={(e) => document.getElementById("downToWork").click()}>
-      <Layout>
-        <SEO title="Concept"/>
-        <div className={css(conceptStyles.page_container)}>
-          <Link id="upToIndex" className={css(conceptStyles.arrow_up)} cover to="/" bg="#0070BA" direction="down">
-            <svg width="47" height="12" viewBox="0 0 47 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M46 10.5L23.5 2L1 10.5" stroke="black" stroke-width="2"/>
-            </svg>
-          </Link>
-          <div className={css(conceptStyles.content_container)}>
-            <h1 className={css(conceptStyles.titles)}>WHAT WE DO</h1>
-            <p>Casp’art is een inspirerend Antwerps ontwerpbureau boordevol frisse ideeën met de drive deze doelgericht</p>
-            <p>te vertalen naar de wensen van uw product.</p>
-            <p>Of het nu gaat om uw <b>brand identity</b>, <b>packaging design</b>, <b>style guides</b> of <b>food styling</b>,</p>
-            <p>wir shaffen das!</p>
-            <p>In een markt met steeds wisselende trends, verstaan wij de kunst om creativiteit te vertalen</p>
-            <p>naar de noden van uw product.</p>
-            <div className={css(conceptStyles.images_container)}>
-              <div className={css(conceptStyles.category_selector)}>
-              {deliconoIsHovered ?
-                <div className={css(conceptStyles.pistache_container)}>
-                  <Link className={css(conceptStyles.pistache_upper_hover)} ref={deliconoRef} to='/brand-identity-delicono'/>
-                  <Link className={css(conceptStyles.pistache_middle_hover)} ref={moonyRef} to='/brand-identity-moony'/>
-                  <Link className={css(conceptStyles.pistache_lower_hover)} ref={joesRef} to='/brand-identity-trader-joes'/>
-                  <div className={css(conceptStyles.pistache_button_container)}>
-                    <div className={css(conceptStyles.pistache_wrapper)}>
-                      <Img className={css(conceptStyles.button)} fluid={props.data.delicono.childImageSharp.fluid}/>
-                    </div>
-                    <div className={css(conceptStyles.pistache_wrapper)}>
-                      <Img className={css(conceptStyles.button, conceptStyles.desaturated)} fluid={props.data.moony.childImageSharp.fluid}/>
-                    </div>
-                    <div className={css(conceptStyles.pistache_wrapper)}>
-                      <Img className={css(conceptStyles.button, conceptStyles.desaturated)} fluid={props.data.joes.childImageSharp.fluid}/>
-                    </div>
-                  </div>
-                  <Img className={css(conceptStyles.pistache_image)} fluid={props.data.pistache.childImageSharp.fluid}/>
-                </div>
-              :
-                (moonyIsHovered ?
-                  <div className={css(conceptStyles.pistache_container)}>
-                    <Link className={css(conceptStyles.pistache_upper_hover)} ref={deliconoRef} to='/brand-identity-delicono'/>
-                    <Link className={css(conceptStyles.pistache_middle_hover)} ref={moonyRef} to='/brand-identity-moony'/>
-                    <Link className={css(conceptStyles.pistache_lower_hover)} ref={joesRef} to='/brand-identity-trader-joes'/>
-                    <div className={css(conceptStyles.pistache_button_container)}>
-                      <div className={css(conceptStyles.pistache_wrapper)}>
-                        <Img className={css(conceptStyles.button, conceptStyles.desaturated)} fluid={props.data.delicono.childImageSharp.fluid}/>
-                      </div>
-                      <div className={css(conceptStyles.pistache_wrapper)}>
-                        <Img className={css(conceptStyles.button)} fluid={props.data.moony.childImageSharp.fluid}/>
-                      </div>
-                      <div className={css(conceptStyles.pistache_wrapper)}>
-                        <Img className={css(conceptStyles.button, conceptStyles.desaturated)} fluid={props.data.joes.childImageSharp.fluid}/>
-                      </div>
-                    </div>
-                    <Img className={css(conceptStyles.pistache_image)} fluid={props.data.pistache.childImageSharp.fluid}/>
-                  </div>
-                :
-                  (joesIsHovered ?
-                    <div className={css(conceptStyles.pistache_container)}>
-                      <Link className={css(conceptStyles.pistache_upper_hover)} ref={deliconoRef} to='/brand-identity-delicono'/>
-                      <Link className={css(conceptStyles.pistache_middle_hover)} ref={moonyRef} to='/brand-identity-moony'/>
-                      <Link className={css(conceptStyles.pistache_lower_hover)} ref={joesRef} to='/brand-identity-trader-joes'/>
-                      <div className={css(conceptStyles.pistache_button_container)}>
-                        <div className={css(conceptStyles.pistache_wrapper)}>
-                          <Img className={css(conceptStyles.button, conceptStyles.desaturated)} fluid={props.data.delicono.childImageSharp.fluid}/>
-                        </div>
-                        <div className={css(conceptStyles.pistache_wrapper)}>
-                          <Img className={css(conceptStyles.button, conceptStyles.desaturated)} fluid={props.data.moony.childImageSharp.fluid}/>
-                        </div>
-                        <div className={css(conceptStyles.pistache_wrapper)}>
-                          <Img className={css(conceptStyles.button)} fluid={props.data.joes.childImageSharp.fluid}/>
-                        </div>
-                      </div>
-                      <Img className={css(conceptStyles.pistache_image)} fluid={props.data.pistache.childImageSharp.fluid}/>
-                    </div>
-                  :
-                  <div className={css(conceptStyles.pistache_container)}>
-                    <Link className={css(conceptStyles.pistache_upper_hover)} ref={deliconoRef} to='/brand-identity-delicono'/>
-                    <Link className={css(conceptStyles.pistache_middle_hover)} ref={moonyRef} to='/brand-identity-moony'/>
-                    <Link className={css(conceptStyles.pistache_lower_hover)} ref={joesRef} to='/brand-identity-trader-joes'/>
-                    <div className={css(conceptStyles.pistache_button_container)}/>
-                    <Img className={css(conceptStyles.pistache_image)} fluid={props.data.pistache.childImageSharp.fluid}/>
-                  </div>
-                ))
-              }
-                <p>Brand Identity</p>
-              </div>
-              <div className={css(conceptStyles.category_selector)}>
-                <div className={css(conceptStyles.category_container)}>
-                  <Img className={css(conceptStyles.image)} fluid={props.data.superfood.childImageSharp.fluid}/>
-                </div>
-                <p>Packaging Design</p>
-              </div>
-              <div className={css(conceptStyles.category_selector)}>
-                {bioIsHovered ?
-                  <div className={css(conceptStyles.category_container)}>
-                    <Link className={css(conceptStyles.image_upper_hover)} ref={bioRef} to='/style-guides-bio'/>
-                    <Link className={css(conceptStyles.image_lower_hover)} ref={pasenRef} to='/style-guides-pasen'/>
-                    <div className={css(conceptStyles.button_container)}>
-                      <div className={css(conceptStyles.button_wrapper)}>
-                        <Img className={css(conceptStyles.button)} fluid={props.data.bio.childImageSharp.fluid}/>
-                      </div>
-                      <div className={css(conceptStyles.button_wrapper)}>
-                        <Img className={css(conceptStyles.button, conceptStyles.desaturated)} fluid={props.data.pasen.childImageSharp.fluid}/>
-                      </div>
-                    </div>
-                    <Img className={css(conceptStyles.image)} fluid={props.data.nougat.childImageSharp.fluid}/>
-                  </div>
-                :
-                  (pasenIsHovered ?
-                    <div className={css(conceptStyles.category_container)}>
-                      <Link className={css(conceptStyles.image_upper_hover)} ref={bioRef} to='/style-guides-bio'/>
-                      <Link className={css(conceptStyles.image_lower_hover)} ref={pasenRef} to='/style-guides-pasen'/>
-                      <div className={css(conceptStyles.button_container)}>
-                        <div className={css(conceptStyles.button_wrapper)}>
-                          <Img className={css(conceptStyles.button, conceptStyles.desaturated)} fluid={props.data.bio.childImageSharp.fluid}/>
-                        </div>
-                        <div className={css(conceptStyles.button_wrapper)}>
-                          <Img className={css(conceptStyles.button)} fluid={props.data.pasen.childImageSharp.fluid}/>
-                        </div>
-                      </div>
-                      <Img className={css(conceptStyles.image)} fluid={props.data.nougat.childImageSharp.fluid}/>
-                    </div>
-                  :
-                    <div className={css(conceptStyles.category_container)}>
-                      <div className={css(conceptStyles.image_upper_hover)} ref={bioRef}/>
-                      <div className={css(conceptStyles.image_lower_hover)} ref={pasenRef}/>
-                      <div className={css(conceptStyles.button_container)}/>
-                      <Img className={css(conceptStyles.image)} fluid={props.data.nougat.childImageSharp.fluid}/>
-                    </div>
-                  )
-                }
-              <p>Style Guides</p>
-            </div>
-          </div>
-            <h1 className={css(conceptStyles.titles)}>OUR TEAM</h1>
-            <p>Als enthousiaste creatievelingen met de nodige skills, zijn we flexibel en gedreven om elke opdracht</p>
-            <p>- klein of groot - met evenveel passie uit te werken. Geen uitdaging is ons te groot!</p>
-          </div>
-          <Link id="downToWork" className={css(conceptStyles.arrow_down)} cover to="/work" bg="#0070BA" direction="up">
-            <svg  width="47" height="12" viewBox="0 0 47 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M46 1.5L23.5 10L1 1.5" stroke="black" stroke-width="2"/>
-            </svg>
-          </Link>
+  const whoWeAre =
+    <div className={css(conceptStyles.who_we_are)}>
+      <h1 className={css(conceptStyles.titles)}>WHAT WE DO</h1>
+      <p>Casp’art is een inspirerend Antwerps ontwerpbureau boordevol frisse ideeën met de drive deze doelgericht</p>
+      <p>te vertalen naar de wensen van uw product.</p>
+      <p>Of het nu gaat om uw <b>brand identity</b>, <b>packaging design</b>, <b>style guides</b> of <b>food styling</b>,</p>
+      <p>wir shaffen das!</p>
+      <p>In een markt met steeds wisselende trends, verstaan wij de kunst om creativiteit te vertalen</p>
+      <p>naar de noden van uw product.</p>
+    </div>
+
+  const brandIdentity =
+    <div className={css(conceptStyles.category_selector)}>
+    {deliconoIsHovered ?
+      <BrandIdentityHover target="delicono" deliconoref={deliconoRef} moonyref={moonyRef} joesref={joesRef} deliconoimg={props.data.delicono.childImageSharp.fluid} moonyimg={props.data.moony.childImageSharp.fluid} joesimg={props.data.joes.childImageSharp.fluid} pistacheimg={props.data.pistache.childImageSharp.fluid}/>
+    :
+      (moonyIsHovered ?
+        <BrandIdentityHover target="moony" deliconoref={deliconoRef} moonyref={moonyRef} joesref={joesRef} deliconoimg={props.data.delicono.childImageSharp.fluid} moonyimg={props.data.moony.childImageSharp.fluid} joesimg={props.data.joes.childImageSharp.fluid} pistacheimg={props.data.pistache.childImageSharp.fluid}/>
+      :
+        (joesIsHovered ?
+          <BrandIdentityHover target="joes" deliconoref={deliconoRef} moonyref={moonyRef} joesref={joesRef} deliconoimg={props.data.delicono.childImageSharp.fluid} moonyimg={props.data.moony.childImageSharp.fluid} joesimg={props.data.joes.childImageSharp.fluid} pistacheimg={props.data.pistache.childImageSharp.fluid}/>
+        :
+        <div className={css(conceptStyles.pistache_container)}>
+          <Link className={css(conceptStyles.pistache_upper_hover)} ref={deliconoRef} to='/brand-identity-delicono'/>
+          <Link className={css(conceptStyles.pistache_middle_hover)} ref={moonyRef} to='/brand-identity-moony'/>
+          <Link className={css(conceptStyles.pistache_lower_hover)} ref={joesRef} to='/brand-identity-trader-joes'/>
+          <div className={css(conceptStyles.pistache_button_container)}/>
+          <Img className={css(conceptStyles.pistache_image)} fluid={props.data.pistache.childImageSharp.fluid}/>
         </div>
-      </Layout>
-    </ReactScrollWheelHandler>
+        ) 
+      )
+    }
+      <p>Brand Identity</p>
+    </div>
+
+  const packagingDesign =
+    <div className={css(conceptStyles.category_selector)}>
+      <Link to='/work' className={css(conceptStyles.category_container)}>
+        <Img className={css(conceptStyles.image)} fluid={props.data.superfood.childImageSharp.fluid}/>
+      </Link>
+      <p>Packaging Design</p>
+    </div>
+
+  const styleGuides =
+    <div className={css(conceptStyles.category_selector)}>
+    {bioIsHovered ?
+      <StyleGuidesHover target="bio" bioref={bioRef} pasenref={pasenRef} bioimg={props.data.bio.childImageSharp.fluid} pasenimg={props.data.pasen.childImageSharp.fluid} nougatimg={props.data.nougat.childImageSharp.fluid}/>
+    :
+      (pasenIsHovered ?
+        <StyleGuidesHover target="pasen" bioref={bioRef} pasenref={pasenRef} bioimg={props.data.bio.childImageSharp.fluid} pasenimg={props.data.pasen.childImageSharp.fluid} nougatimg={props.data.nougat.childImageSharp.fluid}/>
+      :
+        <div className={css(conceptStyles.category_container)}>
+          <div className={css(conceptStyles.image_upper_hover)} ref={bioRef}/>
+          <div className={css(conceptStyles.image_lower_hover)} ref={pasenRef}/>
+          <div className={css(conceptStyles.button_container)}/>
+          <Img className={css(conceptStyles.image)} fluid={props.data.nougat.childImageSharp.fluid}/>
+        </div>
+      )
+    }
+    <p>Style Guides</p>
+  </div>
+
+  const conceptItems = 
+    <div className={css(conceptStyles.images_container)}>
+      {brandIdentity}
+      {packagingDesign}
+      {styleGuides}
+    </div>
+
+  const theTeam =
+    <div className={css(conceptStyles.the_team)}>
+      <h1 className={css(conceptStyles.titles)}>OUR TEAM</h1>
+      <p>Als enthousiaste creatievelingen met de nodige skills, zijn we flexibel en gedreven om elke opdracht</p>
+      <p>- klein of groot - met evenveel passie uit te werken. Geen uitdaging is ons te groot!</p>
+    </div>
+
+  return(
+    <Structure title="Concept" up="/" down="/work">
+      <div className={css(conceptStyles.center_items)}>
+      {whoWeAre}
+      {conceptItems}
+      {theTeam}
+      </div>
+    </Structure>
   )
 }
 
-export default ConceptPage
+export default Concept
 
 const conceptStyles = StyleSheet.create({
 
-  page_container: {
-    margin: '0 auto',
+  center_items: {
+    width: '100%',
+    height: '100%',
+    alignSelf: 'center',
+    textAlign: 'center',
     display: 'grid',
-    width: '100vw',
-    height: '100vh',
-    gridTemplateColumns: '1fr 8fr 1fr',
-    gridTemplateRows: '1fr 8fr 1fr',
+    placeItems: 'center',
     overflow: 'hidden'
   },
 
-  content_container: {
-    placeSelf: 'center',
-    gridColumnStart: '1',
-    gridColumnEnd: '4',
-    gridRowStart: '2',
-    gridRowEnd: '3',
-    textAlign: 'center'
+  who_we_are: {
+    height: '8vw'
   },
 
-  arrow_up: {
-    zIndex: '300',
-    placeSelf: 'center',
-    gridColumnStart: '2',
-    gridColumnEnd: '3',
-    gridRowStart: '1',
-    gridRowEnd: '2'
-  },
-
-  arrow_down: {
-    zIndex: '300',
-    placeSelf: 'center',
-    gridColumnStart: '2',
-    gridColumnEnd: '3',
-    gridRowStart: '3',
-    gridRowEnd: '4'
+  the_team: {
+    height: '6vw'
   },
 
   titles: {
+    marginTop: '0',
     fontWeight: '700',
     color: '#A6A7AA',
     letterSpacing: '0.5vw'

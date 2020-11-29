@@ -1,8 +1,9 @@
-import React from 'react'
-import Layout from '../components/layout'
 import { StyleSheet, css } from 'aphrodite'
-import SEO from '../components/seo'
+
 import Img from 'gatsby-image'
+import Layout from '../components/layout'
+import React from 'react'
+import SEO from '../components/seo'
 
 export const pasenImageQuery = graphql`
   query {
@@ -73,9 +74,9 @@ function PasenPage (props) {
       <div className={css(pasenStyles.page_container)}>
         <div className={css(pasenStyles.image_grid)}>
           <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen1.childImageSharp.fluid}/>
-          <p className={css(pasenStyles.large_image)}><b>Pasen voor Aldi</b> - gamma paasfiguren</p>
+          <p className={css(pasenStyles.large_image, pasenStyles.caption)}><b>Pasen voor Aldi</b> - gamma paasfiguren</p>
           <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen2.childImageSharp.fluid}/>
-          <p className={css(pasenStyles.large_image, pasenStyles.text)}>Ontwikkeling van een tijdloos paasgamma voor Aldi. Gedurfd afwijken van het klassieke geel / groen en opteren voor een eigentijdse look. Eenvoudig te vertalen naar de verschillende producten en verpakkingen.</p>
+          <p className={css(pasenStyles.large_image, pasenStyles.text)}>Ontwikkeling van een tijdloos paasgamma voor Aldi. Gedurfd afwijken van het klassieke geel / groen en opteren voor een eigentijdse look. Eenvoudig te vertalen naar de verschillen- de producten en verpakkingen.</p>
           <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen3.childImageSharp.fluid}/>
           <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen4.childImageSharp.fluid}/>
           <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen5.childImageSharp.fluid}/>
@@ -138,8 +139,15 @@ const pasenStyles = StyleSheet.create({
   },
 
   text: {
+    textAlign: 'justify',
+    marginTop: '0.25em',
     lineHeight: '1.6vw',
-    fontSize: '1.2vw',
+    fontSize: '1.275vw',
+  },
+
+  caption: {
+    marginTop: '0.25em',
+    marginBottom: '1.5em'
   }
 
 })
