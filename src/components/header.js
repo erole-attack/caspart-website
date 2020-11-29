@@ -30,7 +30,7 @@ export default () => {
                 <li className={css(headerStyles.last_item)}><AniLink to="/style-guides-bio" className={css(headerStyles.blue_text, headerStyles.work_item)}>Packaging</AniLink></li>
               </ul>
           </div>
-          <li><AniLink to="/work" className={css(headerStyles.blue_text, headerStyles.topic)}><b>clients</b></AniLink></li>
+          <li><AniLink to="/clients" className={css(headerStyles.blue_text, headerStyles.topic)}><b>clients</b></AniLink></li>
           <li><AniLink to="/work" className={css(headerStyles.blue_text, headerStyles.topic)}><b>contact</b></AniLink></li>
         </ul>
       </div>
