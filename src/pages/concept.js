@@ -68,9 +68,9 @@ export const conceptImageQuery = graphql`
 `
 function BrandIdentityHover (props) {
 
-  const deliconoStyle = () => { return( props.target === "delicono" ? conceptStyles.button : conceptStyles.desaturated) }
-  const moonyStyle = () => { return( props.target === "moony" ? conceptStyles.button : conceptStyles.desaturated) }
-  const joesStyle = () => { return( props.target === "joes" ? conceptStyles.button : conceptStyles.desaturated) }
+  const deliconoStyle = () => { return(props.target === "delicono" ? conceptStyles.button : conceptStyles.desaturated) }
+  const moonyStyle = () => { return(props.target === "moony" ? conceptStyles.button : conceptStyles.desaturated) }
+  const joesStyle = () => { return(props.target === "joes" ? conceptStyles.button : conceptStyles.desaturated) }
 
   return(
     <div className={css(conceptStyles.pistache_container)}>
@@ -95,8 +95,8 @@ function BrandIdentityHover (props) {
 
 function StyleGuidesHover (props) {
 
-  const bioStyle = () => { return( props.target === "bio" ? conceptStyles.button : conceptStyles.desaturated) }
-  const pasenStyle = () => { return( props.target === "pasen" ? conceptStyles.button : conceptStyles.desaturated) }
+  const bioStyle = () => { return(props.target === "bio" ? conceptStyles.button : conceptStyles.desaturated) }
+  const pasenStyle = () => { return(props.target === "pasen" ? conceptStyles.button : conceptStyles.desaturated) }
 
   return(
     <div className={css(conceptStyles.category_container)}>
@@ -202,9 +202,9 @@ function Concept (props) {
   return(
     <Structure title="Concept" up="/" down="/work">
       <div className={css(conceptStyles.center_items)}>
-      {whoWeAre}
-      {conceptItems}
-      {theTeam}
+        {whoWeAre}
+        {conceptItems}
+        {theTeam}
       </div>
     </Structure>
   )

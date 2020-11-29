@@ -1,9 +1,8 @@
 import { StyleSheet, css } from 'aphrodite'
 
 import Img from 'gatsby-image'
-import Layout from '../components/layout'
 import React from 'react'
-import SEO from '../components/seo'
+import Structure from '../components/structure'
 
 export const bioImageQuery = graphql`
   query {
@@ -62,39 +61,25 @@ export const bioImageQuery = graphql`
 function BioPage (props) {
 
   return(
-    <Layout>
-      <SEO title="Bio"/>
-      <div className={css(bioStyles.page_container)}>
-        <div className={css(bioStyles.image_grid)}>
-          <Img className={css(bioStyles.large_image)} fluid={props.data.bio1.childImageSharp.fluid}/>
-          <p className={css(bioStyles.large_image, bioStyles.caption)}><b>Bio voor Aldi</b> - gamma diverse producten</p>
-          <Img className={css(bioStyles.large_image)} fluid={props.data.bio2.childImageSharp.fluid}/>
-          <p className={css(bioStyles.medium_image, bioStyles.text)}>Ontwikkelen van jonge en frisse basisstijl voor de BIO-range van Aldi. Elk product behoudt zijn eigen merknaam onder de noemer BIO. Door de ontwikkeling van een basiscompositie met een herkenbare band bovenaan in combinatie met de BIO-stempel, ontstaat er een uniformiteit ongeacht het soort product.</p>
-          <Img className={css(bioStyles.small_image)} fluid={props.data.bio3.childImageSharp.fluid}/>
-          <Img className={css(bioStyles.large_image)} fluid={props.data.bio4.childImageSharp.fluid}/>
-          <Img className={css(bioStyles.large_image)} fluid={props.data.bio5.childImageSharp.fluid}/>
-          <Img className={css(bioStyles.large_image)} fluid={props.data.bio6.childImageSharp.fluid}/>
-          <Img className={css(bioStyles.large_image)} fluid={props.data.bio7.childImageSharp.fluid}/>
-        </div>
+    <Structure title="Bio">
+      <div className={css(bioStyles.image_grid)}>
+        <Img className={css(bioStyles.large_image)} fluid={props.data.bio1.childImageSharp.fluid}/>
+        <p className={css(bioStyles.large_image, bioStyles.caption)}><b>Bio voor Aldi</b> - gamma diverse producten</p>
+        <Img className={css(bioStyles.large_image)} fluid={props.data.bio2.childImageSharp.fluid}/>
+        <p className={css(bioStyles.medium_image, bioStyles.text)}>Ontwikkelen van jonge en frisse basisstijl voor de BIO-range van Aldi. Elk product behoudt zijn eigen merknaam onder de noemer BIO. Door de ontwikkeling van een basiscompositie met een herkenbare band bovenaan in combinatie met de BIO-stempel, ontstaat er een uniformiteit ongeacht het soort product.</p>
+        <Img className={css(bioStyles.small_image)} fluid={props.data.bio3.childImageSharp.fluid}/>
+        <Img className={css(bioStyles.large_image)} fluid={props.data.bio4.childImageSharp.fluid}/>
+        <Img className={css(bioStyles.large_image)} fluid={props.data.bio5.childImageSharp.fluid}/>
+        <Img className={css(bioStyles.large_image)} fluid={props.data.bio6.childImageSharp.fluid}/>
+        <Img className={css(bioStyles.large_image)} fluid={props.data.bio7.childImageSharp.fluid}/>
       </div>
-    </Layout>
+    </Structure>
   )
 }
 
 export default BioPage
 
 const bioStyles = StyleSheet.create({
-
-  page_container: {
-    zIndex: '3000',
-    margin: '0 auto',
-    display: 'grid',
-    width: '100vw',
-    height: '100vh',
-    gridTemplateColumns: '1fr 8fr 1fr',
-    gridTemplateRows: '1fr 8fr 1fr',
-    overflow: 'hidden'
-  },
 
   image_grid: {
     gridColumnStart: '2',

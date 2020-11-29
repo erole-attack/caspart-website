@@ -1,9 +1,8 @@
 import { StyleSheet, css } from 'aphrodite'
 
 import Img from 'gatsby-image'
-import Layout from '../components/layout'
 import React from 'react'
-import SEO from '../components/seo'
+import Structure from '../components/structure'
 
 export const moonyImageQuery = graphql`
   query {
@@ -48,51 +47,23 @@ export const moonyImageQuery = graphql`
 function MoonyPage (props) {
 
   return(
-    <Layout>
-      <SEO title="Moony"/>
-      <div className={css(moonyStyles.page_container)}>
-        <div className={css(moonyStyles.grid_container)}>
-          <div className={css(moonyStyles.image_grid)}>
-            <Img className={css(moonyStyles.large_image)} fluid={props.data.moony1.childImageSharp.fluid}/>
-            <p className={css(moonyStyles.large_image, moonyStyles.caption)}><b>Logo Moony voor Chatar</b> - gamma cakes</p>
-            <p className={css(moonyStyles.small_image)}>Een sterk en herkenbaar logo voor producten met een jong en eigentijds imago, doch met een betrouwbare authenticiteit. Een duurzaam ontwerp behoudt zijn waarde en zorgt voor een grote naambekendheid.</p>
-            <Img className={css(moonyStyles.medium_image)} fluid={props.data.moony2.childImageSharp.fluid}/>
-            <Img className={css(moonyStyles.large_image, moonyStyles.out_of_bounds)} fluid={props.data.moony3.childImageSharp.fluid}/>
-            <Img className={css(moonyStyles.large_image)} fluid={props.data.moony4.childImageSharp.fluid}/>
-            <Img className={css(moonyStyles.large_image)} fluid={props.data.moony5.childImageSharp.fluid}/>
-          </div>
-        </div>
+    <Structure title="Moony Cakes">
+      <div className={css(moonyStyles.image_grid)}>
+        <Img className={css(moonyStyles.large_image)} fluid={props.data.moony1.childImageSharp.fluid}/>
+        <p className={css(moonyStyles.large_image, moonyStyles.caption)}><b>Logo Moony voor Chatar</b> - gamma cakes</p>
+        <p className={css(moonyStyles.small_image)}>Een sterk en herkenbaar logo voor producten met een jong en eigentijds imago, doch met een betrouwbare authenticiteit. Een duurzaam ontwerp behoudt zijn waarde en zorgt voor een grote naambekendheid.</p>
+        <Img className={css(moonyStyles.medium_image)} fluid={props.data.moony2.childImageSharp.fluid}/>
+        <Img className={css(moonyStyles.large_image, moonyStyles.out_of_bounds)} fluid={props.data.moony3.childImageSharp.fluid}/>
+        <Img className={css(moonyStyles.large_image)} fluid={props.data.moony4.childImageSharp.fluid}/>
+        <Img className={css(moonyStyles.large_image)} fluid={props.data.moony5.childImageSharp.fluid}/>
       </div>
-    </Layout>
+    </Structure>
   )
 }
 
 export default MoonyPage
 
 const moonyStyles = StyleSheet.create({
-
-  page_container: {
-    zIndex: '3000',
-    margin: '0 auto',
-    display: 'grid',
-    width: '100vw',
-    height: '100vh',
-    gridTemplateColumns: '1fr 8fr 1fr',
-    gridTemplateRows: '1fr 8fr 1fr',
-    overflow: 'hidden'
-  },
-
-  grid_container: {
-    position: 'relative',
-    overflow: 'auto',
-    '::-webkit-scrollbar': {
-      display: 'none'
-    },
-    gridColumnStart: '1',
-    gridColumnEnd: '4',
-    gridRowStart: '2',
-    gridRowEnd: '3',
-  },
 
   image_grid: {
     display: 'flex',

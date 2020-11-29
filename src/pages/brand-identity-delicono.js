@@ -1,9 +1,8 @@
 import { StyleSheet, css } from 'aphrodite'
 
 import Img from 'gatsby-image'
-import Layout from '../components/layout'
 import React from 'react'
-import SEO from '../components/seo'
+import Structure from '../components/structure'
 
 export const deliconoImageQuery = graphql`
   query {
@@ -39,39 +38,25 @@ export const deliconoImageQuery = graphql`
 `
 
 
-function DeliconoPage (props) {
+function Delicono (props) {
 
   return(
-    <Layout>
-      <SEO title="Delicono"/>
-      <div className={css(deliconoStyles.page_container)}>
-        <div className={css(deliconoStyles.image_grid)}>
-          <Img className={css(deliconoStyles.large_image)} fluid={props.data.delicono1.childImageSharp.fluid}/>
-          <p className={css(deliconoStyles.large_image, deliconoStyles.caption)}><b>Delicono voor Jacques Ice</b> - gamma luxe chocoladehoorntjes</p>
-          <p className={css(deliconoStyles.small_image)}>De ontwikkeling van een verfijnd logo voor een luxe product, welke de kwaliteit van het product benadrukt en een afspiegeling is van de rijke chocolade-leefwereld.</p>
-          <Img className={css(deliconoStyles.medium_image)} fluid={props.data.delicono2.childImageSharp.fluid}/>
-          <Img className={css(deliconoStyles.large_image)} fluid={props.data.delicono3.childImageSharp.fluid}/>
-          <Img className={css(deliconoStyles.large_image)} fluid={props.data.delicono4.childImageSharp.fluid}/>
-        </div>
+    <Structure title="Delicono">
+      <div className={css(deliconoStyles.image_grid)}>
+        <Img className={css(deliconoStyles.large_image)} fluid={props.data.delicono1.childImageSharp.fluid}/>
+        <p className={css(deliconoStyles.large_image, deliconoStyles.caption)}><b>Delicono voor Jacques Ice</b> - gamma luxe chocoladehoorntjes</p>
+        <p className={css(deliconoStyles.small_image)}>De ontwikkeling van een verfijnd logo voor een luxe product, welke de kwaliteit van het product benadrukt en een afspiegeling is van de rijke chocolade-leefwereld.</p>
+        <Img className={css(deliconoStyles.medium_image)} fluid={props.data.delicono2.childImageSharp.fluid}/>
+        <Img className={css(deliconoStyles.large_image)} fluid={props.data.delicono3.childImageSharp.fluid}/>
+        <Img className={css(deliconoStyles.large_image)} fluid={props.data.delicono4.childImageSharp.fluid}/>
       </div>
-    </Layout>
+    </Structure>
   )
 }
 
-export default DeliconoPage
+export default Delicono
 
 const deliconoStyles = StyleSheet.create({
-
-  page_container: {
-    zIndex: '3000',
-    margin: '0 auto',
-    display: 'grid',
-    width: '100vw',
-    height: '100vh',
-    gridTemplateColumns: '1fr 8fr 1fr',
-    gridTemplateRows: '1fr 8fr 1fr',
-    overflow: 'hidden'
-  },
 
   image_grid: {
     gridColumnStart: '2',

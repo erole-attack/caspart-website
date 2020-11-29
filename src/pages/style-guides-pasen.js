@@ -1,9 +1,8 @@
 import { StyleSheet, css } from 'aphrodite'
 
 import Img from 'gatsby-image'
-import Layout from '../components/layout'
 import React from 'react'
-import SEO from '../components/seo'
+import Structure from '../components/structure'
 
 export const pasenImageQuery = graphql`
   query {
@@ -69,40 +68,26 @@ export const pasenImageQuery = graphql`
 function PasenPage (props) {
 
   return(
-    <Layout>
-      <SEO title="Pasen"/>
-      <div className={css(pasenStyles.page_container)}>
-        <div className={css(pasenStyles.image_grid)}>
-          <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen1.childImageSharp.fluid}/>
-          <p className={css(pasenStyles.large_image, pasenStyles.caption)}><b>Pasen voor Aldi</b> - gamma paasfiguren</p>
-          <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen2.childImageSharp.fluid}/>
-          <p className={css(pasenStyles.large_image, pasenStyles.text)}>Ontwikkeling van een tijdloos paasgamma voor Aldi. Gedurfd afwijken van het klassieke geel / groen en opteren voor een eigentijdse look. Eenvoudig te vertalen naar de verschillen- de producten en verpakkingen.</p>
-          <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen3.childImageSharp.fluid}/>
-          <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen4.childImageSharp.fluid}/>
-          <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen5.childImageSharp.fluid}/>
-          <Img className={css(pasenStyles.medium_image)} fluid={props.data.pasen6.childImageSharp.fluid}/>
-          <Img className={css(pasenStyles.small_image)} fluid={props.data.pasen7.childImageSharp.fluid}/>
-          <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen8.childImageSharp.fluid}/>
-        </div>
+    <Structure title="pasen">
+      <div className={css(pasenStyles.image_grid)}>
+        <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen1.childImageSharp.fluid}/>
+        <p className={css(pasenStyles.large_image, pasenStyles.caption)}><b>Pasen voor Aldi</b> - gamma paasfiguren</p>
+        <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen2.childImageSharp.fluid}/>
+        <p className={css(pasenStyles.large_image, pasenStyles.text)}>Ontwikkeling van een tijdloos paasgamma voor Aldi. Gedurfd afwijken van het klassieke geel / groen en opteren voor een eigentijdse look. Eenvoudig te vertalen naar de verschillen- de producten en verpakkingen.</p>
+        <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen3.childImageSharp.fluid}/>
+        <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen4.childImageSharp.fluid}/>
+        <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen5.childImageSharp.fluid}/>
+        <Img className={css(pasenStyles.medium_image)} fluid={props.data.pasen6.childImageSharp.fluid}/>
+        <Img className={css(pasenStyles.small_image)} fluid={props.data.pasen7.childImageSharp.fluid}/>
+        <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen8.childImageSharp.fluid}/>
       </div>
-    </Layout>
+    </Structure>
   )
 }
 
 export default PasenPage
 
 const pasenStyles = StyleSheet.create({
-
-  page_container: {
-    zIndex: '3000',
-    margin: '0 auto',
-    display: 'grid',
-    width: '100vw',
-    height: '100vh',
-    gridTemplateColumns: '1fr 8fr 1fr',
-    gridTemplateRows: '1fr 8fr 1fr',
-    overflow: 'hidden'
-  },
 
   image_grid: {
     gridColumnStart: '2',

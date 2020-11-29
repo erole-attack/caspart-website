@@ -27,7 +27,7 @@ export default () => {
                 <li><AniLink to="/style-guides-bio" className={css(headerStyles.blue_text, headerStyles.work_item)}>Bio</AniLink></li>
                 <li className={css(headerStyles.last_item)}><AniLink to="/style-guides-pasen" className={css(headerStyles.blue_text, headerStyles.work_item)}>Pasen</AniLink></li>
                 <li className={css(headerStyles.topic)}>projects</li>
-                <li className={css(headerStyles.last_item)}><AniLink to="/style-guides-bio" className={css(headerStyles.blue_text, headerStyles.work_item)}>Packaging</AniLink></li>
+                <li className={css(headerStyles.last_item)}><AniLink to="/work" className={css(headerStyles.blue_text, headerStyles.work_item)}>Packaging</AniLink></li>
               </ul>
           </div>
           <li><AniLink to="/clients" className={css(headerStyles.blue_text, headerStyles.topic)}><b>clients</b></AniLink></li>

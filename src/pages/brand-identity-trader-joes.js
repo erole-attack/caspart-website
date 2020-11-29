@@ -1,9 +1,8 @@
 import { StyleSheet, css } from 'aphrodite'
 
 import Img from 'gatsby-image'
-import Layout from '../components/layout'
 import React from 'react'
-import SEO from '../components/seo'
+import Structure from '../components/structure'
 
 export const joesImageQuery = graphql`
   query {
@@ -55,57 +54,29 @@ export const joesImageQuery = graphql`
 function JoesPage (props) {
 
   return(
-    <Layout>
-      <SEO title="Traders Joe's"/>
-      <div className={css(joesStyles.page_container)}>
-        <div className={css(joesStyles.grid_container)}>
-          <div className={css(joesStyles.image_grid)}>
-            <Img className={css(joesStyles.large_image)} fluid={props.data.pistache1.childImageSharp.fluid}/>
-            <p className={css(joesStyles.large_image, joesStyles.caption)}><b>Trader Joe’s voor Aldi</b> - gamma noten & gedroogde vruchten</p>
-            <div className={css(joesStyles.large_image)}>
-              <Img fluid={props.data.joes.childImageSharp.fluid}/>
-              <div className={css(joesStyles.textframe)}>
-                <p className={css(joesStyles.text)}>Logo ‘American Style’, passend bij de merknaam en het product;</p>
-                <p className={css(joesStyles.text)}>de stijl werd verder doorgevoerd op de verpakkingen.</p>
-              </div>
-            </div>
-            <Img className={css(joesStyles.large_image)} fluid={props.data.fruit1.childImageSharp.fluid}/>
-            <Img className={css(joesStyles.large_image, joesStyles.out_of_bounds)} fluid={props.data.fruit2.childImageSharp.fluid}/>
-            <Img className={css(joesStyles.small_image)} fluid={props.data.pistache2.childImageSharp.fluid}/>
-            <Img className={css(joesStyles.medium_image)} fluid={props.data.pistache3.childImageSharp.fluid}/>
+    <Structure title="Trader Joe's">
+      <div className={css(joesStyles.image_grid)}>
+        <Img className={css(joesStyles.large_image)} fluid={props.data.pistache1.childImageSharp.fluid}/>
+        <p className={css(joesStyles.large_image, joesStyles.caption)}><b>Trader Joe’s voor Aldi</b> - gamma noten & gedroogde vruchten</p>
+        <div className={css(joesStyles.large_image)}>
+          <Img fluid={props.data.joes.childImageSharp.fluid}/>
+          <div className={css(joesStyles.textframe)}>
+            <p className={css(joesStyles.text)}>Logo ‘American Style’, passend bij de merknaam en het product;</p>
+            <p className={css(joesStyles.text)}>de stijl werd verder doorgevoerd op de verpakkingen.</p>
           </div>
         </div>
+        <Img className={css(joesStyles.large_image)} fluid={props.data.fruit1.childImageSharp.fluid}/>
+        <Img className={css(joesStyles.large_image, joesStyles.out_of_bounds)} fluid={props.data.fruit2.childImageSharp.fluid}/>
+        <Img className={css(joesStyles.small_image)} fluid={props.data.pistache2.childImageSharp.fluid}/>
+        <Img className={css(joesStyles.medium_image)} fluid={props.data.pistache3.childImageSharp.fluid}/>
       </div>
-    </Layout>
+    </Structure>
   )
 }
 
 export default JoesPage
 
 const joesStyles = StyleSheet.create({
-
-  page_container: {
-    zIndex: '3000',
-    margin: '0 auto',
-    display: 'grid',
-    width: '100vw',
-    height: '100vh',
-    gridTemplateColumns: '1fr 8fr 1fr',
-    gridTemplateRows: '1fr 8fr 1fr',
-    overflow: 'hidden'
-  },
-
-  grid_container: {
-    position: 'relative',
-    overflow: 'auto',
-    '::-webkit-scrollbar': {
-      display: 'none'
-    },
-    gridColumnStart: '1',
-    gridColumnEnd: '4',
-    gridRowStart: '2',
-    gridRowEnd: '3',
-  },
 
   image_grid: {
     display: 'flex',
