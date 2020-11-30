@@ -24,8 +24,9 @@ function Clients (props) {
       )
     
     return(
-        <Structure title="Clients" up="/work" down="/work">
+        <Structure title="Clients" up="/work" down="/contact">
             {JSONclientlist()}
+            <div className={css(clientsStyles.white_space)}/>
         </Structure>
     )
 }
@@ -35,8 +36,10 @@ export default Clients
 const clientsStyles = StyleSheet.create({
 
     list: { 
-        marginLeft: '5vw',
-        marginRight: '5vw',
+        width: '60vw',
+        zIndex: '300',
+        margin: '0 auto',
+        marginTop: '8%',
         alignSelf: 'center',
         display: 'grid',
         gridTemplateColumns: '35% auto'
@@ -71,6 +74,11 @@ const clientsStyles = StyleSheet.create({
         color: '#0079c1',
         fontWeight: '600',
         marginBottom: '1vw'
+    },
+
+    white_space: {
+        width: '100%',
+        height: '10%'
     }
 
 })

@@ -54,7 +54,7 @@ export const joesImageQuery = graphql`
 function JoesPage (props) {
 
   return(
-    <Structure title="Trader Joe's">
+    <Structure title="Trader Joe's" back="true">
       <div className={css(joesStyles.image_grid)}>
         <Img className={css(joesStyles.large_image)} fluid={props.data.pistache1.childImageSharp.fluid}/>
         <p className={css(joesStyles.large_image, joesStyles.caption)}><b>Trader Joe’s voor Aldi</b> - gamma noten & gedroogde vruchten</p>
@@ -79,10 +79,12 @@ export default JoesPage
 const joesStyles = StyleSheet.create({
 
   image_grid: {
+    zIndex: '300',
     display: 'flex',
     flexWrap: 'wrap',
     margin: '0 auto',
-    width: '50vw',
+    marginTop: '5%',
+    width: '40vw',
   },
 
   large_image: {
@@ -115,8 +117,8 @@ const joesStyles = StyleSheet.create({
   },
 
   out_of_bounds: {
-    marginLeft: '-8.8vw',
-    marginRight: '-8.4vw',
+    marginLeft: '-6.8vw',
+    marginRight: '-6.4vw',
     zIndex: '700'
   },
 

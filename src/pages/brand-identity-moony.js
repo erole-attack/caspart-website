@@ -47,7 +47,7 @@ export const moonyImageQuery = graphql`
 function MoonyPage (props) {
 
   return(
-    <Structure title="Moony Cakes">
+    <Structure title="Moony Cakes" back="true">
       <div className={css(moonyStyles.image_grid)}>
         <Img className={css(moonyStyles.large_image)} fluid={props.data.moony1.childImageSharp.fluid}/>
         <p className={css(moonyStyles.large_image, moonyStyles.caption)}><b>Logo Moony voor Chatar</b> - gamma cakes</p>
@@ -66,10 +66,12 @@ export default MoonyPage
 const moonyStyles = StyleSheet.create({
 
   image_grid: {
+    zIndex: '300',
     display: 'flex',
     flexWrap: 'wrap',
     margin: '0 auto',
-    width: '50vw'
+    marginTop: '5%',
+    width: '40vw',
   },
 
   large_image: {

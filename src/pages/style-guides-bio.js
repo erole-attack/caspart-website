@@ -61,7 +61,7 @@ export const bioImageQuery = graphql`
 function BioPage (props) {
 
   return(
-    <Structure title="Bio">
+    <Structure title="Bio" back="true">
       <div className={css(bioStyles.image_grid)}>
         <Img className={css(bioStyles.large_image)} fluid={props.data.bio1.childImageSharp.fluid}/>
         <p className={css(bioStyles.large_image, bioStyles.caption)}><b>Bio voor Aldi</b> - gamma diverse producten</p>
@@ -82,18 +82,12 @@ export default BioPage
 const bioStyles = StyleSheet.create({
 
   image_grid: {
-    gridColumnStart: '2',
-    gridColumnEnd: '3',
-    gridRowStart: '2',
-    gridRowEnd: '3',
+    zIndex: '300',
     display: 'flex',
     flexWrap: 'wrap',
     margin: '0 auto',
-    width: '50vw',
-    overflow: 'auto',
-    '::-webkit-scrollbar': {
-      display: 'none'
-    }
+    marginTop: '5%',
+    width: '40vw',
   },
 
   large_image: {

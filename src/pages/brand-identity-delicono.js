@@ -41,7 +41,7 @@ export const deliconoImageQuery = graphql`
 function Delicono (props) {
 
   return(
-    <Structure title="Delicono">
+    <Structure title="Delicono" back="true">
       <div className={css(deliconoStyles.image_grid)}>
         <Img className={css(deliconoStyles.large_image)} fluid={props.data.delicono1.childImageSharp.fluid}/>
         <p className={css(deliconoStyles.large_image, deliconoStyles.caption)}><b>Delicono voor Jacques Ice</b> - gamma luxe chocoladehoorntjes</p>
@@ -59,18 +59,12 @@ export default Delicono
 const deliconoStyles = StyleSheet.create({
 
   image_grid: {
-    gridColumnStart: '2',
-    gridColumnEnd: '3',
-    gridRowStart: '2',
-    gridRowEnd: '3',
+    zIndex: '300',
     display: 'flex',
     flexWrap: 'wrap',
     margin: '0 auto',
-    width: '50vw',
-    overflow: 'auto',
-    '::-webkit-scrollbar': {
-      display: 'none'
-    }
+    marginTop: '5%',
+    width: '40vw',
   },
 
   large_image: {

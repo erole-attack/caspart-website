@@ -282,11 +282,14 @@ function Work (props) {
       <Img className={css(workStyles.small_image)} fluid={props.data.vermeiren.childImageSharp.fluid}/>
       <Img className={css(workStyles.small_image)} fluid={props.data.shortbread.childImageSharp.fluid}/>
       <Img className={css(workStyles.small_image)} fluid={props.data.melro.childImageSharp.fluid}/>
+      <div className={css(workStyles.empty_space)}/>
     </div>
 
   return(
     <Structure title="Work" up="/concept" down="/clients">
-      {imageGrid} 
+
+      {imageGrid}
+
     </Structure>
   )
 }
@@ -295,13 +298,18 @@ export default Work
 
 const workStyles = StyleSheet.create({
 
+  scroll_field: {
+    width: '100%',
+    alignSelf: 'center',
+    backgroundColor: 'yellow',
+  },
 
   image_grid: {
-    backgroundColor: 'white',
-    display: 'flex',
+    overflow: 'visible',
+    display: 'inline-flex',
     flexWrap: 'wrap',
     margin: '0 auto',
-    width: '38vw',
+    marginTop: '6vw',
   },
 
   large_image: {
@@ -331,6 +339,11 @@ const workStyles = StyleSheet.create({
   pile_image_container: {
     margin: '-0.5em',
     backgroundColor: 'white'
+  },
+
+  empty_space: {
+    height: '6vw',
+    width: '100%'
   }
 
 })

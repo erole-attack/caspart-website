@@ -68,7 +68,7 @@ export const pasenImageQuery = graphql`
 function PasenPage (props) {
 
   return(
-    <Structure title="pasen">
+    <Structure title="pasen" back="true">
       <div className={css(pasenStyles.image_grid)}>
         <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen1.childImageSharp.fluid}/>
         <p className={css(pasenStyles.large_image, pasenStyles.caption)}><b>Pasen voor Aldi</b> - gamma paasfiguren</p>
@@ -90,18 +90,12 @@ export default PasenPage
 const pasenStyles = StyleSheet.create({
 
   image_grid: {
-    gridColumnStart: '2',
-    gridColumnEnd: '3',
-    gridRowStart: '2',
-    gridRowEnd: '3',
+    zIndex: '300',
     display: 'flex',
     flexWrap: 'wrap',
     margin: '0 auto',
-    width: '50vw',
-    overflow: 'auto',
-    '::-webkit-scrollbar': {
-      display: 'none'
-    }
+    marginTop: '5%',
+    width: '40vw',
   },
 
   large_image: {

@@ -1,14 +1,22 @@
-import React from "react"
+import { StyleSheet, css } from 'aphrodite'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import React from "react"
+import Structure from '../components/structure'
 
 const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
-    <h1>404: Not Found</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
+  <Structure title="404: not Found">
+    <div className={css(notFoundStyles.center)}>
+      <h1>404: Not Found</h1>
+      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    </div>
+  </Structure>
 )
 
 export default NotFoundPage
+
+const notFoundStyles = StyleSheet.create({
+  center: {
+    placeSelf: 'center',
+    margin: '0 auto'
+  }
+})
