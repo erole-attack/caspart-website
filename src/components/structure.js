@@ -27,7 +27,7 @@ function Structure (props) {
   const arrowDown = 
       <>
           {props.down ? 
-            <BackdropFilter className={css(structureStyles.button, structureStyles.button_down)} filter={"blur(10px) saturate(180%) contrast(35%) brightness(155%)"} canvasFallback={false}>
+            <div className={css(structureStyles.button, structureStyles.button_down)} >
               <Link className={css(structureStyles.button_hover)} to={props.down}>
                   <div id="downToConcept" className={css(structureStyles.arrow_down)}>
                     <svg width="49" height="17" viewBox="0 0 49 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -35,7 +35,7 @@ function Structure (props) {
                     </svg>
                   </div>
               </Link>
-            </BackdropFilter>
+            </div>
           :
               <div/>
           }
@@ -44,7 +44,7 @@ function Structure (props) {
   const arrowBack = 
     <>
         {props.back === "true" ? 
-          <BackdropFilter className={css(structureStyles.button, structureStyles.button_down)} filter={"blur(10px) saturate(180%) contrast(35%) brightness(155%)"} canvasFallback={false}>
+          <div className={css(structureStyles.button, structureStyles.button_down)} >
             <Link className={css(structureStyles.button_hover)} to="/concept">
                 <div id="downToConcept" className={css(structureStyles.arrow_back)}>
                   <svg width="17" height="50" viewBox="0 0 17 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -52,7 +52,7 @@ function Structure (props) {
                   </svg>
                 </div>
             </Link>
-          </BackdropFilter>
+          </div>
         :
             <div/>
         }
