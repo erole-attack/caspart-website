@@ -1,6 +1,5 @@
 import { StyleSheet, css } from 'aphrodite'
 
-import BackdropFilter from 'react-backdrop-filter'
 import Layout from './layout'
 import { Link } from 'gatsby'
 import React from 'react'
