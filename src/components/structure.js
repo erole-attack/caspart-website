@@ -92,6 +92,7 @@ const structureStyles = StyleSheet.create({
 
   button: {
     zIndex: '900',
+    backdropFilter: 'blur(10px) saturate(180%) contrast(35%) brightness(155%)',
     backgroundColor: 'rgba(255, 255, 255, 0.7)',
     display: 'grid',
     placeItems: 'center',
