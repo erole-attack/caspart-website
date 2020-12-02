@@ -14,8 +14,8 @@ function Clients (props) {
             {JSONData.content.map((data, index) => {
                 return (
                     <>
-                        <p key={`content_client_${index}`} className={css(clientsStyles.clients)}>{data.client}</p>
-                        <p key={`content_brands_${index}`} className={css(clientsStyles.brands)}>{data.brands}</p>
+                        <p key={`content_client_${index}`} className={css(clientsStyles.clients)}>{data.client.toUpperCase()}</p>
+                        <p key={`content_brands_${index}`} className={css(clientsStyles.brands)}>{data.brands.toUpperCase()}</p>
                         <hr className={css(clientsStyles.hr)}/>
                     </>
                 )    
@@ -36,7 +36,9 @@ export default Clients
 const clientsStyles = StyleSheet.create({
 
     list: { 
-        width: '60vw',
+        width: '100vw',
+        paddingLeft: '20vw',
+        paddingRight: '20vw',
         zIndex: '300',
         margin: '0 auto',
         marginTop: '8%',
@@ -49,7 +51,8 @@ const clientsStyles = StyleSheet.create({
         lineHeight: "1vw",
         gridColumn: "1 / 2",
         marginTop: '0.35vw',
-        marginBottom: '0.35vw'
+        marginBottom: '0.35vw',
+        fontWeight: '500'
     },
 
     brands: {
@@ -57,7 +60,8 @@ const clientsStyles = StyleSheet.create({
         gridColumn: "2 / 3",
         fontWeight: '400',
         marginTop: '0.35vw',
-        marginBottom: '0.35vw'
+        marginBottom: '0.35vw',
+        fontWeight: '300'
     },
 
     hr: {

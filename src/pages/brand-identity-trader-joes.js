@@ -57,7 +57,7 @@ function JoesPage (props) {
     <Structure title="Trader Joe's" back="true">
       <div className={css(joesStyles.image_grid)}>
         <Img className={css(joesStyles.large_image)} fluid={props.data.pistache1.childImageSharp.fluid}/>
-        <p className={css(joesStyles.large_image, joesStyles.caption)}><b>Trader Joe’s voor Aldi</b> - gamma noten & gedroogde vruchten</p>
+        <p className={css(joesStyles.large_image, joesStyles.caption)}><b className={css(joesStyles.bold_caption)}>Trader Joe’s voor Aldi</b> - gamma noten & gedroogde vruchten</p>
         <div className={css(joesStyles.large_image)}>
           <Img fluid={props.data.joes.childImageSharp.fluid}/>
           <div className={css(joesStyles.textframe)}>
@@ -69,6 +69,7 @@ function JoesPage (props) {
         <Img className={css(joesStyles.large_image, joesStyles.out_of_bounds)} fluid={props.data.fruit2.childImageSharp.fluid}/>
         <Img className={css(joesStyles.small_image)} fluid={props.data.pistache2.childImageSharp.fluid}/>
         <Img className={css(joesStyles.medium_image)} fluid={props.data.pistache3.childImageSharp.fluid}/>
+        <div className={css(joesStyles.blank_div)}/>
       </div>
     </Structure>
   )
@@ -84,7 +85,9 @@ const joesStyles = StyleSheet.create({
     flexWrap: 'wrap',
     margin: '0 auto',
     marginTop: '5%',
-    width: '40vw',
+    width: '50vw',
+    paddingLeft: '25vw',
+    paddingRight: '25vw'
   },
 
   large_image: {
@@ -123,8 +126,20 @@ const joesStyles = StyleSheet.create({
   },
 
   caption: {
+    fontSize: '1vw',
     marginTop: '0.25em',
     marginBottom: '1.5em'
+  },
+
+  bold_caption: {
+    fontSize: '1.2vw',
+    fontWeight: '800'
+  },
+
+  blank_div: {
+    flexGrow: '3',
+    height: '5vw',
+    width: '100%',
   }
 
 })

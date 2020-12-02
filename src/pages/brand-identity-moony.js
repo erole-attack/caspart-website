@@ -50,12 +50,13 @@ function MoonyPage (props) {
     <Structure title="Moony Cakes" back="true">
       <div className={css(moonyStyles.image_grid)}>
         <Img className={css(moonyStyles.large_image)} fluid={props.data.moony1.childImageSharp.fluid}/>
-        <p className={css(moonyStyles.large_image, moonyStyles.caption)}><b>Logo Moony voor Chatar</b> - gamma cakes</p>
+        <p className={css(moonyStyles.large_image, moonyStyles.caption)}><b className={css(moonyStyles.bold_caption)}>Logo Moony voor Chatar</b> - gamma cakes</p>
         <p className={css(moonyStyles.small_image)}>Een sterk en herkenbaar logo voor producten met een jong en eigentijds imago, doch met een betrouwbare authenticiteit. Een duurzaam ontwerp behoudt zijn waarde en zorgt voor een grote naambekendheid.</p>
         <Img className={css(moonyStyles.medium_image)} fluid={props.data.moony2.childImageSharp.fluid}/>
         <Img className={css(moonyStyles.large_image, moonyStyles.out_of_bounds)} fluid={props.data.moony3.childImageSharp.fluid}/>
         <Img className={css(moonyStyles.large_image)} fluid={props.data.moony4.childImageSharp.fluid}/>
         <Img className={css(moonyStyles.large_image)} fluid={props.data.moony5.childImageSharp.fluid}/>
+        <div className={css(moonyStyles.blank_div)}/>
       </div>
     </Structure>
   )
@@ -71,7 +72,9 @@ const moonyStyles = StyleSheet.create({
     flexWrap: 'wrap',
     margin: '0 auto',
     marginTop: '5%',
-    width: '40vw',
+    width: '50vw',
+    paddingLeft: '25vw',
+    paddingRight: '25vw'
   },
 
   large_image: {
@@ -101,8 +104,20 @@ const moonyStyles = StyleSheet.create({
   },
 
   caption: {
+    fontSize: '1vw',
     marginTop: '0.25em',
     marginBottom: '1.5em'
+  },
+
+  bold_caption: {
+    fontSize: '1.2vw',
+    fontWeight: '800'
+  },
+
+  blank_div: {
+    flexGrow: '3',
+    height: '5vw',
+    width: '100%',
   }
 
 })

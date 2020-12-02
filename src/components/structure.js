@@ -1,5 +1,6 @@
 import { StyleSheet, css } from 'aphrodite'
 
+import BackdropFilter from 'react-backdrop-filter'
 import Layout from './layout'
 import { Link } from 'gatsby'
 import React from 'react'
@@ -10,13 +11,15 @@ function Structure (props) {
   const arrowUp = 
       <>
           {props.up ? 
-              <Link className={css(structureStyles.button, structureStyles.button_up)} to={props.up}>
+            <BackdropFilter className={css(structureStyles.button, structureStyles.button_up)} filter={"blur(10px) saturate(180%) contrast(35%) brightness(155%)"} canvasFallback={false}>
+              <Link className={css(structureStyles.button_hover)} to={props.up}>
                   <div className={css(structureStyles.arrow_up)}>
                     <svg width="49" height="17" viewBox="0 0 49 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M48.5 16.5L24.5 1.5L0.499999 16.5" stroke="black" strokeWidth="4"/>
                     </svg>
                   </div>
               </Link>
+            </BackdropFilter>
           :
               <div/>
           }
@@ -25,13 +28,15 @@ function Structure (props) {
   const arrowDown = 
       <>
           {props.down ? 
-              <Link className={css(structureStyles.button, structureStyles.button_down)} to={props.down}>
+            <BackdropFilter className={css(structureStyles.button, structureStyles.button_down)} filter={"blur(10px) saturate(180%) contrast(35%) brightness(155%)"} canvasFallback={false}>
+              <Link className={css(structureStyles.button_hover)} to={props.down}>
                   <div id="downToConcept" className={css(structureStyles.arrow_down)}>
                     <svg width="49" height="17" viewBox="0 0 49 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M0.5 0.499999L24.5 15.5L48.5 0.5" stroke="black" strokeWidth="4"/>
                     </svg>
                   </div>
               </Link>
+            </BackdropFilter>
           :
               <div/>
           }
@@ -40,13 +45,15 @@ function Structure (props) {
   const arrowBack = 
     <>
         {props.back === "true" ? 
-            <Link className={css(structureStyles.button, structureStyles.button_down)} to="/concept">
+          <BackdropFilter className={css(structureStyles.button, structureStyles.button_down)} filter={"blur(10px) saturate(180%) contrast(35%) brightness(155%)"} canvasFallback={false}>
+            <Link className={css(structureStyles.button_hover)} to="/concept">
                 <div id="downToConcept" className={css(structureStyles.arrow_back)}>
                   <svg width="17" height="50" viewBox="0 0 17 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M16 1L1 25L16 49" stroke="black" strokeWidth="4"/>
                   </svg>
                 </div>
             </Link>
+          </BackdropFilter>
         :
             <div/>
         }
@@ -85,24 +92,28 @@ const structureStyles = StyleSheet.create({
   },
 
   button: {
-    zIndex: '9000',
-    backgroundColor: 'rgba(255, 255, 255, 0.01)',
-    backdropFilter: 'blur(14px) saturate(50%) contrast(14%) brightness(177%)',
-    WebkitBackdropFilter: 'blur(14px) saturate(50%) contrast(14%) brightness(177%)',
-    height: '100%',
-    width: '100%',
+    zIndex: '900',
+    backgroundColor: 'rgba(255, 255, 255, 0.7)',
     display: 'grid',
     placeItems: 'center',
     gridColumnStart: '1',
     gridColumnEnd: '4',
+  },
+
+  button_hover: {
+    zIndex: '0',
+    width: '100%',
+    height: '100%',
+    display: 'grid',
+    placeItems: 'center',
+    cursor: 'pointer',
     transition: 'backdrop-filter 0.5s',
     ':hover': {
-      backdropFilter: 'blur(120px) saturate(180%) contrast(35%) brightness(155%)',
-      WebkitBackdropFilter: 'blur(120px) saturate(180%) contrast(35%) brightness(155%)',
       ':nth-child(1n) > div ': {
+        cursor: 'pointer',
         filter: 'invert(0%) opacity(70%)'
-      },
-  },
+      }
+    }
   },
 
   button_up: {

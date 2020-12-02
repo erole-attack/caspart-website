@@ -186,7 +186,7 @@ function Concept (props) {
     </div>
 
   const conceptItems = 
-    <div className={css(conceptStyles.images_container)}>
+    <div className={css(conceptStyles.concept_items)}>
       {brandIdentity}
       {packagingDesign}
       {styleGuides}
@@ -220,16 +220,29 @@ const conceptStyles = StyleSheet.create({
     alignSelf: 'center',
     textAlign: 'center',
     display: 'grid',
+    gridTemplateRows: 'auto auto auto',
     placeItems: 'center',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    zIndex: '900'
   },
 
   who_we_are: {
-    height: '8vw'
+    gridRow: '1 / 2',
+    marginBottom: '0',
+    alignSelf: 'end',
+    marginBottom: '0',
+  },
+
+  concept_items: {
+    gridRow: '2 / 3',
+    width: '50vw',
+    display: 'flex'
   },
 
   the_team: {
-    height: '6vw'
+    marginTop: '2vw',
+    alignSelf: 'start',
+    gridRow: '3 / 4',
   },
 
   titles: {
@@ -239,14 +252,9 @@ const conceptStyles = StyleSheet.create({
     letterSpacing: '0.5vw'
   },
 
-  images_container: {
-    marginTop: '3vw',
-    width: '50vw',
-    display: 'flex'
-  },
-
   category_selector: {
     width: '14.9vw',
+    height: '14.9vw',
     flexGrow: '1',
     margin: '10px'
   },

@@ -44,11 +44,12 @@ function Delicono (props) {
     <Structure title="Delicono" back="true">
       <div className={css(deliconoStyles.image_grid)}>
         <Img className={css(deliconoStyles.large_image)} fluid={props.data.delicono1.childImageSharp.fluid}/>
-        <p className={css(deliconoStyles.large_image, deliconoStyles.caption)}><b>Delicono voor Jacques Ice</b> - gamma luxe chocoladehoorntjes</p>
+        <p className={css(deliconoStyles.large_image, deliconoStyles.caption)}><b className={css(deliconoStyles.bold_caption)}>Delicono voor Jacques Ice</b> - gamma luxe chocoladehoorntjes</p>
         <p className={css(deliconoStyles.small_image)}>De ontwikkeling van een verfijnd logo voor een luxe product, welke de kwaliteit van het product benadrukt en een afspiegeling is van de rijke chocolade-leefwereld.</p>
         <Img className={css(deliconoStyles.medium_image)} fluid={props.data.delicono2.childImageSharp.fluid}/>
         <Img className={css(deliconoStyles.large_image)} fluid={props.data.delicono3.childImageSharp.fluid}/>
         <Img className={css(deliconoStyles.large_image)} fluid={props.data.delicono4.childImageSharp.fluid}/>
+        <div className={css(deliconoStyles.blank_div)}/>
       </div>
     </Structure>
   )
@@ -64,7 +65,9 @@ const deliconoStyles = StyleSheet.create({
     flexWrap: 'wrap',
     margin: '0 auto',
     marginTop: '5%',
-    width: '40vw',
+    width: '50vw',
+    paddingLeft: '25vw',
+    paddingRight: '25vw',
   },
 
   large_image: {
@@ -89,8 +92,20 @@ const deliconoStyles = StyleSheet.create({
   },
 
   caption: {
+    fontSize: '1vw',
     marginTop: '0.25em',
     marginBottom: '1.5em'
+  },
+
+  bold_caption: {
+    fontSize: '1.2vw',
+    fontWeight: '800'
+  },
+
+  blank_div: {
+    flexGrow: '3',
+    height: '5vw',
+    width: '100%',
   }
 
 })

@@ -27,8 +27,9 @@ export const contactImageQuery = graphql`
 function Contact (props) {
 
     const logo =
-        <Img className={css(contactStyles.logo)} fluid={props.data.logo.childImageSharp.fluid}/>
-
+        <div className={css(contactStyles.logo_container)}>
+            <Img className={css(contactStyles.logo)} fluid={props.data.logo.childImageSharp.fluid}/>
+        </div>
     const contactInformation =
         <div className={css(contactStyles.contact_information)}>
             <p>CASP’ART B.V.</p>
@@ -83,19 +84,28 @@ const contactStyles = StyleSheet.create({
         zIndex: '300',
         display: 'grid',
         placeItems: 'center',
-        gridTemplateRows: 'auto auto auto auto'
+        gridTemplateRows: 'auto auto 25vw auto'
+    },
+
+    logo_container: {
+        height: '100%',
+        width: '100%',
+        gridRow: '1/2',
+        display: 'grid',
+        placeItems: 'center'
     },
 
     logo: {
-        width: '9.5vw',
+        width: '8vw',
         gridRow: '1/2',
         lineHeight: '0.5 px'
     },
 
     contact_information: {
-       width: '100%',
-       textAlign: 'center',
-       gridRow: '2/3',
+        height: '100%',
+        width: '100%',
+        textAlign: 'center',
+        gridRow: '2/3',
     },
 
     contact_form: {
@@ -103,14 +113,15 @@ const contactStyles = StyleSheet.create({
         height: '100%',
         gridRow: '3/4',
         display: 'grid',
-        gridTemplateRows: '1fr 1fr 1fr 7fr',
+        gridTemplateRows: '0.5fr 1fr 0.4fr 1fr 0.4fr 1fr 0.4fr 7fr 0.5fr',
         gridTemplateColumn: '1f 7fr 1fr',
         placeItems: 'center',
     },
 
     form_input: {
+        textIndent: '0.5vw',
         width: '30vw',
-        height: '1.5vw',
+        height: '100%',
         MozBorderRadius: '0px',
         WebkitBorderRadius: '0px',
         borderRadius: '0px',
@@ -120,43 +131,55 @@ const contactStyles = StyleSheet.create({
 
    name_input: {
         height: '100%',
-        gridRow: '1/2',
+        gridRow: '2/3',
         gridColumn: '2/3',
-        padding: '0.3vw'
+        padding: '0',
+        margin: '0',
    },
 
    email_input: {
         height: '100%',
-        gridRow: '2/3',
+        gridRow: '4/5',
         gridColumn: '2/3',
-        padding: '0.3vw'
+        padding: '0',
+        margin: '0',
     },
 
     phone_input: {
         height: '100%',
-        gridRow: '3/4',
+        gridRow: '6/7',
         gridColumn: '2/3',
-        padding: '0.3vw'
+        padding: '0',
+        margin: '0',
     },
 
     message_input: {
+        width: '30.1vw',
         height: '100%',
-        gridRow: '4/5',
+        gridRow: '8/9',
         gridColumn: '2/3',
-        padding: '0.3vw'
+        padding: '0',
+        margin: '0',
+        display: 'grid',
+        placeItems: 'center'
     },
 
     message_area: {
+        height: '95%',
+        width: '95%',
+        color: '#636466',
+        fontSize: '0.8vw',
         resize: 'none',
-        height: '100px',
-        width: '30vw',
-        height: '100%',
         padding: '0',
+        paddingTop: '2.5%',
+        paddingLeft: '2.5%',
+        paddingRight: '2.5%',
+        margin: '0',
         backgroundColor: '#DCDDDE'
     },
 
     form_button_area: {
-        gridRow: '4/5',
+        gridRow: '8/9',
         gridcolumn: '3/4',
         justifySelf: 'start',
         alignSelf: 'end'
@@ -174,14 +197,19 @@ const contactStyles = StyleSheet.create({
         height: '2vw',
         width: '6vw',
         padding: '0',
-        margin: '0',
         border: '0',
-        gridRow: '4/5',
-        gridcolumn: '1/2',
+        gridRow: '8/9',
     },
 
     end_text: {
+        height: '30%',
+        width: '100%',
+        textAlign: 'center',
         gridRow: '4/5',
+    },
+
+    engel: {
+        
     }
 
 })

@@ -110,6 +110,6 @@ textarea {
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #616264;
   opacity: 1; /* Firefox */
-  padding: 5px;
   font-size: 13px;
 }
+

@@ -64,7 +64,7 @@ function BioPage (props) {
     <Structure title="Bio" back="true">
       <div className={css(bioStyles.image_grid)}>
         <Img className={css(bioStyles.large_image)} fluid={props.data.bio1.childImageSharp.fluid}/>
-        <p className={css(bioStyles.large_image, bioStyles.caption)}><b>Bio voor Aldi</b> - gamma diverse producten</p>
+        <p className={css(bioStyles.large_image, bioStyles.caption)}><b className={css(bioStyles.bold_caption)}>Bio voor Aldi</b> - gamma diverse producten</p>
         <Img className={css(bioStyles.large_image)} fluid={props.data.bio2.childImageSharp.fluid}/>
         <p className={css(bioStyles.medium_image, bioStyles.text)}>Ontwikkelen van jonge en frisse basisstijl voor de BIO-range van Aldi. Elk product behoudt zijn eigen merknaam onder de noemer BIO. Door de ontwikkeling van een basiscompositie met een herkenbare band bovenaan in combinatie met de BIO-stempel, ontstaat er een uniformiteit ongeacht het soort product.</p>
         <Img className={css(bioStyles.small_image)} fluid={props.data.bio3.childImageSharp.fluid}/>
@@ -72,6 +72,7 @@ function BioPage (props) {
         <Img className={css(bioStyles.large_image)} fluid={props.data.bio5.childImageSharp.fluid}/>
         <Img className={css(bioStyles.large_image)} fluid={props.data.bio6.childImageSharp.fluid}/>
         <Img className={css(bioStyles.large_image)} fluid={props.data.bio7.childImageSharp.fluid}/>
+        <div className={css(bioStyles.blank_div)}/>
       </div>
     </Structure>
   )
@@ -87,7 +88,9 @@ const bioStyles = StyleSheet.create({
     flexWrap: 'wrap',
     margin: '0 auto',
     marginTop: '5%',
-    width: '40vw',
+    width: '50vw',
+    paddingLeft: '25vw',
+    paddingRight: '25vw'
   },
 
   large_image: {
@@ -115,8 +118,20 @@ const bioStyles = StyleSheet.create({
   },
 
   caption: {
+    fontSize: '1vw',
     marginTop: '0.25em',
     marginBottom: '1.5em'
+  },
+
+  bold_caption: {
+    fontSize: '1.2vw',
+    fontWeight: '800'
+  },
+
+  blank_div: {
+    flexGrow: '3',
+    height: '5vw',
+    width: '100%',
   }
 
 })

@@ -305,11 +305,15 @@ const workStyles = StyleSheet.create({
   },
 
   image_grid: {
+    zIndex: '300',
     overflow: 'visible',
-    display: 'inline-flex',
+    display: 'flex',
     flexWrap: 'wrap',
     margin: '0 auto',
     marginTop: '6vw',
+    width: '100vw',
+    paddingLeft: '25vw',
+    paddingRight: '25vw'
   },
 
   large_image: {

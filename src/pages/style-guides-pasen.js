@@ -71,7 +71,7 @@ function PasenPage (props) {
     <Structure title="pasen" back="true">
       <div className={css(pasenStyles.image_grid)}>
         <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen1.childImageSharp.fluid}/>
-        <p className={css(pasenStyles.large_image, pasenStyles.caption)}><b>Pasen voor Aldi</b> - gamma paasfiguren</p>
+        <p className={css(pasenStyles.large_image, pasenStyles.caption)}><b className={css(pasenStyles.bold_caption)}>Pasen voor Aldi</b> - gamma paasfiguren</p>
         <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen2.childImageSharp.fluid}/>
         <p className={css(pasenStyles.large_image, pasenStyles.text)}>Ontwikkeling van een tijdloos paasgamma voor Aldi. Gedurfd afwijken van het klassieke geel / groen en opteren voor een eigentijdse look. Eenvoudig te vertalen naar de verschillen- de producten en verpakkingen.</p>
         <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen3.childImageSharp.fluid}/>
@@ -80,6 +80,7 @@ function PasenPage (props) {
         <Img className={css(pasenStyles.medium_image)} fluid={props.data.pasen6.childImageSharp.fluid}/>
         <Img className={css(pasenStyles.small_image)} fluid={props.data.pasen7.childImageSharp.fluid}/>
         <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen8.childImageSharp.fluid}/>
+        <div className={css(pasenStyles.blank_div)}/>
       </div>
     </Structure>
   )
@@ -95,7 +96,9 @@ const pasenStyles = StyleSheet.create({
     flexWrap: 'wrap',
     margin: '0 auto',
     marginTop: '5%',
-    width: '40vw',
+    width: '50vw',
+    paddingLeft: '25vw',
+    paddingRight: '25vw',
   },
 
   large_image: {
@@ -125,8 +128,20 @@ const pasenStyles = StyleSheet.create({
   },
 
   caption: {
+    fontSize: '1vw',
     marginTop: '0.25em',
     marginBottom: '1.5em'
+  },
+
+  bold_caption: {
+    fontSize: '1.2vw',
+    fontWeight: '800'
+  },
+
+  blank_div: {
+    flexGrow: '3',
+    height: '5vw',
+    width: '100%',
   }
 
 })
