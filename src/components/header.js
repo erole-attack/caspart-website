@@ -145,7 +145,6 @@ const headerStyles = StyleSheet.create({
     height: '100%',
     zIndex: '9999',
     display: 'flex',
-    marginRight: '2vw',
     justifyContent: 'space-between',
     alignItems: 'center',
     gridRowStart: '1',

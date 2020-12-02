@@ -11,7 +11,7 @@ function Structure (props) {
   const arrowUp = 
       <>
           {props.up ? 
-            <BackdropFilter className={css(structureStyles.button, structureStyles.button_up)} filter={"blur(10px) saturate(180%) contrast(35%) brightness(155%)"} canvasFallback={false}>
+            <div className={css(structureStyles.button, structureStyles.button_up)} >
               <Link className={css(structureStyles.button_hover)} to={props.up}>
                   <div className={css(structureStyles.arrow_up)}>
                     <svg width="49" height="17" viewBox="0 0 49 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -19,7 +19,7 @@ function Structure (props) {
                     </svg>
                   </div>
               </Link>
-            </BackdropFilter>
+            </div>
           :
               <div/>
           }
