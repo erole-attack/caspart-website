@@ -156,7 +156,7 @@ export const workImageQuery = graphql`
     }
     yoghurt: file(relativePath: { eq: "milsani-yoghurt.png" }) {
       childImageSharp {
-        fluid(maxWidth: 400) {
+        fluid(maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }

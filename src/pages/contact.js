@@ -32,16 +32,18 @@ function Contact (props) {
         </div>
     const contactInformation =
         <div className={css(contactStyles.contact_information)}>
-            <p>CASP’ART B.V.</p>
-            <p>Venneborglaan 98</p>
-            <p>2100 Antwerpen</p>
-            <p>0032/(0)3 326 01 96</p>
-            <p>Contactpersoon: Claire Bauwens</p>
-            <p>claire@caspart.be</p>
+            <div>
+                <p>CASP’ART B.V.</p>
+                <p>Venneborglaan 98</p>
+                <p>2100 Antwerpen</p>
+                <p>0032/(0)3 326 01 96</p>
+                <p>Contactpersoon: Claire Bauwens</p>
+                <p>claire@caspart.be</p>
+            </div>
         </div>
 
     const contactForm =
-    <form className={css(contactStyles.contact_form)} method="post" action="#">
+    <form className={css(contactStyles.contact_form)} method="post" action="mailto:jeroen.gunster@gmx.com">
         <label className={css(contactStyles.name_input)}>
             <input className={css(contactStyles.form_input)} type="text" name="name" id="name" placeholder="NAME"/>
         </label>
@@ -84,7 +86,7 @@ const contactStyles = StyleSheet.create({
         zIndex: '300',
         display: 'grid',
         placeItems: 'center',
-        gridTemplateRows: 'auto auto 25vw auto'
+        gridTemplateRows: 'auto 10vw 22vw 4vw'
     },
 
     logo_container: {
@@ -102,6 +104,8 @@ const contactStyles = StyleSheet.create({
     },
 
     contact_information: {
+        display: 'grid',
+        placeItems: 'center',
         height: '100%',
         width: '100%',
         textAlign: 'center',
@@ -113,7 +117,7 @@ const contactStyles = StyleSheet.create({
         height: '100%',
         gridRow: '3/4',
         display: 'grid',
-        gridTemplateRows: '0.5fr 1fr 0.4fr 1fr 0.4fr 1fr 0.4fr 7fr 0.5fr',
+        gridTemplateRows: '0.2fr 0.8fr 0.4fr 0.8fr 0.4fr 0.8fr 0.4fr 7fr 0.5fr',
         gridTemplateColumn: '1f 7fr 1fr',
         placeItems: 'center',
     },
@@ -166,14 +170,14 @@ const contactStyles = StyleSheet.create({
 
     message_area: {
         height: '95%',
-        width: '95%',
+        width: '96%',
         color: '#636466',
         fontSize: '0.8vw',
         resize: 'none',
         padding: '0',
-        paddingTop: '2.5%',
-        paddingLeft: '2.5%',
-        paddingRight: '2.5%',
+        paddingTop: '1.5%',
+        paddingLeft: '2%',
+        paddingRight: '2%',
         margin: '0',
         backgroundColor: '#DCDDDE'
     },
@@ -181,6 +185,7 @@ const contactStyles = StyleSheet.create({
     form_button_area: {
         gridRow: '8/9',
         gridcolumn: '3/4',
+        marginRight: '10vw',
         justifySelf: 'start',
         alignSelf: 'end'
     },
@@ -194,6 +199,7 @@ const contactStyles = StyleSheet.create({
     },
 
     blank_div: {
+        marginLeft: '10vw',
         height: '2vw',
         width: '6vw',
         padding: '0',
@@ -207,9 +213,5 @@ const contactStyles = StyleSheet.create({
         textAlign: 'center',
         gridRow: '4/5',
     },
-
-    engel: {
-        
-    }
 
 })

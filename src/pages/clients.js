@@ -12,10 +12,11 @@ function Clients (props) {
             <h3 className={css(clientsStyles.brands, clientsStyles.blue)}>brands</h3>
             <hr className={css(clientsStyles.hr)}/>
             {JSONData.content.map((data, index) => {
+                const regex = /voor/gi
                 return (
                     <>
                         <p key={`content_client_${index}`} className={css(clientsStyles.clients)}>{data.client.toUpperCase()}</p>
-                        <p key={`content_brands_${index}`} className={css(clientsStyles.brands)}>{data.brands.toUpperCase()}</p>
+                        <p key={`content_brands_${index}`} className={css(clientsStyles.brands)}>{data.brands.toUpperCase().replace(regex, 'voor')}</p>
                         <hr className={css(clientsStyles.hr)}/>
                     </>
                 )    
@@ -48,10 +49,12 @@ const clientsStyles = StyleSheet.create({
     },
 
     clients: {
+        color: '#404040',
         lineHeight: "1vw",
         gridColumn: "1 / 2",
         marginTop: '0.35vw',
         marginBottom: '0.35vw',
+        fontSize: '1.2vw',
         fontWeight: '500'
     },
 

@@ -58,7 +58,7 @@ function JoesPage (props) {
       <div className={css(joesStyles.image_grid)}>
         <Img className={css(joesStyles.large_image)} fluid={props.data.pistache1.childImageSharp.fluid}/>
         <p className={css(joesStyles.large_image, joesStyles.caption)}><b className={css(joesStyles.bold_caption)}>Trader Joe’s voor Aldi</b> - gamma noten & gedroogde vruchten</p>
-        <div className={css(joesStyles.large_image)}>
+        <div className={css(joesStyles.large_image, joesStyles.logo)}>
           <Img fluid={props.data.joes.childImageSharp.fluid}/>
           <div className={css(joesStyles.textframe)}>
             <p className={css(joesStyles.text)}>Logo ‘American Style’, passend bij de merknaam en het product;</p>
@@ -90,23 +90,28 @@ const joesStyles = StyleSheet.create({
     paddingRight: '25vw'
   },
 
+  logo: {
+    marginTop: '-1em',
+    marginBottom: '-0.5em'
+  },
+
   large_image: {
     flexGrow: '3',
-    flexBasis: 'calc(100% - 1.5em)',
-    margin: '0.75em',
+    flexBasis: 'calc(100% - 3em)',
+    margin: '1.5em',
     fontSize: '1.2vw',
   },
 
   medium_image: {
     flexGrow: '2',
-    flexBasis: 'calc(60% - 1.5em)',
-    margin: '0.75em'
+    flexBasis: 'calc(60% - 3em)',
+    margin: '1.5em'
   },
 
   small_image: {
     flexGrow: '1',
-    flexBasis: 'calc(40% - 1.5em)',
-    margin: '0.75em'
+    flexBasis: 'calc(40% - 3em)',
+    margin: '1.5em'
   },
 
   textframe: {
@@ -127,7 +132,7 @@ const joesStyles = StyleSheet.create({
 
   caption: {
     fontSize: '1vw',
-    marginTop: '0.25em',
+    marginTop: '0',
     marginBottom: '1.5em'
   },
 

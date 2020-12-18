@@ -194,15 +194,16 @@ const headerStyles = StyleSheet.create({
   },
 
   menu_button: {
-    width: '2.5vw',
-    cursor: 'pointer',
+    width: '1.8vw',
+    padding: '0.3vw',
     margin: '0 auto',
     marginLeft: '1vw',
+    cursor: 'pointer',
   },
 
   exit_button: {
-    width: '1.5vw',
-    padding: '0.5vw',
+    width: '1.8vw',
+    padding: '0.3vw',
     margin: '0 auto',
     marginLeft: '1vw',
     cursor: 'pointer',

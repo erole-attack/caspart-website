@@ -51,7 +51,7 @@ function MoonyPage (props) {
       <div className={css(moonyStyles.image_grid)}>
         <Img className={css(moonyStyles.large_image)} fluid={props.data.moony1.childImageSharp.fluid}/>
         <p className={css(moonyStyles.large_image, moonyStyles.caption)}><b className={css(moonyStyles.bold_caption)}>Logo Moony voor Chatar</b> - gamma cakes</p>
-        <p className={css(moonyStyles.small_image)}>Een sterk en herkenbaar logo voor producten met een jong en eigentijds imago, doch met een betrouwbare authenticiteit. Een duurzaam ontwerp behoudt zijn waarde en zorgt voor een grote naambekendheid.</p>
+        <div className={css(moonyStyles.small_image)}><p className={css(moonyStyles.text)}>Een sterk en herkenbaar logo voor producten met een jong en eigentijds imago, doch met een betrouwbare authenticiteit. Een duurzaam ontwerp behoudt zijn waarde en zorgt voor een grote naambekendheid.</p></div>
         <Img className={css(moonyStyles.medium_image)} fluid={props.data.moony2.childImageSharp.fluid}/>
         <Img className={css(moonyStyles.large_image, moonyStyles.out_of_bounds)} fluid={props.data.moony3.childImageSharp.fluid}/>
         <Img className={css(moonyStyles.large_image)} fluid={props.data.moony4.childImageSharp.fluid}/>
@@ -79,22 +79,28 @@ const moonyStyles = StyleSheet.create({
 
   large_image: {
     flexGrow: '3',
-    flexBasis: 'calc(100% - 1.5em)',
-    margin: '0.75em'
+    flexBasis: 'calc(100% - 3em)',
+    margin: '1.5em'
   },
 
   medium_image: {
     flexGrow: '2',
-    flexBasis: 'calc(70% - 1.5em)',
-    margin: '0.75em'
+    flexBasis: 'calc(65% - 3em)',
+    margin: '1.5em'
   },
 
   small_image: {
     flexGrow: '1',
-    flexBasis: 'calc(30% - 1.5em)',
-    margin: '0.75em',
+    flexBasis: 'calc(35% - 3em)',
+    margin: '1.5em',
+    marginRight: '0',
+    display: 'grid',
+    alignItems: 'center'
+  },
+
+  text: {
     lineHeight: '1.6vw',
-    fontSize: '1.2vw'
+    fontSize: '1.1vw',
   },
 
   out_of_bounds: {
@@ -105,8 +111,8 @@ const moonyStyles = StyleSheet.create({
 
   caption: {
     fontSize: '1vw',
-    marginTop: '0.25em',
-    marginBottom: '1.5em'
+    marginTop: '0',
+    marginBottom: '1.5em',
   },
 
   bold_caption: {

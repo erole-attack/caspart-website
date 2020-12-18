@@ -66,7 +66,7 @@ function BioPage (props) {
         <Img className={css(bioStyles.large_image)} fluid={props.data.bio1.childImageSharp.fluid}/>
         <p className={css(bioStyles.large_image, bioStyles.caption)}><b className={css(bioStyles.bold_caption)}>Bio voor Aldi</b> - gamma diverse producten</p>
         <Img className={css(bioStyles.large_image)} fluid={props.data.bio2.childImageSharp.fluid}/>
-        <p className={css(bioStyles.medium_image, bioStyles.text)}>Ontwikkelen van jonge en frisse basisstijl voor de BIO-range van Aldi. Elk product behoudt zijn eigen merknaam onder de noemer BIO. Door de ontwikkeling van een basiscompositie met een herkenbare band bovenaan in combinatie met de BIO-stempel, ontstaat er een uniformiteit ongeacht het soort product.</p>
+        <div className={css(bioStyles.medium_image, bioStyles.text_block)}><p className={css(bioStyles.text)}>Ontwikkelen van jonge en frisse basisstijl voor de BIO-range van Aldi. Elk product behoudt zijn eigen merk-naam onder de noemer BIO. Door de ontwikkeling van een basiscompositie met een herkenbare band boven-aan in combinatie met de BIO-stempel, ontstaat er een uniformiteit ongeacht het soort product.</p></div>
         <Img className={css(bioStyles.small_image)} fluid={props.data.bio3.childImageSharp.fluid}/>
         <Img className={css(bioStyles.large_image)} fluid={props.data.bio4.childImageSharp.fluid}/>
         <Img className={css(bioStyles.large_image)} fluid={props.data.bio5.childImageSharp.fluid}/>
@@ -103,8 +103,6 @@ const bioStyles = StyleSheet.create({
     flexGrow: '2',
     flexBasis: 'calc(65% - 1.5em)',
     margin: '0.75em',
-    lineHeight: '2.2vw',
-    fontSize: '1.2vw'
   },
 
   small_image: {
@@ -113,8 +111,16 @@ const bioStyles = StyleSheet.create({
     margin: '0.75em'
   },
 
+  text_block: {
+    display: 'grid',
+    alignItems: 'center',
+  },
+
   text: {
-    marginTop: '1.25em',
+    lineHeight: '1.6vw',
+    fontSize: '1.35vw',
+    textAlign: 'justify',
+    textJustify: 'inter-word',
   },
 
   caption: {

@@ -72,29 +72,31 @@ const deliconoStyles = StyleSheet.create({
 
   large_image: {
     flexGrow: '3',
-    flexBasis: 'calc(100% - 1.5em)',
-    margin: '0.75em'
+    flexBasis: 'calc(100% - 3em)',
+    margin: '1.5em',
   },
 
   medium_image: {
     flexGrow: '2',
-    flexBasis: 'calc(70% - 1.5em)',
-    margin: '0.75em'
+    flexBasis: 'calc(70% - 3em)',
+    margin: '1.5em',
   },
 
   small_image: {
     flexGrow: '1',
-    flexBasis: 'calc(30% - 1.5em)',
-    margin: '0.75em',
-    lineHeight: '1.6vw',
-    fontSize: '1.2vw',
-    
+    flexBasis: 'calc(30% - 3em)',
+    margin: '1.5em',
+    lineHeight: '1.9vw',
+    fontSize: '1vw',
+    textAlign: 'justify',
+    textJustify: 'inter-word',
+    wordBreak: 'keep-all',
   },
 
   caption: {
     fontSize: '1vw',
-    marginTop: '0.25em',
-    marginBottom: '1.5em'
+    marginTop: '0',
+    marginBottom: '1.5em',
   },
 
   bold_caption: {

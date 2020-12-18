@@ -73,7 +73,7 @@ function PasenPage (props) {
         <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen1.childImageSharp.fluid}/>
         <p className={css(pasenStyles.large_image, pasenStyles.caption)}><b className={css(pasenStyles.bold_caption)}>Pasen voor Aldi</b> - gamma paasfiguren</p>
         <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen2.childImageSharp.fluid}/>
-        <p className={css(pasenStyles.large_image, pasenStyles.text)}>Ontwikkeling van een tijdloos paasgamma voor Aldi. Gedurfd afwijken van het klassieke geel / groen en opteren voor een eigentijdse look. Eenvoudig te vertalen naar de verschillen- de producten en verpakkingen.</p>
+        <p className={css(pasenStyles.large_image, pasenStyles.text)}>Ontwikkeling van een tijdloos paasgamma voor Aldi. Gedurfd afwijken van het klassieke geel / groen en opteren voor een eigentijdse look. Eenvoudig te vertalen naar de verschillende producten en verpakkingen.</p>
         <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen3.childImageSharp.fluid}/>
         <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen4.childImageSharp.fluid}/>
         <Img className={css(pasenStyles.large_image)} fluid={props.data.pasen5.childImageSharp.fluid}/>
@@ -104,33 +104,33 @@ const pasenStyles = StyleSheet.create({
   large_image: {
     flexGrow: '3',
     flexBasis: 'calc(100% - 1.5em)',
-    margin: '0.75em',
+    margin: '0.75vw',
     fontSize: '1.2vw',
   },
 
   medium_image: {
     flexGrow: '2',
     flexBasis: 'calc(70% - 1.5em)',
-    margin: '0.75em'
+    margin: '0.75vw'
   },
 
   small_image: {
     flexGrow: '1',
     flexBasis: 'calc(30% - 1.5em)',
-    margin: '0.75em'
+    margin: '0.75vw'
   },
 
   text: {
     textAlign: 'justify',
-    marginTop: '0.25em',
+    marginTop: '0.25vw',
     lineHeight: '1.6vw',
-    fontSize: '1.275vw',
+    fontSize: '1.2885vw',
   },
 
   caption: {
     fontSize: '1vw',
     marginTop: '0.25em',
-    marginBottom: '1.5em'
+    marginBottom: '0.25em',
   },
 
   bold_caption: {
