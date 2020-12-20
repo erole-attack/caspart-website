@@ -52,6 +52,7 @@ function Index (props) {
 
   const engel = 
     <div className={css(indexStyles.engel_container)}>
+      {/* <Img className={css(indexStyles.engel)} fluid={props.data.engel.childImageSharp.fluid}/> */}
       <Lottie className={css(indexStyles.engel)} options={{ animationData: animation }} />
     </div>
 

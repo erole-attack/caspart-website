@@ -79,7 +79,7 @@ const clientsStyles = StyleSheet.create({
 
     blue: {
         color: '#0079c1',
-        fontWeight: '600',
+        fontWeight: '800',
         marginBottom: '1vw'
     },
 

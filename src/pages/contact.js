@@ -3,6 +3,7 @@ import { StyleSheet, css } from 'aphrodite'
 import Img from 'gatsby-image'
 import React from 'react'
 import Structure from '../components/structure'
+import engel from '../images/engel-fly.gif'
 import { graphql } from 'gatsby'
 
 export const contactImageQuery = graphql`
@@ -10,13 +11,6 @@ export const contactImageQuery = graphql`
         logo: file(relativePath: { eq: "caspart-logo.png" }) {
             childImageSharp {
                 fluid(maxWidth: 400) {
-                    ...GatsbyImageSharpFluid_withWebp
-                }
-            }
-        }
-        engel: file(relativePath: { eq: "kleine-engel.png" }) {
-            childImageSharp {
-                fluid(maxWidth: 200) {
                     ...GatsbyImageSharpFluid_withWebp
                 }
             }
@@ -43,22 +37,22 @@ function Contact (props) {
         </div>
 
     const contactForm =
-    <form className={css(contactStyles.contact_form)} method="post" action="mailto:jeroen.gunster@gmx.com">
+    <form className={css(contactStyles.contact_form)} method="post" action="https://formspree.io/f/xjvppkoj">
         <label className={css(contactStyles.name_input)}>
             <input className={css(contactStyles.form_input)} type="text" name="name" id="name" placeholder="NAME"/>
         </label>
         <label className={css(contactStyles.email_input)}>
-            <input className={css(contactStyles.form_input)} type="email" name="email" id="email" placeholder="E-MAIL"/>
+            <input className={css(contactStyles.form_input)} type="email" name="e-mail" id="email" placeholder="E-MAIL"/>
         </label>
         <label className={css(contactStyles.phone_input)}>
-            <input className={css(contactStyles.form_input)} type="tel" name="subject" id="subject" placeholder="PHONE"/>
+            <input className={css(contactStyles.form_input)} type="tel" name="phone" id="subject" placeholder="PHONE"/>
         </label>
         <label className={css(contactStyles.message_input)}>
             <textarea className={css(contactStyles.message_area)}  name="message" id="message" placeholder="MESSAGE" />
         </label>
         <div className={css(contactStyles.blank_div)} type="submit"/>
         <div className={css(contactStyles.form_button_area)}>
-            <Img className={css(contactStyles.engel)} fluid={props.data.engel.childImageSharp.fluid}/>
+            <img className={css(contactStyles.engel)} src={engel}/>
             <button className={css(contactStyles.form_button)} type="submit">SEND</button>
         </div>
     </form>
@@ -86,7 +80,7 @@ const contactStyles = StyleSheet.create({
         zIndex: '300',
         display: 'grid',
         placeItems: 'center',
-        gridTemplateRows: 'auto 10vw 22vw 4vw'
+        gridTemplateRows: 'auto 9vw 22vw 1vw'
     },
 
     logo_container: {
@@ -183,6 +177,7 @@ const contactStyles = StyleSheet.create({
     },
 
     form_button_area: {
+        display: 'grid',
         gridRow: '8/9',
         gridcolumn: '3/4',
         marginRight: '10vw',
@@ -192,7 +187,7 @@ const contactStyles = StyleSheet.create({
 
     form_button: {
         height: '2vw',
-        width: '6vw',
+        width: '100%',
         border: '0',
         backgroundColor: '#0079c1',
         color: 'white',
@@ -213,5 +208,10 @@ const contactStyles = StyleSheet.create({
         textAlign: 'center',
         gridRow: '4/5',
     },
+
+    engel: {
+        width: '7vw',
+        marginBottom: '5px'
+    }
 
 })

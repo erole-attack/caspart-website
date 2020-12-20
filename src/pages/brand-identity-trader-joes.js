@@ -132,7 +132,8 @@ const joesStyles = StyleSheet.create({
 
   caption: {
     fontSize: '1vw',
-    marginTop: '0',
+    marginTop: '-0.25vw',
+    marginLeft: '1.8vw',
     marginBottom: '1.5em'
   },
 
