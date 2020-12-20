@@ -1,8 +1,10 @@
 import { StyleSheet, css } from 'aphrodite'
 
 import Img from 'gatsby-image'
+import Lottie from 'lottie-react-web'
 import React from 'react'
 import Structure from '../components/structure'
+import animation from '../content/engel_data.json'
 import { graphql } from 'gatsby'
 import useHover from '../components/hooks'
 
@@ -49,9 +51,9 @@ function Index (props) {
     </div>
 
   const engel = 
-      <div className={css(indexStyles.engel_container)}>
-        <Img className={css(indexStyles.engel)} fluid={props.data.engel.childImageSharp.fluid}/>
-      </div>
+    <div className={css(indexStyles.engel_container)}>
+      <Lottie className={css(indexStyles.engel)} options={{ animationData: animation }} />
+    </div>
 
   return(
     <Structure title="Home" down="/concept">
@@ -130,12 +132,8 @@ const indexStyles = StyleSheet.create({
 
   engel_container: {
     position: 'absolute',
+    width: '80vw',
     margin: '0'
-  },
-
-  engel: {
-    width: '65vw',
-    filter: 'grayscale(100%)'
   },
 
   svg_container: {
