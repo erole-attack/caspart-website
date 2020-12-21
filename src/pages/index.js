@@ -5,6 +5,7 @@ import Lottie from 'lottie-react-web'
 import React from 'react'
 import Structure from '../components/structure'
 import animation from '../content/engel_data.json'
+import engeltje from '../images/engel-fly.gif'
 import { graphql } from 'gatsby'
 import useHover from '../components/hooks'
 
@@ -52,19 +53,30 @@ function Index (props) {
 
   const engel = 
     <div className={css(indexStyles.engel_container)}>
-      {/* <Img className={css(indexStyles.engel)} fluid={props.data.engel.childImageSharp.fluid}/> */}
-      <Lottie className={css(indexStyles.engel)} options={{ animationData: animation }} />
+      <Img className={css(indexStyles.engel)} fluid={props.data.engel.childImageSharp.fluid}/>
+      {/* <Lottie className={css(indexStyles.engel)} options={{ animationData: animation }} /> */}
     </div>
 
   return(
     <Structure title="Home" down="/concept">
       <div className={css(indexStyles.center_items)}>
+        <img className={css(indexStyles.engel_fly)} src={engeltje}/>
         {welcomeMessage}
         {engel}
         {hoverArea}
       </div>
     </Structure>
   )
+}
+
+const fly = {
+  '0%': {
+      transform: 'translate(100vw, -20vh)',
+  },
+
+  '100%': {
+      transform: 'translate(-100vw, -20vh)',
+  },
 }
 
 export default Index
@@ -84,6 +96,10 @@ const indexStyles = StyleSheet.create({
   engel_tekst: {
     zIndex: '10',
     textAlign: 'right'
+  },
+
+  engel: {
+    width: '65vw'
   },
 
   text_container: {
@@ -132,6 +148,8 @@ const indexStyles = StyleSheet.create({
   },
 
   engel_container: {
+    display: 'grid',
+    placeItems: 'center',
     position: 'absolute',
     width: '80vw',
     margin: '0'
@@ -150,7 +168,12 @@ const indexStyles = StyleSheet.create({
     overflow: 'hidden',
   },
 
-  hover_area: {
+  engel_fly: {
+    zIndex: '9999',
+    position: 'absolute',
+    animationName: fly,
+    animationDuration: '10s',
+    animationFillMode: 'forwards'
   }
 
 })

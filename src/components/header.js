@@ -3,8 +3,8 @@ import { StyleSheet, css } from 'aphrodite'
 
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import { Link } from 'gatsby'
-import facebookLogo from "../images/facebook-logo.svg"
 import instagramLogo from "../images/instagram-logo.svg"
+import linkedinLogo from "../images/linkedin-logo.svg"
 
 export default () => {
 
@@ -95,19 +95,14 @@ export default () => {
       </svg>
     </a>
 
-  const fbButton =
-    <a className={css(headerStyles.social_icons)} href="https://www.facebook.com/caspartpackaging/">
-      <svg className={css(headerStyles.instagram_button)} viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#clip0)">
-          <path d="M19.1 0H3C1.3 0 0 1.3 0 3V19.2C0 20.8 1.3 22.2 3 22.2H11V14.3H8.9C8.6 14.3 8.4 14.1 8.4 13.8V11.3C8.4 11 8.6 10.8 8.9 10.8H10.9V8.2C10.9 5.3 12.6 3.8 15.2 3.8H17.3C17.6 3.8 17.8 4 17.8 4.3V6.4C17.8 6.7 17.6 6.9 17.3 6.9H16C14.6 6.9 14.3 7.6 14.3 8.5V10.6H17.3C17.6 10.6 17.8 10.9 17.8 11.1L17.5 13.6C17.5 13.8 17.3 14 17 14H14.3V21.9H19C20.6 21.9 22 20.6 22 18.9V3C22.1 1.3 20.8 0 19.1 0Z" fill="#636466"/>
-        </g>
-        <defs>
-          <clipPath id="clip0">
-            <rect width="22.1" height="22.1" fill="white"/>
-          </clipPath>
-        </defs>
+  const liButton =
+    <a className={css(headerStyles.social_icons)} href="https://be.linkedin.com/in/claire-bauwens-8a67b63">
+      <svg className={css(headerStyles.instagram_button)} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 0H5C2.239 0 0 2.239 0 5V19C0 21.761 2.239 24 5 24H19C21.762 24 24 21.761 24 19V5C24 2.239 21.762 0 19 0ZM8 19H5V8H8V19ZM6.5 6.732C5.534 6.732 4.75 5.942 4.75 4.968C4.75 3.994 5.534 3.204 6.5 3.204C7.466 3.204 8.25 3.994 8.25 4.968C8.25 5.942 7.467 6.732 6.5 6.732ZM20 19H17V13.396C17 10.028 13 10.283 13 13.396V19H10V8H13V9.765C14.396 7.179 20 6.988 20 12.241V19Z" fill="#636466"/>
       </svg>
     </a>
+
+
 
 
   return(
@@ -118,7 +113,7 @@ export default () => {
         <div className={css(headerStyles.right_side)}>
           <div className={css(headerStyles.social_icons)}>
             {instButton}
-            {fbButton}
+            {liButton}
           </div>
           {menuButton()}
         </div>

@@ -110,7 +110,7 @@ const pasenStyles = StyleSheet.create({
 
   medium_image: {
     flexGrow: '2',
-    flexBasis: 'calc(70% - 1.5em)',
+    flexBasis: 'calc(60% - 1.5em)',
     margin: '0.75vw'
   },
 

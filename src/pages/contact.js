@@ -1,7 +1,7 @@
+import React, {useState} from 'react'
 import { StyleSheet, css } from 'aphrodite'
 
 import Img from 'gatsby-image'
-import React from 'react'
 import Structure from '../components/structure'
 import engel from '../images/engel-fly.gif'
 import { graphql } from 'gatsby'
@@ -10,7 +10,7 @@ export const contactImageQuery = graphql`
     query {
         logo: file(relativePath: { eq: "caspart-logo.png" }) {
             childImageSharp {
-                fluid(maxWidth: 400) {
+                fluid(maxWidth: 800) {
                     ...GatsbyImageSharpFluid_withWebp
                 }
             }
@@ -19,6 +19,18 @@ export const contactImageQuery = graphql`
 `
 
 function Contact (props) {
+    const [fly, setFly] = useState(false)
+
+    const recalculate = (e) => {
+        let textAreaCount = e.target.value.length
+        if (textAreaCount > 0) {
+            setFly(true)
+        }
+    }
+
+    const flyingAngel = () => {
+       return fly ? css(contactStyles.engel, contactStyles.engel_fly) : css(contactStyles.engel)
+    }
 
     const logo =
         <div className={css(contactStyles.logo_container)}>
@@ -48,11 +60,11 @@ function Contact (props) {
             <input className={css(contactStyles.form_input)} type="tel" name="phone" id="subject" placeholder="PHONE"/>
         </label>
         <label className={css(contactStyles.message_input)}>
-            <textarea className={css(contactStyles.message_area)}  name="message" id="message" placeholder="MESSAGE" />
+            <textarea className={css(contactStyles.message_area)}  name="message" id="message" placeholder="MESSAGE" onChange={recalculate}/>
         </label>
         <div className={css(contactStyles.blank_div)} type="submit"/>
         <div className={css(contactStyles.form_button_area)}>
-            <img className={css(contactStyles.engel)} src={engel}/>
+            <img className={flyingAngel()} src={engel}/>
             <button className={css(contactStyles.form_button)} type="submit">SEND</button>
         </div>
     </form>
@@ -71,6 +83,20 @@ function Contact (props) {
 
 export default Contact
 
+const fly = {
+    '0%': {
+        transform: 'translate(0)',
+    },
+
+    '50%': {
+        transform: 'translate(-50vw, -50vh)',
+    },
+
+    '100%': {
+        transform: 'translate(-100vw, -90vh)',
+    },
+}
+
 const contactStyles = StyleSheet.create({
 
     contact_container: {
@@ -80,7 +106,7 @@ const contactStyles = StyleSheet.create({
         zIndex: '300',
         display: 'grid',
         placeItems: 'center',
-        gridTemplateRows: 'auto 9vw 22vw 1vw'
+        gridTemplateRows: '6vw 11vw 22vw 1vw'
     },
 
     logo_container: {
@@ -187,7 +213,7 @@ const contactStyles = StyleSheet.create({
 
     form_button: {
         height: '2vw',
-        width: '100%',
+        width: '7vw',
         border: '0',
         backgroundColor: '#0079c1',
         color: 'white',
@@ -210,8 +236,15 @@ const contactStyles = StyleSheet.create({
     },
 
     engel: {
+        position: 'relative',
         width: '7vw',
         marginBottom: '5px'
+    },
+
+    engel_fly: {
+        animationName: fly,
+        animationDuration: '4s',
+        animationFillMode: 'forwards'
     }
 
 })
