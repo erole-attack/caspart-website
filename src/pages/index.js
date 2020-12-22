@@ -99,6 +99,7 @@ const indexStyles = StyleSheet.create({
   },
 
   engel: {
+    filter: 'grayscale(100%)',
     width: '65vw'
   },
 
@@ -172,7 +173,7 @@ const indexStyles = StyleSheet.create({
     zIndex: '9999',
     position: 'absolute',
     animationName: fly,
-    animationDuration: '10s',
+    animationDuration: '16s',
     animationFillMode: 'forwards'
   }
 
