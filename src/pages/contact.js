@@ -143,6 +143,7 @@ const contactStyles = StyleSheet.create({
     },
 
     form_input: {
+        fontSize: '0.8vw',
         textIndent: '0.5vw',
         width: '30vw',
         height: '100%',
@@ -220,12 +221,13 @@ const contactStyles = StyleSheet.create({
     },
 
     blank_div: {
-        marginLeft: '10vw',
         height: '2vw',
-        width: '6vw',
-        padding: '0',
-        border: '0',
+        width: '7vw',  
         gridRow: '8/9',
+        gridcolumn: '1/2',
+        marginLeft: '10vw',
+        justifySelf: 'end',
+        alignSelf: 'end'
     },
 
     end_text: {
