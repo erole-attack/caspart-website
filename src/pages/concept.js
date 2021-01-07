@@ -10,35 +10,35 @@ export const conceptImageQuery = graphql`
   query {
     pistache: file(relativePath: { eq: "pistachenootjes.png" }) {
       childImageSharp {
-        fluid(maxWidth: 600) {
+        fluid(maxWidth: 300) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     superfood: file(relativePath: { eq: "superfood.png" }) {
       childImageSharp {
-        fluid(maxWidth: 600) {
+        fluid(maxWidth: 300) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     nougat: file(relativePath: { eq: "nougat-cranberry.png" }) {
       childImageSharp {
-        fluid(maxWidth: 600) {
+        fluid(maxWidth: 300) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     bio: file(relativePath: { eq: "bio.png" }) {
       childImageSharp {
-        fluid(maxWidth: 400) {
+        fluid(maxWidth: 300) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     pasen: file(relativePath: { eq: "pasen.png" }) {
       childImageSharp {
-        fluid(maxWidth: 400) {
+        fluid(maxWidth: 300) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
@@ -52,14 +52,14 @@ export const conceptImageQuery = graphql`
     }
     moony: file(relativePath: { eq: "moony-cakes.png" }) {
       childImageSharp {
-        fluid(maxWidth: 400) {
+        fluid(maxWidth: 300) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     joes: file(relativePath: { eq: "trader-joes.png" }) {
       childImageSharp {
-        fluid(maxWidth: 400) {
+        fluid(maxWidth: 300) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
