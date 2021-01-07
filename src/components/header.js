@@ -221,12 +221,10 @@ const headerStyles = StyleSheet.create({
     width: '90vw',
     height: '80vh',
     display: 'grid',
-    gridTemplateColumns: 'auto auto',
-    justifyItems: 'end'
+    placeItems: 'center'
   },
 
   menu_items: {
-    gridColumn: "2 / 3",
     fontSize: '1.4vw',
     lineHeight: '1.4vw',
     color: '#636466',
