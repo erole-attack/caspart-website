@@ -3,8 +3,6 @@ import { StyleSheet, css } from 'aphrodite'
 
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import { Link } from 'gatsby'
-import instagramLogo from "../images/instagram-logo.svg"
-import linkedinLogo from "../images/linkedin-logo.svg"
 
 export default () => {
 
@@ -131,7 +129,7 @@ const headerStyles = StyleSheet.create({
     width: '100vw',
     height: '100vh',
     gridTemplateColumns: '2fr 10fr 2fr',
-    gridTemplateRows: '2fr 10fr 2fr',
+    gridTemplateRows: '3fr 10fr 3fr',
     overflow: 'hidden',
     placeItems: 'center',
   },
@@ -140,6 +138,7 @@ const headerStyles = StyleSheet.create({
     height: '100%',
     zIndex: '9999',
     display: 'flex',
+    marginRight: '10vw',
     justifyContent: 'space-between',
     alignItems: 'center',
     gridRowStart: '1',
@@ -173,6 +172,7 @@ const headerStyles = StyleSheet.create({
     width: '100%',
     display: 'grid',
     placeItems: 'center',
+    marginLeft: '8vw',
     gridRowStart: '1',
     gridRowEnd: '2',
     gridColumnStart: '1',
