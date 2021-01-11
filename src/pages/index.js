@@ -1,10 +1,8 @@
 import { StyleSheet, css } from 'aphrodite'
 
 import Img from 'gatsby-image'
-import Lottie from 'lottie-react-web'
 import React from 'react'
 import Structure from '../components/structure'
-import animation from '../content/engel_data.json'
 import engeltje from '../images/engel-fly.gif'
 import { graphql } from 'gatsby'
 import useHover from '../components/hooks'
