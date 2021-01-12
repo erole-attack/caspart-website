@@ -247,7 +247,7 @@ const headerStyles = StyleSheet.create({
 
   work_item: {
     fontSize: '1.4vw',
-    marginLeft: '1vw',
+    marginLeft: '10vw',
     fontWeight: '400'
   },
 
