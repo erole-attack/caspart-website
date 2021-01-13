@@ -100,9 +100,6 @@ export default () => {
       </svg>
     </a>
 
-
-
-
   return(
     <div>
       {menu}
