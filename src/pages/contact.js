@@ -49,7 +49,7 @@ function Contact (props) {
         </div>
 
     const contactForm =
-    <form className={css(contactStyles.contact_form)} method="post" action="https://formspree.io/f/xjvppkoj">
+    <form className={css(contactStyles.contact_form)} method="post" action="https://formspree.io/f/xleoazpz">
         <label className={css(contactStyles.name_input)}>
             <input className={css(contactStyles.form_input)} type="text" name="name" id="name" placeholder="NAME"/>
         </label>
