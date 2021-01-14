@@ -12,6 +12,7 @@ module.exports = {
         trackingIds: [
           "UA-187294858-1", // Google Analytics / GA
         ],
+      },
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
