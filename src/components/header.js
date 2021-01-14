@@ -3,6 +3,11 @@ import { StyleSheet, css } from 'aphrodite'
 
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import { Link } from 'gatsby'
+import ReactGA from 'react-ga'
+
+ReactGA.initialize('G-2Y1B4V01EH')
+ReactGA.pageview(window.location.pathname + window.location.search)
+
 
 export default () => {
 
