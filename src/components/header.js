@@ -18,14 +18,14 @@ export default () => {
               <li className={css(headerStyles.topic, headerStyles.bold)}>work</li>
                 <ul>
                   <li className={css(headerStyles.topic)}>brand identity</li>
-                  <li><AniLink onClick={goBack} to="/brand-identity-delicono" className={css(headerStyles.blue_text, headerStyles.work_item)}>Delicono</AniLink></li>
-                  <li><AniLink onClick={goBack} to="/brand-identity-moony" className={css(headerStyles.blue_text, headerStyles.work_item)}>Moony Cakes</AniLink></li>
-                  <li className={css(headerStyles.last_item)}><AniLink onClick={goBack} to="/brand-identity-trader-joes" className={css(headerStyles.blue_text, headerStyles.work_item)}>Trader Joe's</AniLink></li>
+                  <li><AniLink onClick={goBack} to="/brand-identity-delicono" className={css(headerStyles.blue_text, headerStyles.work_item)}>- Delicono</AniLink></li>
+                  <li><AniLink onClick={goBack} to="/brand-identity-moony" className={css(headerStyles.blue_text, headerStyles.work_item)}>- Moony Cakes</AniLink></li>
+                  <li className={css(headerStyles.last_item)}><AniLink onClick={goBack} to="/brand-identity-trader-joes" className={css(headerStyles.blue_text, headerStyles.work_item)}>- Trader Joe's</AniLink></li>
                   <li className={css(headerStyles.topic)}>style guides</li>
-                  <li><AniLink onClick={goBack} to="/style-guides-bio" className={css(headerStyles.blue_text, headerStyles.work_item)}>Bio</AniLink></li>
-                  <li className={css(headerStyles.last_item)}><AniLink onClick={goBack} to="/style-guides-pasen" className={css(headerStyles.blue_text, headerStyles.work_item)}>Pasen</AniLink></li>
+                  <li><AniLink onClick={goBack} to="/style-guides-bio" className={css(headerStyles.blue_text, headerStyles.work_item)}>- Bio</AniLink></li>
+                  <li className={css(headerStyles.last_item)}><AniLink onClick={goBack} to="/style-guides-pasen" className={css(headerStyles.blue_text, headerStyles.work_item)}>- Pasen</AniLink></li>
                   <li className={css(headerStyles.topic)}>projects</li>
-                  <li className={css(headerStyles.last_item)}><AniLink onClick={goBack} to="/work" className={css(headerStyles.blue_text, headerStyles.work_item)}>Packaging</AniLink></li>
+                  <li className={css(headerStyles.last_item)}><AniLink onClick={goBack} to="/work" className={css(headerStyles.blue_text, headerStyles.work_item)}>- Packaging</AniLink></li>
                 </ul>
             </div>
             <li><AniLink onClick={goBack} to="/clients" className={css(headerStyles.blue_text, headerStyles.topic, headerStyles.bold)}>clients</AniLink></li>
@@ -244,7 +244,7 @@ const headerStyles = StyleSheet.create({
 
   work_item: {
     fontSize: '1.4vw',
-    marginLeft: '10vw',
+    marginLeft: '0vw',
     fontWeight: '400'
   },
 
