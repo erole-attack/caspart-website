@@ -10,224 +10,224 @@ function ImageGrid (props) {
     query {
       olijfolie: file(relativePath: { eq: "al-oud-olijfolie.png" }) {
          childImageSharp {
-           fluid(maxWidth: 150) {
+           fluid(maxWidth: 200) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        manna: file(relativePath: { eq: "manna_sauzen.png" }) {
          childImageSharp {
-           fluid(maxWidth: 150) {
+           fluid(maxWidth: 200) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        prima: file(relativePath: { eq: "prima_cocoa.png" }) {
          childImageSharp {
-           fluid(maxWidth: 50) {
+           fluid(maxWidth: 75) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        groentesap: file(relativePath: { eq: "pure-fruit-groentesap.png" }) {
          childImageSharp {
-           fluid(maxWidth: 100) {
+           fluid(maxWidth: 150) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        nuts: file(relativePath: { eq: "joy-nuts-paprika.png" }) {
          childImageSharp {
-           fluid(maxWidth: 50) {
+           fluid(maxWidth: 75) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        bcolijfolie: file(relativePath: { eq: "b&c-olijfolie.png" }) {
          childImageSharp {
-           fluid(maxWidth: 50) {
+           fluid(maxWidth: 75) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        cavalier: file(relativePath: { eq: "cavalier-chocolade.png" }) {
          childImageSharp {
-           fluid(maxWidth: 50) {
+           fluid(maxWidth: 75) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        saucee: file(relativePath: { eq: "saucee.png" }) {
          childImageSharp {
-           fluid(maxWidth: 100) {
+           fluid(maxWidth: 150) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        kruidenboter: file(relativePath: { eq: "kruidenboter-mix.png" }) {
          childImageSharp {
-           fluid(maxWidth: 50) {
+           fluid(maxWidth: 75) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        leberg: file(relativePath: { eq: "leberg.png" }) {
          childImageSharp {
-           fluid(maxWidth: 50) {
+           fluid(maxWidth: 75) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        cupcake: file(relativePath: { eq: "cupcake-chocolates.png" }) {
          childImageSharp {
-           fluid(maxWidth: 50) {
+           fluid(maxWidth: 75) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        superfood: file(relativePath: { eq: "superfoods.png" }) {
          childImageSharp {
-           fluid(maxWidth: 100) {
+           fluid(maxWidth: 150) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        pistache: file(relativePath: { eq: "pistachenootjes.png" }) {
          childImageSharp {
-           fluid(maxWidth: 50) {
+           fluid(maxWidth: 75) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        blondeel: file(relativePath: { eq: "frederic-blondeel.png" }) {
          childImageSharp {
-           fluid(maxWidth: 50) {
+           fluid(maxWidth: 75) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        olieen: file(relativePath: { eq: "b&c-olieen.png" }) {
          childImageSharp {
-           fluid(maxWidth: 100) {
+           fluid(maxWidth: 150) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        paaseitjes: file(relativePath: { eq: "paaseitjes.png" }) {
          childImageSharp {
-           fluid(maxWidth: 100) {
+           fluid(maxWidth: 150) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        cornflakes: file(relativePath: { eq: "cornflakes.png" }) {
          childImageSharp {
-           fluid(maxWidth: 50) {
+           fluid(maxWidth: 75) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        truffles: file(relativePath: { eq: "truffles.png" }) {
          childImageSharp {
-           fluid(maxWidth: 50) {
+           fluid(maxWidth: 75) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        brokkensaus: file(relativePath: { eq: "brokkensaus.png" }) {
          childImageSharp {
-           fluid(maxWidth: 50) {
+           fluid(maxWidth: 75) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        monte: file(relativePath: { eq: "del-monte.png" }) {
          childImageSharp {
-           fluid(maxWidth: 50) {
+           fluid(maxWidth: 75) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        chocomelk: file(relativePath: { eq: "milsa-chocomelk.png" }) {
          childImageSharp {
-           fluid(maxWidth: 50) {
+           fluid(maxWidth: 75) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        yoghurt: file(relativePath: { eq: "milsani-yoghurt.png" }) {
          childImageSharp {
-           fluid(maxWidth: 150) {
+           fluid(maxWidth: 200) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        azijn: file(relativePath: { eq: "b&c-azijn.png" }) {
          childImageSharp {
-           fluid(maxWidth: 50) {
+           fluid(maxWidth: 75) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        madeleines: file(relativePath: { eq: "arioso-madeleines.png" }) {
          childImageSharp {
-           fluid(maxWidth: 50) {
+           fluid(maxWidth: 75) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        vleesbrood: file(relativePath: { eq: "vleesbrood.png" }) {
          childImageSharp {
-           fluid(maxWidth: 50) {
+           fluid(maxWidth: 75) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        soup: file(relativePath: { eq: "soup.png" }) {
          childImageSharp {
-           fluid(maxWidth: 50) {
+           fluid(maxWidth: 75) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        delinut: file(relativePath: { eq: "delinut.png" }) {
          childImageSharp {
-           fluid(maxWidth: 50) {
+           fluid(maxWidth: 75) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        yoplait: file(relativePath: { eq: "panier-de-yoplait.png" }) {
          childImageSharp {
-           fluid(maxWidth: 50) {
+           fluid(maxWidth: 75) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        mahall: file(relativePath: { eq: "mahall-saus.png" }) {
          childImageSharp {
-           fluid(maxWidth: 150) {
+           fluid(maxWidth: 200) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        vermeiren: file(relativePath: { eq: "vermeiren-cookies.png" }) {
          childImageSharp {
-           fluid(maxWidth: 50) {
+           fluid(maxWidth: 75) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        shortbread: file(relativePath: { eq: "shortbread-cookies.png" }) {
          childImageSharp {
-           fluid(maxWidth: 50) {
+           fluid(maxWidth: 75) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }
        }
        melro: file(relativePath: { eq: "melro-room.png" }) {
          childImageSharp {
-           fluid(maxWidth: 50) {
+           fluid(maxWidth: 75) {
              ...GatsbyImageSharpFluid_withWebp
            }
          }

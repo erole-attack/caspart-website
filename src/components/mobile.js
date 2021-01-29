@@ -13,14 +13,14 @@ function Mobile (props) {
     query {
       engel: file(relativePath: {eq: "grote-engel.png"}) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       olijfolie: file(relativePath: { eq: "al-oud-olijfolie.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -34,189 +34,189 @@ function Mobile (props) {
       }
       delicono2: file(relativePath: { eq: "delicono2.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       delicono3: file(relativePath: { eq: "delicono3.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       delicono4: file(relativePath: { eq: "delicono4.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       moony2: file(relativePath: { eq: "moony2.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       moony1: file(relativePath: { eq: "moony1.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       moony3: file(relativePath: { eq: "moony3.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       moony4: file(relativePath: { eq: "moony4.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       joes: file(relativePath: { eq: "trader-joes-logo.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       fruit1: file(relativePath: { eq: "soft-fruit1.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       fruit2: file(relativePath: { eq: "soft-fruit2.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       pistache1: file(relativePath: { eq: "pistache1.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       bio1: file(relativePath: { eq: "bio1.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       bio2: file(relativePath: { eq: "bio2.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       bio3: file(relativePath: { eq: "bio3.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       bio4: file(relativePath: { eq: "bio4.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       bio5: file(relativePath: { eq: "bio5.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       bio6: file(relativePath: { eq: "bio6.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       bio7: file(relativePath: { eq: "bio7.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       pasen1: file(relativePath: { eq: "pasen1.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       pasen2: file(relativePath: { eq: "pasen2.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       pasen3: file(relativePath: { eq: "pasen3.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       pasen4: file(relativePath: { eq: "pasen4.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       pasen5: file(relativePath: { eq: "pasen5.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       pasen6: file(relativePath: { eq: "pasen6.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       pasen7: file(relativePath: { eq: "pasen7.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       pasen8: file(relativePath: { eq: "pasen8.png" }) {
         childImageSharp {
-          fluid(maxWidth: 150) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       logo: file(relativePath: { eq: "caspart-logo.png" }) {
         childImageSharp {
-            fluid(maxWidth: 150) {
+            fluid(maxWidth: 200) {
                 ...GatsbyImageSharpFluid_withWebp
             }
         }
@@ -299,7 +299,8 @@ function Mobile (props) {
       <Img className={css(mobileStyles.large_image)} fluid={data.moony1.childImageSharp.fluid}/>
       <Img className={css(mobileStyles.large_image)} fluid={data.moony3.childImageSharp.fluid}/>
       <Img className={css(mobileStyles.large_image)} fluid={data.moony4.childImageSharp.fluid}/>
-      <Img className={css(mobileStyles.large_image)} fluid={data.joes.childImageSharp.fluid}/>
+      <div className={css(mobileStyles.space_between)}/>
+      <Img className={css(mobileStyles.large_image, mobileStyles.less_margin)} fluid={data.joes.childImageSharp.fluid}/>
       <div className={css(mobileStyles.text_block)}>
         <p className={css(mobileStyles.caption)}>Trader Joe’s voor <b>Aldi</b></p>
         <p className={css(mobileStyles.paragrhaph, mobileStyles.justify)}>
@@ -321,7 +322,7 @@ function Mobile (props) {
       <div>
         <p className={css(mobileStyles.caption)}>gamma Bio voor <b>Aldi</b></p>
       </div>
-      <Img className={css(mobileStyles.large_image)} fluid={data.bio2.childImageSharp.fluid}/>
+      <Img className={css(mobileStyles.large_image, mobileStyles.less_margin)} fluid={data.bio2.childImageSharp.fluid}/>
       <div className={css(mobileStyles.text_block)}>
         <p className={css(mobileStyles.paragrhaph, mobileStyles.justify)}>
           Ontwikkelen van jonge en frisse basis-
@@ -339,6 +340,8 @@ function Mobile (props) {
       <Img className={css(mobileStyles.large_image)} fluid={data.bio5.childImageSharp.fluid}/>
       <Img className={css(mobileStyles.large_image)} fluid={data.bio6.childImageSharp.fluid}/>
       <Img className={css(mobileStyles.large_image)} fluid={data.bio7.childImageSharp.fluid}/>
+      <div className={css(mobileStyles.space_between)}/>
+      <div className={css(mobileStyles.space_between)}/>
       <Img className={css(mobileStyles.large_image)} fluid={data.pasen1.childImageSharp.fluid}/>
       <div>
         <p className={css(mobileStyles.caption)}>Pasen voor <b>Aldi</b></p>
@@ -438,7 +441,7 @@ function Mobile (props) {
       {JSONclientlist()}
       <Img className={css(mobileStyles.blauwe_engel)} fluid={data.blauweEngel.childImageSharp.fluid}/>
       {contact}
-      <p className={css(mobileStyles.paragrhaph)}><b>Follow us on Instagram!</b></p>
+      <p className={css(mobileStyles.paragrhaph)}><b>Follow us on <a href="https://www.instagram.com/caspartpackaging/">Instagram!</a></b></p>
       <div className={css(mobileStyles.space_between)}/>
       <div className={css(mobileStyles.space_between)}/>
     </div>
@@ -703,15 +706,14 @@ const mobileStyles = StyleSheet.create({
   },
 
   message_area: {
+    textIndent: '1vw',
       height: '95%',
-      width: '96%',
+      width: '100%',
       color: '#636466',
       fontSize: '4.8vw',
       resize: 'none',
       padding: '0',
       paddingTop: '1.5%',
-      paddingLeft: '2%',
-      paddingRight: '2%',
       margin: '0',
       backgroundColor: '#DCDDDE'
   },
@@ -748,7 +750,12 @@ const mobileStyles = StyleSheet.create({
   },
 
   space_between: {
-    height: '1em'
+    height: '2em'
+  },
+
+  less_margin: {
+    margin: '0',
+    marginBottom: '-3vw'
   }
  
 })
