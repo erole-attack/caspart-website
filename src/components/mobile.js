@@ -680,19 +680,16 @@ const mobileStyles = StyleSheet.create({
     },
 
   name_input: {
-      width: '85vw',
       height: '100%',
       gridRow: '2/3',
   },
 
   email_input: {
-      width: '85vw',
       height: '100%',
       gridRow: '4/5',
   },
 
   phone_input: { 
-      width: '85vw',
       height: '100%',
       gridRow: '6/7',
   },
