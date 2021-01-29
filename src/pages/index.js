@@ -34,10 +34,6 @@ function Index (props) {
   const textFade = css(indexStyles.engel_fading_tekst)
   const noTextFade = css(indexStyles.engel_non_fading_tekst)
 
-  const broejke = useMediaQuery({
-    query: '(min-device-width: 138224px)'
-  })
-
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-device-width: 1224px)'
   })
@@ -76,7 +72,7 @@ function Index (props) {
 
   return(
     <>
-    {broejke && 
+    {isDesktopOrLaptop && 
       <Structure title="Home" down="/concept">
           <div className={css(indexStyles.center_items)}>
             <img className={css(indexStyles.engel_fly)} src={engeltje} alt='flying angel'/>
@@ -87,7 +83,7 @@ function Index (props) {
           </div>
       </Structure>
       }
-      {isDesktopOrLaptop && 
+      {isTabletOrMobileDevice && 
         <Structure title="Home">
           <div className={css(indexStyles.center_items_mobile)}>
             <Mobile/>
