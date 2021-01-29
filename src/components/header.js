@@ -10,10 +10,14 @@ export default () => {
 
   const [menu, setMenu] = useState("")
 
+  const broejke = useMediaQuery({
+    query: '(min-device-width: 138224px)'
+  })
+
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-device-width: 1224px)'
   })
-  const isTabletOrMobileDevice = useMediaQuery({
+  const isTabletOrMobileDevice  = useMediaQuery({
     query: '(max-device-width: 1224px)'
   })
 
@@ -21,7 +25,7 @@ export default () => {
     setMenu(
       <div className={css(headerStyles.menu)}>
         <div className={css(headerStyles.menu_items_container)}>
-        {isDesktopOrLaptop && 
+        {broejke && 
           <ul className={css(headerStyles.menu_items)}>
               <li><AniLink onClick={goBack} to="/concept" className={css(headerStyles.blue_text, headerStyles.topic, headerStyles.bold)}>concept</AniLink></li>
               <div className={css(headerStyles.work_items)}>
@@ -42,7 +46,7 @@ export default () => {
               <li><AniLink onClick={goBack} to="/contact" className={css(headerStyles.blue_text, headerStyles.topic, headerStyles.bold)}>contact</AniLink></li>
             </ul>
           }
-          {isTabletOrMobileDevice && 
+          {isDesktopOrLaptop && 
             <ul className={css(headerStyles.menu_items_mobile)}>
               <li><button onClick={() => scrollToSection('#about')} className={css(headerStyles.topic, headerStyles.bold_mobile)}>about</button></li>
               <li><button onClick={() => scrollToSection('#work')} className={css(headerStyles.topic, headerStyles.bold_mobile)}>work</button></li>
@@ -83,14 +87,14 @@ export default () => {
     return(
       menu === "" ?
       <>
-        {isDesktopOrLaptop && 
+        {broejke && 
           <svg className={css(headerStyles.menu_button)} mode="multiply" viewBox="0 0 29 21" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={goToMenu}>
             <path d="M1 1H27.3415" stroke="#636466" strokeWidth="2" strokeLinecap="round"/>
             <path d="M1 10.5H28" stroke="#636466" strokeWidth="2" strokeLinecap="round"/>
             <path d="M1.65854 20H28" stroke="#636466" strokeWidth="2" strokeLinecap="round"/>
           </svg>
         }
-        {isTabletOrMobileDevice && 
+        {isDesktopOrLaptop && 
           <svg className={css(headerStyles.menu_mobile_button)} mode="multiply" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={goToMenu}>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M30 3C30 4.65685 28.6569 6 27 6H3C1.34315 6 0 4.65685 0 3V3C0 1.34315 1.34315 0 3 0H27C28.6569 0 30 1.34315 30 3V3Z" fill="white"/>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M30 27C30 28.6569 28.6569 30 27 30H3C1.34315 30 0 28.6569 0 27V27C0 25.3431 1.34315 24 3 24H27C28.6569 24 30 25.3431 30 27V27Z" fill="white"/>
@@ -100,7 +104,7 @@ export default () => {
       </>
       :
       <>
-        {isDesktopOrLaptop && 
+        {broejke && 
           <svg className={css(headerStyles.exit_button)} viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={goBack}>
             <g clipPath="url(#clip0)">
               <path d="M8.1 9L0.6 0H4.5L8.3 4.8C9 5.6 9.6 6.4 10.4 7.5H10.6C11.3 6.4 11.9 5.6 12.6 4.8L16.3 0H20L12.4 9.1L20.5 18.6H16.6L12.5 13.6C11.8 12.7 11 11.7 10.1 10.6H10C9.2 11.7 8.5 12.7 7.8 13.6L3.8 18.6H0L8.1 9Z" fill="#636466"/>
@@ -112,7 +116,7 @@ export default () => {
             </defs>
           </svg>
         }
-        {isTabletOrMobileDevice && 
+        {isDesktopOrLaptop && 
           <svg className={css(headerStyles.exit_mobile_button)} viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={goBack}>
             <g clipPath="url(#clip0)">
               <path d="M8.1 9L0.6 0H4.5L8.3 4.8C9 5.6 9.6 6.4 10.4 7.5H10.6C11.3 6.4 11.9 5.6 12.6 4.8L16.3 0H20L12.4 9.1L20.5 18.6H16.6L12.5 13.6C11.8 12.7 11 11.7 10.1 10.6H10C9.2 11.7 8.5 12.7 7.8 13.6L3.8 18.6H0L8.1 9Z" fill="white"/>
@@ -131,7 +135,7 @@ export default () => {
 
   const instButton =
     <a className={css(headerStyles.social_icons)} href="https://www.instagram.com/caspartpackaging/">
-      {isDesktopOrLaptop && 
+      {broejke && 
         <svg className={css(headerStyles.instagram_button)} viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0)">
               <path d="M16.1 0H6.1C2.7 0 0 2.7 0 6.1V16C0 19.4 2.7 22.1 6.1 22.1H16C19.4 22.1 22.1 19.4 22.1 16V6.1C22.2 2.7 19.4 0 16.1 0ZM20.2 16.1C20.2 18.4 18.3 20.3 16 20.3H6.1C3.8 20.3 1.9 18.4 1.9 16.1V6.1C2 3.8 3.8 2 6.1 2H16C18.3 2 20.2 3.9 20.2 6.2V16.1Z" fill="#636466"/>
@@ -145,7 +149,7 @@ export default () => {
             </defs>
         </svg>
       }
-      {isTabletOrMobileDevice && 
+      {isDesktopOrLaptop && 
         <svg className={css(headerStyles.instagram_mobile_button)} viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0)">
               <path d="M16.1 0H6.1C2.7 0 0 2.7 0 6.1V16C0 19.4 2.7 22.1 6.1 22.1H16C19.4 22.1 22.1 19.4 22.1 16V6.1C22.2 2.7 19.4 0 16.1 0ZM20.2 16.1C20.2 18.4 18.3 20.3 16 20.3H6.1C3.8 20.3 1.9 18.4 1.9 16.1V6.1C2 3.8 3.8 2 6.1 2H16C18.3 2 20.2 3.9 20.2 6.2V16.1Z" fill="white"/>
@@ -164,12 +168,12 @@ export default () => {
 
   const liButton =
     <a className={css(headerStyles.social_icons)} href="https://be.linkedin.com/in/claire-bauwens-8a67b63">
-      {isDesktopOrLaptop && 
+      {broejke && 
         <svg className={css(headerStyles.li_button)} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M19 0H5C2.239 0 0 2.239 0 5V19C0 21.761 2.239 24 5 24H19C21.762 24 24 21.761 24 19V5C24 2.239 21.762 0 19 0ZM8 19H5V8H8V19ZM6.5 6.732C5.534 6.732 4.75 5.942 4.75 4.968C4.75 3.994 5.534 3.204 6.5 3.204C7.466 3.204 8.25 3.994 8.25 4.968C8.25 5.942 7.467 6.732 6.5 6.732ZM20 19H17V13.396C17 10.028 13 10.283 13 13.396V19H10V8H13V9.765C14.396 7.179 20 6.988 20 12.241V19Z" fill="#636466"/>
         </svg>
       }
-      {isTabletOrMobileDevice && 
+      {isDesktopOrLaptop && 
         <svg className={css(headerStyles.li_mobile_button)} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M19 0H5C2.239 0 0 2.239 0 5V19C0 21.761 2.239 24 5 24H19C21.762 24 24 21.761 24 19V5C24 2.239 21.762 0 19 0ZM8 19H5V8H8V19ZM6.5 6.732C5.534 6.732 4.75 5.942 4.75 4.968C4.75 3.994 5.534 3.204 6.5 3.204C7.466 3.204 8.25 3.994 8.25 4.968C8.25 5.942 7.467 6.732 6.5 6.732ZM20 19H17V13.396C17 10.028 13 10.283 13 13.396V19H10V8H13V9.765C14.396 7.179 20 6.988 20 12.241V19Z" fill="white"/>
         </svg>
@@ -178,7 +182,7 @@ export default () => {
 
   return(
     <div>
-      {isDesktopOrLaptop && 
+      {broejke && 
         <>
           {menu}
           <header className={css(headerStyles.area)}>
@@ -193,7 +197,7 @@ export default () => {
           </header>
         </>
       }
-      {isTabletOrMobileDevice &&
+      {isDesktopOrLaptop &&
         <>
           {menu}
           <header className={css(headerStyles.mobile_area)}>
@@ -237,7 +241,7 @@ const headerStyles = StyleSheet.create({
     width: '100vw',
     height: '100vh',
     gridTemplateColumns: '2fr 10fr 2fr',
-    gridTemplateRows: '55px 10fr 3fr',
+    gridTemplateRows: '4em 10fr 3fr',
     overflow: 'hidden',
     placeItems: 'center',
   },
@@ -273,6 +277,7 @@ const headerStyles = StyleSheet.create({
     justifyContent: 'flex-end',
     gridColumnStart: '2',
     gridColumnEnd: '3',
+    height: '4em'
   },
 
   mobile_telefoon_nummer_area: {
@@ -285,7 +290,7 @@ const headerStyles = StyleSheet.create({
 
   mobile_telefoon_nummer: {
     color: 'white',
-    fontSize: '18px',
+    fontSize: '5vw',
     fontWeight: '700',
     textDecoration: 'none',
     marginBottom: '7px'

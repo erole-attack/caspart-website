@@ -417,8 +417,8 @@ function Mobile (props) {
     <div className={css(mobileStyles.page_container)}>
       <img className={css(mobileStyles.engel_fly)} src={engeltje} alt='flying angel'/>
       <div className={css(mobileStyles.engel_elements)}>
-        {welcomeMessage}
-        {engel}
+          {welcomeMessage}
+          {engel}
       </div>
       <Img className={css(mobileStyles.large_image, mobileStyles.image)} fluid={data.olijfolie.childImageSharp.fluid}/>
       {whoWeAre}
@@ -468,28 +468,33 @@ const mobileStyles = StyleSheet.create({
   },
 
   engel_elements: {
+    position: 'relative',
     display: 'grid',
-    placeItems: 'center',
+    placeContent: 'center',
     height: '60vw',
     marginTop: '4em',
-    marginBottom: '2em'
+    marginBottom: '2em',
   },
  
    engel_tekst: {
+     width: '100%',
+     height: '100%',
      zIndex: '10',
-     textAlign: 'right'
+     display: 'grid',
+     placeContent: 'center',
+     textAlign: 'right',
+      position: 'absolute',
    },
 
    engel_container: {
     display: 'grid',
     placeItems: 'center',
-    position: 'absolute',
-    width: '90vw',
-    margin: '0'
+    width: '85vw',
   },
  
    engel: {
-     width: '90vw'
+    filter: 'grayscale(100%)',
+     width: '85vw',
    },
 
    image: {
@@ -542,7 +547,7 @@ const mobileStyles = StyleSheet.create({
  
    titles: {
      lineHeight: '0',
-     fontSize: '4.5vw',
+     fontSize: '4.2vw',
      fontWeight: '400'
    },
    
@@ -663,7 +668,7 @@ const mobileStyles = StyleSheet.create({
   },
 
   form_input: {
-      width: '100%',
+      width: '85vw',
       fontSize: '4.8vw',
       textIndent: '0.5vw',
       height: '100%',
