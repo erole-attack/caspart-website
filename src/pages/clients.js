@@ -61,7 +61,6 @@ const clientsStyles = StyleSheet.create({
     brands: {
         lineHeight: "1vw",
         gridColumn: "2 / 3",
-        fontWeight: '400',
         marginTop: '0.35vw',
         marginBottom: '0.35vw',
         fontWeight: '300'

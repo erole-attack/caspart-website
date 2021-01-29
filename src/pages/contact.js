@@ -64,7 +64,7 @@ function Contact (props) {
         </label>
         <div className={css(contactStyles.blank_div)} type="submit"/>
         <div className={css(contactStyles.form_button_area)}>
-            <img className={flyingAngel()} src={engel}/>
+            <img className={flyingAngel()} src={engel} alt='flying angel'/>
             <button className={css(contactStyles.form_button)} type="submit">SEND</button>
         </div>
     </form>

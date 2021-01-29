@@ -23,8 +23,8 @@ module.exports = {
     },
     'gatsby-plugin-aphrodite',
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-preact`,
     `gatsby-plugin-react-helmet`,
     {
           resolve: "gatsby-plugin-transition-link",

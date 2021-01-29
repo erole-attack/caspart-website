@@ -1,5 +1,4 @@
-import React from 'react'
-import { useRef, useState, useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 function useHover() {
   const [value, setValue] = useState(false);
@@ -20,7 +19,7 @@ function useHover() {
         };
       }
     },
-    [ref.current] // Recall only if ref changes
+    [] // Recall only if ref changes
   );
 
   return [ref, value];

@@ -1,8 +1,8 @@
 import { Link, graphql } from 'gatsby'
-import React, { useState } from 'react'
 import { StyleSheet, css } from 'aphrodite'
 
 import Img from 'gatsby-image'
+import React from 'react'
 import Structure from '../components/structure'
 import useHover from '../components/hooks'
 
@@ -249,8 +249,7 @@ const conceptStyles = StyleSheet.create({
   who_we_are: {
     gridRow: '1 / 2',
     marginBottom: '0',
-    alignSelf: 'end',
-    marginBottom: '0',
+    alignSelf: 'end'
   },
 
   concept_items: {

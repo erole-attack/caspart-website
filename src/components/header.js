@@ -3,19 +3,30 @@ import { StyleSheet, css } from 'aphrodite'
 
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import { Link } from 'gatsby'
+import scrollTo from 'gatsby-plugin-smoothscroll'
+import { useMediaQuery } from 'react-responsive'
 
 export default () => {
 
   const [menu, setMenu] = useState("")
+
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-device-width: 1224px)'
+  })
+  const isTabletOrMobileDevice = useMediaQuery({
+    query: '(max-device-width: 1224px)'
+  })
 
   const goToMenu = () => {
     setMenu(
       <div className={css(headerStyles.menu)}>
         <div className={css(headerStyles.menu_items_container)}>
           <ul className={css(headerStyles.menu_items)}>
-            <li><AniLink onClick={goBack} to="/concept" className={css(headerStyles.blue_text, headerStyles.topic, headerStyles.bold)}>concept</AniLink></li>
-            <div className={css(headerStyles.work_items)}>
-              <li className={css(headerStyles.topic, headerStyles.bold)}>work</li>
+          {isDesktopOrLaptop && 
+            <>
+              <li><AniLink onClick={goBack} to="/concept" className={css(headerStyles.blue_text, headerStyles.topic, headerStyles.bold)}>concept</AniLink></li>
+              <div className={css(headerStyles.work_items)}>
+                <li className={css(headerStyles.topic, headerStyles.bold)}>work</li>
                 <ul>
                   <li className={css(headerStyles.topic)}>brand identity</li>
                   <li><AniLink onClick={goBack} to="/brand-identity-delicono" className={css(headerStyles.blue_text, headerStyles.work_item)}>- Delicono</AniLink></li>
@@ -27,13 +38,28 @@ export default () => {
                   <li className={css(headerStyles.topic)}>projects</li>
                   <li className={css(headerStyles.last_item)}><AniLink onClick={goBack} to="/work" className={css(headerStyles.blue_text, headerStyles.work_item)}>- Packaging</AniLink></li>
                 </ul>
-            </div>
-            <li><AniLink onClick={goBack} to="/clients" className={css(headerStyles.blue_text, headerStyles.topic, headerStyles.bold)}>clients</AniLink></li>
-            <li><AniLink onClick={goBack} to="/contact" className={css(headerStyles.blue_text, headerStyles.topic, headerStyles.bold)}>contact</AniLink></li>
+              </div>
+              <li><AniLink onClick={goBack} to="/clients" className={css(headerStyles.blue_text, headerStyles.topic, headerStyles.bold)}>clients</AniLink></li>
+              <li><AniLink onClick={goBack} to="/contact" className={css(headerStyles.blue_text, headerStyles.topic, headerStyles.bold)}>contact</AniLink></li>
+            </>
+          }
+          {isTabletOrMobileDevice && 
+            <>
+              <li><button onClick={() => scrollToSection('#about')} className={css(headerStyles.topic, headerStyles.bold_mobile)}>about</button></li>
+              <li><button onClick={() => scrollToSection('#work')} className={css(headerStyles.topic, headerStyles.bold_mobile)}>work</button></li>
+              <li><button onClick={() => scrollToSection('#clients')} className={css(headerStyles.topic, headerStyles.bold_mobile)}>clients</button></li>
+              <li><button onClick={() => scrollToSection('#contact')} className={css(headerStyles.topic, headerStyles.bold_mobile)}>contact</button></li>
+            </>
+          }
           </ul>
         </div>
       </div>
     )
+  }
+
+  const scrollToSection = (section) => {
+    setMenu("")
+    scrollTo(section)
   }
 
   const goBack = () => {
@@ -58,61 +84,136 @@ export default () => {
   const menuButton = () => {
     return(
       menu === "" ?
-        <svg className={css(headerStyles.menu_button)} mode="multiply" viewBox="0 0 29 21" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={goToMenu}>
-          <path d="M1 1H27.3415" stroke="#636466" strokeWidth="2" strokeLinecap="round"/>
-          <path d="M1 10.5H28" stroke="#636466" strokeWidth="2" strokeLinecap="round"/>
-          <path d="M1.65854 20H28" stroke="#636466" strokeWidth="2" strokeLinecap="round"/>
-        </svg>
+      <>
+        {isDesktopOrLaptop && 
+          <svg className={css(headerStyles.menu_button)} mode="multiply" viewBox="0 0 29 21" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={goToMenu}>
+            <path d="M1 1H27.3415" stroke="#636466" strokeWidth="2" strokeLinecap="round"/>
+            <path d="M1 10.5H28" stroke="#636466" strokeWidth="2" strokeLinecap="round"/>
+            <path d="M1.65854 20H28" stroke="#636466" strokeWidth="2" strokeLinecap="round"/>
+          </svg>
+        }
+        {isTabletOrMobileDevice && 
+          <svg className={css(headerStyles.menu_mobile_button)} mode="multiply" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={goToMenu}>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M30 3C30 4.65685 28.6569 6 27 6H3C1.34315 6 0 4.65685 0 3V3C0 1.34315 1.34315 0 3 0H27C28.6569 0 30 1.34315 30 3V3Z" fill="white"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M30 27C30 28.6569 28.6569 30 27 30H3C1.34315 30 0 28.6569 0 27V27C0 25.3431 1.34315 24 3 24H27C28.6569 24 30 25.3431 30 27V27Z" fill="white"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M30 15C30 16.6569 28.6569 18 27 18H3C1.34315 18 0 16.6569 0 15V15C0 13.3431 1.34315 12 3 12H27C28.6569 12 30 13.3431 30 15V15Z" fill="white"/>
+          </svg>
+        }
+      </>
       :
-      <svg className={css(headerStyles.exit_button)} viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={goBack}>
-        <g clip-path="url(#clip0)">
-          <path d="M8.1 9L0.6 0H4.5L8.3 4.8C9 5.6 9.6 6.4 10.4 7.5H10.6C11.3 6.4 11.9 5.6 12.6 4.8L16.3 0H20L12.4 9.1L20.5 18.6H16.6L12.5 13.6C11.8 12.7 11 11.7 10.1 10.6H10C9.2 11.7 8.5 12.7 7.8 13.6L3.8 18.6H0L8.1 9Z" fill="#636466"/>
-        </g>
-        <defs>
-          <clipPath id="clip0">
-            <rect width="20.6" height="18.7" fill="white"/>
-          </clipPath>
-        </defs>
-      </svg>
+      <>
+        {isDesktopOrLaptop && 
+          <svg className={css(headerStyles.exit_button)} viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={goBack}>
+            <g clipPath="url(#clip0)">
+              <path d="M8.1 9L0.6 0H4.5L8.3 4.8C9 5.6 9.6 6.4 10.4 7.5H10.6C11.3 6.4 11.9 5.6 12.6 4.8L16.3 0H20L12.4 9.1L20.5 18.6H16.6L12.5 13.6C11.8 12.7 11 11.7 10.1 10.6H10C9.2 11.7 8.5 12.7 7.8 13.6L3.8 18.6H0L8.1 9Z" fill="#636466"/>
+            </g>
+            <defs>
+              <clipPath id="clip0">
+                <rect width="20.6" height="18.7" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+        }
+        {isTabletOrMobileDevice && 
+          <svg className={css(headerStyles.exit_mobile_button)} viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={goBack}>
+            <g clipPath="url(#clip0)">
+              <path d="M8.1 9L0.6 0H4.5L8.3 4.8C9 5.6 9.6 6.4 10.4 7.5H10.6C11.3 6.4 11.9 5.6 12.6 4.8L16.3 0H20L12.4 9.1L20.5 18.6H16.6L12.5 13.6C11.8 12.7 11 11.7 10.1 10.6H10C9.2 11.7 8.5 12.7 7.8 13.6L3.8 18.6H0L8.1 9Z" fill="white"/>
+            </g>
+            <defs>
+              <clipPath id="clip0">
+                <rect width="20.6" height="18.7" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+        }
+      </>
     )
   }
 
+
   const instButton =
     <a className={css(headerStyles.social_icons)} href="https://www.instagram.com/caspartpackaging/">
-      <svg className={css(headerStyles.facebook_button)} viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g clip-path="url(#clip0)">
-            <path d="M16.1 0H6.1C2.7 0 0 2.7 0 6.1V16C0 19.4 2.7 22.1 6.1 22.1H16C19.4 22.1 22.1 19.4 22.1 16V6.1C22.2 2.7 19.4 0 16.1 0ZM20.2 16.1C20.2 18.4 18.3 20.3 16 20.3H6.1C3.8 20.3 1.9 18.4 1.9 16.1V6.1C2 3.8 3.8 2 6.1 2H16C18.3 2 20.2 3.9 20.2 6.2V16.1Z" fill="#636466"/>
-            <path d="M11.1 5.4C7.89999 5.4 5.39999 8 5.39999 11.1C5.39999 14.3 7.99999 16.8 11.1 16.8C14.3 16.8 16.8 14.2 16.8 11.1C16.8 7.9 14.2 5.4 11.1 5.4ZM11.1 14.8C8.99999 14.8 7.39999 13.1 7.39999 11.1C7.29999 9 8.99999 7.3 11.1 7.3C13.2 7.3 14.8 9 14.8 11C14.8 13.2 13.2 14.8 11.1 14.8Z" fill="#636466"/>
-            <path d="M17 3.7C16.6 3.7 16.2 3.9 16 4.1C15.7 4.4 15.6 4.7 15.6 5.1C15.6 5.5 15.8 5.9 16 6.1C16.3 6.4 16.6 6.5 17 6.5C17.4 6.5 17.8 6.3 18 6.1C18.3 5.8 18.4 5.5 18.4 5.1C18.4 4.7 18.2 4.3 18 4.1C17.8 3.9 17.4 3.7 17 3.7Z" fill="#636466"/>
-          </g>
-          <defs>
-            <clipPath id="clip0">
-              <rect width="22.2" height="22.2" fill="white"/>
-            </clipPath>
-          </defs>
-      </svg>
+      {isDesktopOrLaptop && 
+        <svg className={css(headerStyles.instagram_button)} viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0)">
+              <path d="M16.1 0H6.1C2.7 0 0 2.7 0 6.1V16C0 19.4 2.7 22.1 6.1 22.1H16C19.4 22.1 22.1 19.4 22.1 16V6.1C22.2 2.7 19.4 0 16.1 0ZM20.2 16.1C20.2 18.4 18.3 20.3 16 20.3H6.1C3.8 20.3 1.9 18.4 1.9 16.1V6.1C2 3.8 3.8 2 6.1 2H16C18.3 2 20.2 3.9 20.2 6.2V16.1Z" fill="#636466"/>
+              <path d="M11.1 5.4C7.89999 5.4 5.39999 8 5.39999 11.1C5.39999 14.3 7.99999 16.8 11.1 16.8C14.3 16.8 16.8 14.2 16.8 11.1C16.8 7.9 14.2 5.4 11.1 5.4ZM11.1 14.8C8.99999 14.8 7.39999 13.1 7.39999 11.1C7.29999 9 8.99999 7.3 11.1 7.3C13.2 7.3 14.8 9 14.8 11C14.8 13.2 13.2 14.8 11.1 14.8Z" fill="#636466"/>
+              <path d="M17 3.7C16.6 3.7 16.2 3.9 16 4.1C15.7 4.4 15.6 4.7 15.6 5.1C15.6 5.5 15.8 5.9 16 6.1C16.3 6.4 16.6 6.5 17 6.5C17.4 6.5 17.8 6.3 18 6.1C18.3 5.8 18.4 5.5 18.4 5.1C18.4 4.7 18.2 4.3 18 4.1C17.8 3.9 17.4 3.7 17 3.7Z" fill="#636466"/>
+            </g>
+            <defs>
+              <clipPath id="clip0">
+                <rect width="22.2" height="22.2" fill="white"/>
+              </clipPath>
+            </defs>
+        </svg>
+      }
+      {isTabletOrMobileDevice && 
+        <svg className={css(headerStyles.instagram_mobile_button)} viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0)">
+              <path d="M16.1 0H6.1C2.7 0 0 2.7 0 6.1V16C0 19.4 2.7 22.1 6.1 22.1H16C19.4 22.1 22.1 19.4 22.1 16V6.1C22.2 2.7 19.4 0 16.1 0ZM20.2 16.1C20.2 18.4 18.3 20.3 16 20.3H6.1C3.8 20.3 1.9 18.4 1.9 16.1V6.1C2 3.8 3.8 2 6.1 2H16C18.3 2 20.2 3.9 20.2 6.2V16.1Z" fill="white"/>
+              <path d="M11.1 5.4C7.89999 5.4 5.39999 8 5.39999 11.1C5.39999 14.3 7.99999 16.8 11.1 16.8C14.3 16.8 16.8 14.2 16.8 11.1C16.8 7.9 14.2 5.4 11.1 5.4ZM11.1 14.8C8.99999 14.8 7.39999 13.1 7.39999 11.1C7.29999 9 8.99999 7.3 11.1 7.3C13.2 7.3 14.8 9 14.8 11C14.8 13.2 13.2 14.8 11.1 14.8Z" fill="white"/>
+              <path d="M17 3.7C16.6 3.7 16.2 3.9 16 4.1C15.7 4.4 15.6 4.7 15.6 5.1C15.6 5.5 15.8 5.9 16 6.1C16.3 6.4 16.6 6.5 17 6.5C17.4 6.5 17.8 6.3 18 6.1C18.3 5.8 18.4 5.5 18.4 5.1C18.4 4.7 18.2 4.3 18 4.1C17.8 3.9 17.4 3.7 17 3.7Z" fill="white"/>
+            </g>
+            <defs>
+              <clipPath id="clip0">
+                <rect width="22.2" height="22.2" fill="white"/>
+              </clipPath>
+            </defs>
+        </svg>
+      }
     </a>
+    
 
   const liButton =
     <a className={css(headerStyles.social_icons)} href="https://be.linkedin.com/in/claire-bauwens-8a67b63">
-      <svg className={css(headerStyles.instagram_button)} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M19 0H5C2.239 0 0 2.239 0 5V19C0 21.761 2.239 24 5 24H19C21.762 24 24 21.761 24 19V5C24 2.239 21.762 0 19 0ZM8 19H5V8H8V19ZM6.5 6.732C5.534 6.732 4.75 5.942 4.75 4.968C4.75 3.994 5.534 3.204 6.5 3.204C7.466 3.204 8.25 3.994 8.25 4.968C8.25 5.942 7.467 6.732 6.5 6.732ZM20 19H17V13.396C17 10.028 13 10.283 13 13.396V19H10V8H13V9.765C14.396 7.179 20 6.988 20 12.241V19Z" fill="#636466"/>
-      </svg>
+      {isDesktopOrLaptop && 
+        <svg className={css(headerStyles.li_button)} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 0H5C2.239 0 0 2.239 0 5V19C0 21.761 2.239 24 5 24H19C21.762 24 24 21.761 24 19V5C24 2.239 21.762 0 19 0ZM8 19H5V8H8V19ZM6.5 6.732C5.534 6.732 4.75 5.942 4.75 4.968C4.75 3.994 5.534 3.204 6.5 3.204C7.466 3.204 8.25 3.994 8.25 4.968C8.25 5.942 7.467 6.732 6.5 6.732ZM20 19H17V13.396C17 10.028 13 10.283 13 13.396V19H10V8H13V9.765C14.396 7.179 20 6.988 20 12.241V19Z" fill="#636466"/>
+        </svg>
+      }
+      {isTabletOrMobileDevice && 
+        <svg className={css(headerStyles.li_mobile_button)} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 0H5C2.239 0 0 2.239 0 5V19C0 21.761 2.239 24 5 24H19C21.762 24 24 21.761 24 19V5C24 2.239 21.762 0 19 0ZM8 19H5V8H8V19ZM6.5 6.732C5.534 6.732 4.75 5.942 4.75 4.968C4.75 3.994 5.534 3.204 6.5 3.204C7.466 3.204 8.25 3.994 8.25 4.968C8.25 5.942 7.467 6.732 6.5 6.732ZM20 19H17V13.396C17 10.028 13 10.283 13 13.396V19H10V8H13V9.765C14.396 7.179 20 6.988 20 12.241V19Z" fill="white"/>
+        </svg>
+      }
     </a>
 
   return(
     <div>
-      {menu}
-      <header className={css(headerStyles.area)}>
-        {homeButton()}
-        <div className={css(headerStyles.right_side)}>
-          <div className={css(headerStyles.social_icons)}>
-            {instButton}
-            {liButton}
-          </div>
-          {menuButton()}
-        </div>
-      </header>
+      {isDesktopOrLaptop && 
+        <>
+          {menu}
+          <header className={css(headerStyles.area)}>
+            {homeButton()}
+            <div className={css(headerStyles.right_side)}>
+              <div className={css(headerStyles.social_icons)}>
+                {instButton}
+                {liButton}
+              </div>
+              {menuButton()}
+            </div>
+          </header>
+        </>
+      }
+      {isTabletOrMobileDevice &&
+        <>
+          {menu}
+          <header className={css(headerStyles.mobile_area)}>
+            <div className={css(headerStyles.header_area)}>
+              <div className={css(headerStyles.mobile_telefoon_nummer_area)}><a href="tel:+323 326 01 96" className={css(headerStyles.mobile_telefoon_nummer)}>0032 (0)3 326 01 96</a></div>
+              <div className={css(headerStyles.mobile_right_side)}>
+                <div className={css(headerStyles.social_icons)}>
+                  {instButton}
+                  {liButton}
+                </div>
+                <div className={css(headerStyles.social_icons)}>
+                  {menuButton()}
+                </div>
+              </div>
+            </div>
+          </header>
+        </>
+      }
     </div>
   )
 }
@@ -131,6 +232,31 @@ const headerStyles = StyleSheet.create({
     placeItems: 'center',
   },
 
+  mobile_area: {
+    position: 'absolute',
+    margin: '0 auto',
+    display: 'grid',
+    width: '100vw',
+    height: '100vh',
+    gridTemplateColumns: '2fr 10fr 2fr',
+    gridTemplateRows: '55px 10fr 3fr',
+    overflow: 'hidden',
+    placeItems: 'center',
+  },
+
+  header_area: {
+    height: '100%',
+    width: '100%',
+    zIndex: '9999',
+    display: 'grid',
+    gridTemplateColumns: '10fr 6fr',
+    gridRowStart: '1',
+    gridRowEnd: '2',
+    gridColumnStart: '1',
+    gridColumnEnd: '4',
+    backgroundColor: 'black'
+  },
+
   right_side: {
     height: '100%',
     zIndex: '9999',
@@ -144,10 +270,37 @@ const headerStyles = StyleSheet.create({
     gridColumnEnd: '4',
   },
 
+  mobile_right_side: {
+    height: '100%',
+    width: '100%',
+    zIndex: '9999',
+    display: 'flex',
+    justifyContent: 'flex-end',
+    gridColumnStart: '2',
+    gridColumnEnd: '3',
+  },
+
+  mobile_telefoon_nummer_area: {
+    height: '100%',
+    width: '100%',
+    zIndex: '9999',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+    gridColumnStart: '1',
+    gridColumnEnd: '2',
+  },
+
+  mobile_telefoon_nummer: {
+    color: 'white',
+    fontSize: '18px',
+    fontWeight: '700',
+    textDecoration: 'none',
+    marginBottom: '7px'
+  },
+
   social_icons: {
     display: 'flex',
-    alignItems: 'center',
-    margin: '0 auto',
     height: '100%'
   },
 
@@ -157,10 +310,19 @@ const headerStyles = StyleSheet.create({
     marginRight: '0.2vw',
   },
 
-  facebook_button: {
+  instagram_mobile_button: {
+    width: '30px',
+    marginRight: '6px'
+  },
+
+  li_button: {
     width: '1.7vw',
     margin: '0 auto',
     marginRight: '0.2vw',
+  },
+
+  li_mobile_button: {
+    width: '30px',
   },
 
   home_button: {
@@ -193,12 +355,24 @@ const headerStyles = StyleSheet.create({
     cursor: 'pointer',
   },
 
+  menu_mobile_button: {
+    width: '25px',
+    marginRight: '15px',
+    marginLeft: '15px'
+  },
+
   exit_button: {
     width: '1.8vw',
     padding: '0.3vw',
     margin: '0 auto',
     marginLeft: '1vw',
     cursor: 'pointer',
+  },
+
+  exit_mobile_button: {
+    width: '25px',
+    marginRight: '15px',
+    marginLeft: '15px'
   },
 
   menu: {
@@ -222,10 +396,15 @@ const headerStyles = StyleSheet.create({
   },
 
   menu_items: {
+    margin: '0',
+    padding: '0',
+    display: 'grid',
+    placeItems: 'center',
+    width: '100%',
     fontSize: '1.4vw',
     lineHeight: '1.4vw',
     color: '#636466',
-    fontWeight: '200'
+    fontWeight: '200',
   },
 
   work_items: {
@@ -234,7 +413,16 @@ const headerStyles = StyleSheet.create({
 
   bold: {
     fontSize: '1.4vw',
-    fontWeight: '800'
+    fontWeight: '800',
+  },
+
+  bold_mobile: {
+    background: 'none',
+    border: 'none',
+    fontSize: '10vw',
+    lineHeight: '24vw',
+    fontWeight: '800',
+    textDecoration: 'none'
   },
 
   blue_text: {
