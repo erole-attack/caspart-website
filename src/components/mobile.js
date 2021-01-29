@@ -479,9 +479,16 @@ const mobileStyles = StyleSheet.create({
      zIndex: '10',
      textAlign: 'right'
    },
+
+   engel_container: {
+    display: 'grid',
+    placeItems: 'center',
+    position: 'absolute',
+    width: '90vw',
+    margin: '0'
+  },
  
    engel: {
-     filter: 'grayscale(100%)',
      width: '90vw'
    },
 
@@ -537,14 +544,6 @@ const mobileStyles = StyleSheet.create({
      lineHeight: '0',
      fontSize: '4.5vw',
      fontWeight: '400'
-   },
- 
-   engel_container: {
-     display: 'grid',
-     placeItems: 'center',
-     position: 'absolute',
-     width: '90vw',
-     margin: '0'
    },
    
    engel_fly: {
@@ -648,8 +647,6 @@ const mobileStyles = StyleSheet.create({
   contact_information: {
       display: 'grid',
       placeItems: 'center',
-      height: '100%',
-      width: '100%',
       textAlign: 'center',
       gridRow: '2/3',
       marginTop: '4vw',

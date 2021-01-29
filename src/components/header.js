@@ -21,9 +21,8 @@ export default () => {
     setMenu(
       <div className={css(headerStyles.menu)}>
         <div className={css(headerStyles.menu_items_container)}>
+        {isDesktopOrLaptop && 
           <ul className={css(headerStyles.menu_items)}>
-          {isDesktopOrLaptop && 
-            <>
               <li><AniLink onClick={goBack} to="/concept" className={css(headerStyles.blue_text, headerStyles.topic, headerStyles.bold)}>concept</AniLink></li>
               <div className={css(headerStyles.work_items)}>
                 <li className={css(headerStyles.topic, headerStyles.bold)}>work</li>
@@ -41,17 +40,16 @@ export default () => {
               </div>
               <li><AniLink onClick={goBack} to="/clients" className={css(headerStyles.blue_text, headerStyles.topic, headerStyles.bold)}>clients</AniLink></li>
               <li><AniLink onClick={goBack} to="/contact" className={css(headerStyles.blue_text, headerStyles.topic, headerStyles.bold)}>contact</AniLink></li>
-            </>
+            </ul>
           }
           {isTabletOrMobileDevice && 
-            <>
+            <ul className={css(headerStyles.menu_items_mobile)}>
               <li><button onClick={() => scrollToSection('#about')} className={css(headerStyles.topic, headerStyles.bold_mobile)}>about</button></li>
               <li><button onClick={() => scrollToSection('#work')} className={css(headerStyles.topic, headerStyles.bold_mobile)}>work</button></li>
               <li><button onClick={() => scrollToSection('#clients')} className={css(headerStyles.topic, headerStyles.bold_mobile)}>clients</button></li>
               <li><button onClick={() => scrollToSection('#contact')} className={css(headerStyles.topic, headerStyles.bold_mobile)}>contact</button></li>
-            </>
+            </ul>
           }
-          </ul>
         </div>
       </div>
     )
@@ -271,9 +269,6 @@ const headerStyles = StyleSheet.create({
   },
 
   mobile_right_side: {
-    height: '100%',
-    width: '100%',
-    zIndex: '9999',
     display: 'flex',
     justifyContent: 'flex-end',
     gridColumnStart: '2',
@@ -281,9 +276,6 @@ const headerStyles = StyleSheet.create({
   },
 
   mobile_telefoon_nummer_area: {
-    height: '100%',
-    width: '100%',
-    zIndex: '9999',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'flex-end',
@@ -396,6 +388,13 @@ const headerStyles = StyleSheet.create({
   },
 
   menu_items: {
+    fontSize: '1.4vw',
+    lineHeight: '1.4vw',
+    color: '#636466',
+    fontWeight: '200'
+  },
+
+  menu_items_mobile: {
     margin: '0',
     padding: '0',
     display: 'grid',
