@@ -677,7 +677,7 @@ const mobileStyles = StyleSheet.create({
   },
 
   form_input: {
-      width: '100%',
+      width: '85vw',
       fontSize: '4.8vw',
       textIndent: '1vw',
       height: '100%',
@@ -689,19 +689,19 @@ const mobileStyles = StyleSheet.create({
     },
 
   name_input: {
-    width: '100%',
+    width: '85vw',
       height: '100%',
       gridRow: '2/3',
   },
 
   email_input: {
-    width: '100%',
+    width: '85vw',
       height: '100%',
       gridRow: '4/5',
   },
 
   phone_input: { 
-    width: '100%',
+    width: '85vw',
       height: '100%',
       gridRow: '6/7',
   },
@@ -717,7 +717,7 @@ const mobileStyles = StyleSheet.create({
   message_area: {
     textIndent: '1vw',
       height: '95%',
-      width: '100%',
+      width: '85vw',
       color: '#636466',
       fontSize: '4.8vw',
       resize: 'none',
