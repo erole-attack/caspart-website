@@ -673,7 +673,7 @@ const mobileStyles = StyleSheet.create({
   form_input: {
       width: '85vw',
       fontSize: '4.8vw',
-      textIndent: '1vw',
+      textIndent: '0.5vw',
       height: '100%',
       MozBorderRadius: '0px',
       WebkitBorderRadius: '0px',
