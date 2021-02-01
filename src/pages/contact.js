@@ -106,7 +106,7 @@ const contactStyles = StyleSheet.create({
         zIndex: '300',
         display: 'grid',
         placeItems: 'center',
-        gridTemplateRows: '6vw 11vw 22vw 1vw'
+        gridTemplateRows: '6vw 11vw minmax(300px, 22vw) 1vw'
     },
 
     logo_container: {
@@ -137,7 +137,7 @@ const contactStyles = StyleSheet.create({
         height: '100%',
         gridRow: '3/4',
         display: 'grid',
-        gridTemplateRows: '0.2fr 0.8fr 0.4fr 0.8fr 0.4fr 0.8fr 0.4fr 7fr 0.5fr',
+        gridTemplateRows: '0.2fr minmax(30px, auto) 0.4fr 0.8fr 0.4fr 0.8fr 0.4fr 7fr 0.5fr',
         gridTemplateColumn: '1f 7fr 1fr',
         placeItems: 'center',
     },
