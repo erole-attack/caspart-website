@@ -348,7 +348,7 @@ function Mobile (props) {
       </div>
       <Img className={css(mobileStyles.large_image)} fluid={data.pasen2.childImageSharp.fluid}/>
       <div className={css(mobileStyles.text_block)}>
-        <p className={css(mobileStyles.paragrhaph, mobileStyles.justify)}>
+        <p className={css(mobileStyles.paragrhaph, mobileStyles.justify_pasen)}>
           Ontwikkeling van een tijdloos paasgamma
           voor Aldi. Gedurfd afwijken van het klassieke
           geel / groen en opteren voor een eigentijdse
@@ -592,6 +592,12 @@ const mobileStyles = StyleSheet.create({
     lineHeight: '6vw',
     textAlign: 'justify'
   },
+
+  justify_pasen: {
+    lineHeight: '6vw',
+    textAlign: 'justify',
+    fontSize: '5vw',
+  },
   
   caption: {
     textAlign: 'center',
@@ -671,7 +677,7 @@ const mobileStyles = StyleSheet.create({
   },
 
   form_input: {
-      width: '85vw',
+      width: '100%',
       fontSize: '4.8vw',
       textIndent: '0.5vw',
       height: '100%',
@@ -683,16 +689,19 @@ const mobileStyles = StyleSheet.create({
     },
 
   name_input: {
+    width: '100%',
       height: '100%',
       gridRow: '2/3',
   },
 
   email_input: {
+    width: '100%',
       height: '100%',
       gridRow: '4/5',
   },
 
   phone_input: { 
+    width: '100%',
       height: '100%',
       gridRow: '6/7',
   },

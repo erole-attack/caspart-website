@@ -42,7 +42,7 @@ const clientsStyles = StyleSheet.create({
         paddingRight: '20vw',
         zIndex: '300',
         margin: '0 auto',
-        marginTop: '8%',
+        marginTop: 'calc(100px + 3vw)',
         alignSelf: 'center',
         display: 'grid',
         gridTemplateColumns: '35% auto'
@@ -50,16 +50,15 @@ const clientsStyles = StyleSheet.create({
 
     clients: {
         color: '#404040',
-        lineHeight: "1vw",
+        lineHeight: "calc(8px + 0.6vw)",
         gridColumn: "1 / 2",
         marginTop: '0.35vw',
         marginBottom: '0.35vw',
-        fontSize: '1.2vw',
         fontWeight: '500'
     },
 
     brands: {
-        lineHeight: "1vw",
+        lineHeight: "calc(8px + 0.6vw)",
         gridColumn: "2 / 3",
         marginTop: '0.35vw',
         marginBottom: '0.35vw',
