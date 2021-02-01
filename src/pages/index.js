@@ -134,8 +134,7 @@ const indexStyles = StyleSheet.create({
 
   engel: {
     filter: 'grayscale(100%)',
-    width: '65vw',
-    minWidth: '600px'
+    width: '65vw'
   },
 
   text_container: {
@@ -188,7 +187,6 @@ const indexStyles = StyleSheet.create({
     placeItems: 'center',
     position: 'absolute',
     width: '80vw',
-    minWidth: '600px',
     margin: '0'
   },
 
@@ -201,7 +199,6 @@ const indexStyles = StyleSheet.create({
 
   hover_area_container: {
     width: '65vw',
-    minWidth: '600px',
     height: '100%',
     overflow: 'hidden',
   },

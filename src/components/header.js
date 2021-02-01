@@ -299,7 +299,6 @@ const headerStyles = StyleSheet.create({
 
   instagram_button: {
     width: '1.7vw',
-    minWidth: '30px',
     margin: '0 auto',
     marginRight: '0.2vw',
   },
@@ -311,7 +310,6 @@ const headerStyles = StyleSheet.create({
 
   li_button: {
     width: '1.7vw',
-    minWidth: '30px',
     margin: '0 auto',
     marginRight: '0.2vw',
   },
@@ -335,8 +333,7 @@ const headerStyles = StyleSheet.create({
 
   caspart_icon: {
     zIndex: '9999',
-    width: '8vw',
-    minWidth: '80px',
+    width: '8vw'
   },
 
   caspart_icon_path: {
@@ -345,7 +342,6 @@ const headerStyles = StyleSheet.create({
 
   menu_button: {
     width: '1.8vw',
-    minWidth: '30px',
     padding: '0.3vw',
     margin: '0 auto',
     marginLeft: '1vw',
@@ -360,7 +356,6 @@ const headerStyles = StyleSheet.create({
 
   exit_button: {
     width: '1.8vw',
-    minWidth: '30px',
     padding: '0.3vw',
     margin: '0 auto',
     marginLeft: '1vw',

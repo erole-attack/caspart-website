@@ -14,6 +14,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-overflow-scrolling: touch;
 }
+
+@media (prefers-color-scheme: dark) {
+  body   { background:  white; }
+}
+
 img {
   max-width: 100%;
   margin-left: 0;
@@ -42,7 +47,7 @@ strong {
 }
 h1 {
   font-weight: 300;
-  font-size: calc(12px + 1.75vw);
+  font-size: 2.5vw;
   line-height: 1.5vw;
   letter-spacing: 0.11em;
   text-decoration: none;
@@ -53,14 +58,14 @@ h2 {
 }
 h3 {
   font-weight: 300;
-  font-size: calc(8px + 1vw);
+  font-size: 1.2vw;
   line-height: 0.8vw;
   letter-spacing: 0.11em;
 }
 p {
   font-weight: 300;
-  font-size: calc(7px + 0.6vw);
-  line-height: calc(7px + 0.2vw);
+  font-size: 1vw;
+  line-height: 0.4vw;
 }
 button {
   font-weight: 600;
@@ -113,4 +118,3 @@ textarea {
   opacity: 1; /* Firefox */
   font-size: 13px;
 }
-
